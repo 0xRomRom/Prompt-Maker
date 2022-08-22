@@ -67,7 +67,7 @@ nav {
   font-weight: 600;
   font-family: "Open Sans";
   position: relative;
-  top: -0.5rem;
+  top: -0.8rem;
 }
 
 .flex-list1 {
@@ -138,6 +138,7 @@ nav {
   width: 5.5rem;
   left: -0.5rem;
   height: 2.5rem;
+  cursor: pointer;
 }
 
 .copy {
