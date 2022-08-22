@@ -198,28 +198,29 @@ li:hover {
 
 .side-menu {
   background-color: rgb(8, 11, 22);
-  width: 20%;
+  width: 22rem;
   height: 100vh;
-  border-top: 1px solid green;
-  border-right: 1px solid white;
+  left: 0rem;
+  position: absolute;
+  /* border-right: 1px solid white; */
   /* z-index: 300; */
 }
 
 .side-flex {
   position: relative;
   display: flex;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   justify-content: space-evenly;
   flex-direction: column;
   width: 80%;
-  left: 3rem;
+  left: 10%;
   top: 15rem;
-  height: 70%;
+  height: 38rem;
 }
 
 .main-menu {
   background-color: rgb(8, 11, 22);
-  width: 80%;
+  width: 100%;
   height: 100vh;
 }
 
@@ -228,27 +229,55 @@ li:hover {
   padding-right: 1rem;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  /* background-color: green; */
   height: 3rem;
   font-family: "Open Sans";
   font-weight: 600;
   font-size: 1rem;
-  border: 1px solid white;
+  /* border: 1px solid white; */
+  cursor: pointer;
 }
 
 .side-title {
   font-size: 1.4rem;
-  position: relative;
+  position: absolute;
+  left: 4.5rem;
+}
+
+.side-title1 {
+  font-size: 1.4rem;
+  color: #6a6b6e;
+  position: absolute;
+  left: 4.5rem;
 }
 
 .subject-counter {
   border-radius: 3rem;
   border: 2px solid white;
   padding: 0.05rem 0.5rem;
+  position: absolute;
+  left: 12rem;
+}
+
+.subject-counter1 {
+  border-radius: 3rem;
+  border: 2px solid #6a6b6e;
+  color: #6a6b6e;
+  padding: 0.05rem 0.5rem;
+  position: absolute;
+  left: 12rem;
 }
 
 .fa-style {
   font-size: 1.7rem;
+  position: absolute;
+  left: 1.75rem;
+}
+
+.fa-style1 {
+  font-size: 1.7rem;
+  color: #6a6b6e;
+  position: absolute;
+  left: 1.75rem;
 }
