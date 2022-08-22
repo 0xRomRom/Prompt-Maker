@@ -409,6 +409,19 @@ li:hover {
   flex-direction: row;
 }
 
+.fadeOut {
+  animation: 0.3s fadeOut ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .subjects-style {
   position: relative;
   width: 18.25rem;
@@ -443,4 +456,44 @@ li:hover {
   height: 3rem;
   top: 8.5rem;
   z-index: 30;
+}
+
+.hover-buttons {
+  position: absolute;
+  /* background-color: green; */
+  left: 29.5vw;
+  top: 37rem;
+  width: 10rem;
+  height: 8rem;
+  z-index: 30;
+}
+
+.dot-1 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid rgb(37, 49, 96);
+  background-color: rgb(37, 49, 96);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.dot-2 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid rgb(37, 49, 96);
+  background-color: rgb(8, 11, 22);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.dot-3 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid rgb(37, 49, 96);
+  background-color: rgb(8, 11, 22);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
