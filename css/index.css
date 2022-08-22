@@ -141,9 +141,8 @@ nav {
 }
 
 .copy {
-  color: rgb(223, 31, 31);
-  background-color: white;
-  height: 2rem;
+  color: white;
+  font-size: 1.6rem;
 }
 
 li:hover {
@@ -168,12 +167,12 @@ li:hover {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  gap: 0.7rem;
+  gap: 0.98rem;
 }
 
 .icon-size {
   color: white;
-  height: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -201,11 +200,55 @@ li:hover {
   background-color: rgb(8, 11, 22);
   width: 20%;
   height: 100vh;
+  border-top: 1px solid green;
   border-right: 1px solid white;
+  /* z-index: 300; */
+}
+
+.side-flex {
+  position: relative;
+  display: flex;
+  border: 1px solid white;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 80%;
+  left: 3rem;
+  top: 15rem;
+  height: 70%;
 }
 
 .main-menu {
   background-color: rgb(8, 11, 22);
   width: 80%;
   height: 100vh;
+}
+
+.option-box {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: green; */
+  height: 3rem;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid white;
+}
+
+.side-title {
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.subject-counter {
+  border-radius: 3rem;
+  border: 2px solid white;
+  padding: 0.05rem 0.5rem;
+}
+
+.fa-style {
+  font-size: 1.7rem;
 }
