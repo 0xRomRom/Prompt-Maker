@@ -417,6 +417,12 @@ li:hover {
   overflow: hidden;
 }
 
+.subjects-style > .modal-img-style:hover {
+  width: 105%;
+  height: 130%;
+  transition: 0.2s ease-in-out;
+}
+
 .modal-img-style {
   position: absolute;
   width: 100%;
