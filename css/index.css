@@ -6,11 +6,14 @@
   letter-spacing: 3px;
 }
 
+html {
+  background-color: rgb(8, 11, 22);
+}
+
 .interface {
   position: relative;
   height: 60rem;
   width: 100vw;
-  /* background-color: #0e1326; */
   background-color: rgb(197, 213, 26);
 }
 
@@ -29,17 +32,14 @@ nav {
   background-color: #121930;
   height: 40%;
   width: 100%;
-  /* border: 1px solid white; */
 }
 
 .box-width {
   position: relative;
-  /* background-color: green; */
   width: 83vw;
   height: 2rem;
   height: 100%;
   left: 3rem;
-  /* border: 1px solid white; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -63,7 +63,6 @@ nav {
   width: 100%;
   flex-wrap: wrap;
   list-style: none;
-  /* border: 1px solid rgb(255, 255, 255); */
   font-size: 1rem;
   font-weight: 600;
   font-family: "Open Sans";
@@ -79,7 +78,6 @@ nav {
   gap: 1rem;
   padding-left: 26rem;
   list-style: none;
-  /* border: 1px solid white; */
 }
 
 .flex-list2 {
@@ -104,7 +102,6 @@ nav {
   height: 2rem;
   height: 100%;
   left: 3rem;
-  /* border: 1px solid white; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -117,7 +114,6 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   width: 100%;
 }
 
@@ -150,6 +146,7 @@ nav {
 li:hover {
   color: white;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .icons-box {
@@ -164,7 +161,6 @@ li:hover {
   height: 2rem;
   height: 100%;
   left: 3rem;
-  /* border: 1px solid white; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -192,9 +188,9 @@ li:hover {
 
 .option-menu {
   position: absolute;
-  height: 100vh;
+  height: 63rem;
   width: 100vw;
-  background-color: #0e1326;
+  background-color: rgb(8, 11, 22);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,14 +203,11 @@ li:hover {
   height: 100vh;
   left: 0rem;
   position: absolute;
-  /* border-right: 1px solid white; */
-  /* z-index: 300; */
 }
 
 .side-flex {
   position: relative;
   display: flex;
-  /* border: 1px solid white; */
   justify-content: space-evenly;
   flex-direction: column;
   width: 80%;
