@@ -469,7 +469,7 @@ li:hover {
   z-index: 30;
 }
 
-.dot-1 {
+.d1 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -478,8 +478,7 @@ li:hover {
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-
-.dot-2 {
+.d2 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -489,7 +488,7 @@ li:hover {
   transition: 0.3s ease-in-out;
 }
 
-.dot-3 {
+.d3 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
