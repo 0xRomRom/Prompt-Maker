@@ -497,3 +497,21 @@ li:hover {
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
+
+@media only screen and (max-width: 1900px) {
+  .subjects-style {
+    width: 15.15rem;
+    height: 50%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .subjects-7 {
+    display: none;
+  }
+  .subjects-8 {
+    display: none;
+  }
+}
