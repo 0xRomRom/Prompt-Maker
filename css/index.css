@@ -430,9 +430,14 @@ li:hover {
   overflow: hidden;
 }
 
-.subjects-style > .modal-img-style:hover {
+.subjects-style:hover > .modal-img-style {
   width: 105%;
   height: 130%;
+  transition: 0.2s ease-in-out;
+}
+
+.subjects-style:hover {
+  box-shadow: 0px 0px 5px rgb(70, 72, 76);
   transition: 0.2s ease-in-out;
 }
 
