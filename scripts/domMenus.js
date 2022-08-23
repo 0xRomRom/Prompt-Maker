@@ -39,6 +39,7 @@ const subPage1 = `<div class="subjects-1 subjects-style">
 <div class="modal-name-style">Humans</div>
 <img src="img/index/Humans.png" class="modal-img-style" />
 </div>`;
+subjectBoxes.innerHTML = subPage1;
 
 const subPage2 = `<div class="subjects-5 subjects-style">
 <div class="modal-name-style">Items</div>
@@ -135,5 +136,3 @@ dot3.addEventListener("click", () => {
     subjectBoxes.classList.remove("fadeOut");
   }, 500);
 });
-
-subjectBoxes.innerHTML = subPage1;
