@@ -89,6 +89,7 @@ allSubjects.forEach((item) => {
     subjectCounter.textContent = subjectCount;
     subjectMiniCounter.textContent = subjectCount;
     totalCounter.textContent = totalCount;
+    promptString.focus();
   });
   // console.log(item.dataset.id);
 });
