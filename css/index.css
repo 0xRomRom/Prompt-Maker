@@ -10,6 +10,10 @@ html {
   background-color: rgb(8, 11, 22);
 }
 
+.hidden {
+  display: none !important;
+}
+
 .interface {
   position: relative;
   height: 60rem;
@@ -500,6 +504,20 @@ li:hover {
   background-color: rgb(8, 11, 22);
   cursor: pointer;
   transition: 0.3s ease-in-out;
+}
+
+.modal-style {
+  position: relative;
+  /* border: 1px solid white; */
+  width: 100%;
+  top: 1rem;
+  height: 23rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 1900px) {
