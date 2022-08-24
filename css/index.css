@@ -141,6 +141,10 @@ nav {
   cursor: pointer;
 }
 
+.copy-prompt:hover {
+  text-shadow: 0px 0px 5px white;
+}
+
 .copy {
   color: white;
   font-size: 1.6rem;
@@ -544,9 +548,6 @@ li:hover {
   .hover-buttons {
     left: 18rem;
     top: 33rem;
-  }
-  .links-box {
-    display: none;
   }
 }
 

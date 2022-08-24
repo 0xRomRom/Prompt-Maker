@@ -98,3 +98,5 @@ export const subPage3 = `<div class="subjects-2 subjects-style">
 <div class="modal-name-style">Animals</div>
 <img src="img/index/Animals.png" class="modal-img-style" />
 </div>`;
+
+//Menu 2: Location
