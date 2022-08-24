@@ -14,8 +14,10 @@ const sub3 = document.querySelector(".sub3");
 
 const subjectCounter = document.querySelector(".subject-counter");
 const subjectMiniCounter = document.querySelector(".subjects-counter");
+const totalCounter = document.querySelector(".total-selection-counter");
 //Init//
 let subjectCount = 0;
+let totalCount = 20;
 ////////
 
 //Copy resulting query
@@ -83,8 +85,10 @@ allSubjects.forEach((item) => {
     console.log(item.dataset.id);
     appendToQuery(item.dataset.id);
     subjectCount++;
+    totalCount++;
     subjectCounter.textContent = subjectCount;
     subjectMiniCounter.textContent = subjectCount;
+    totalCounter.textContent = totalCount;
   });
   // console.log(item.dataset.id);
 });
