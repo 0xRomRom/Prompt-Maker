@@ -16,8 +16,8 @@ const subjectCounter = document.querySelector(".subject-counter");
 const subjectMiniCounter = document.querySelector(".subjects-counter");
 const totalCounter = document.querySelector(".total-selection-counter");
 //Init//
+let totalCount = 0;
 let subjectCount = 0;
-let totalCount = 20;
 ////////
 
 //Copy resulting query
@@ -33,6 +33,7 @@ dotArray.forEach((dot) => {
   dot.addEventListener("click", (e) => {
     if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
     let dotIndex = +e.target.classList[0].slice(4) - 1;
+    menuTransitions(e);
     if (dotIndex === 0) {
       sub1.classList.remove("hidden");
       sub2.classList.add("hidden");
@@ -48,8 +49,6 @@ dotArray.forEach((dot) => {
       sub2.classList.add("hidden");
       sub3.classList.remove("hidden");
     }
-
-    menuTransitions(e);
   });
 });
 
@@ -75,14 +74,15 @@ const menuTransitions = (e) => {
   }
 };
 
+//Append selection to query
 const appendToQuery = (string) => {
   promptString.value += `${string.charAt(0).toUpperCase() + string.slice(1)}, `;
 };
 
+//Subjects UI updater
 let allSubjects = document.querySelectorAll(".subjects-style");
 allSubjects.forEach((item) => {
   item.addEventListener("click", () => {
-    console.log(item.dataset.id);
     appendToQuery(item.dataset.id);
     subjectCount++;
     totalCount++;
@@ -91,10 +91,4 @@ allSubjects.forEach((item) => {
     totalCounter.textContent = totalCount;
     promptString.focus();
   });
-  // console.log(item.dataset.id);
-});
-
-const subjects1 = document.querySelector(".subjects-1");
-document.addEventListener("click", (e) => {
-  console.log(subjects1);
 });

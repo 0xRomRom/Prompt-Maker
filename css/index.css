@@ -190,7 +190,8 @@ li:hover {
   color: white;
   border-radius: 50%;
   border: 1px solid #00e4ff;
-  padding-left: 0.2rem;
+  padding-right: 0.3rem;
+  padding-left: 0.5rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   text-align: center;
@@ -274,28 +275,8 @@ li:hover {
   left: 13rem;
 }
 
-.subject-counter1 {
-  border-radius: 50%;
-  width: 1.75rem;
-  height: 1.75rem;
-  border: 2px solid #6a6b6e;
-  color: #6a6b6e;
-  padding-top: 0.1rem;
-  padding-left: 0.2rem;
-  position: absolute;
-  text-align: center;
-  left: 13rem;
-}
-
 .fa-style {
   font-size: 1.7rem;
-  position: absolute;
-  left: 1.75rem;
-}
-
-.fa-style1 {
-  font-size: 1.7rem;
-  color: #6a6b6e;
   position: absolute;
   left: 1.75rem;
 }
