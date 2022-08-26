@@ -12,7 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prompt Maker - AI Query Generator</title>
-    <script defer src="./scripts/script.js"></script>
+    <script defer type="module" src="./scripts/script.js"></script>
+    <script defer type="module" src="./scripts/init.js"></script>
     <script
       src="https://kit.fontawesome.com/5f3c108898.js"
       crossorigin="anonymous"
@@ -65,54 +66,54 @@
             <div class="option-box option-box1">
               <i class="fa-solid fa-eye fa-style"></i>
               <p class="side-title">Subject</p>
-              <div class="subject-counter">0</div>
+              <div class="subject-counter head-count">0</div>
             </div>
             <div class="option-box option-box2">
               <i class="fa-solid fa-location-dot fa-style"></i>
               <p class="side-title">Location</p>
-              <div class="subject-counter">0</div>
+              <div class="location-counter head-count">0</div>
             </div>
             <div class="option-box option-box3">
               <i class="fa-solid fa-cubes fa-style"></i>
               <p class="side-title">Themes</p>
-              <div class="subject-counter">0</div>
+              <div class="themes-counter head-count">0</div>
             </div>
             <div class="option-box option-box4">
               <i class="fa-solid fa-pen-nib fa-style"></i>
               <p class="side-title">Design</p>
-              <div class="subject-counter">0</div>
+              <div class="design-counter head-count">0</div>
             </div>
             <div class="option-box option-box5">
               <i class="fa-solid fa-sun fa-style"></i>
               <p class="side-title">Lightning</p>
-              <div class="subject-counter">0</div>
+              <div class="lightning-counter head-count">0</div>
             </div>
             <div class="option-box option-box6">
               <i class="fa-solid fa-droplet fa-style"></i>
               <p class="side-title">Colors</p>
-              <div class="subject-counter">0</div>
+              <div class="colors-counter head-count">0</div>
             </div>
             <div class="option-box option-box7">
               <i class="fa-solid fa-camera fa-style"></i>
               <p class="side-title">Camera</p>
-              <div class="subject-counter">0</div>
+              <div class="camera-counter head-count">0</div>
             </div>
             <div class="option-box option-box8">
               <i class="fa-solid fa-user fa-style"></i>
               <p class="side-title">Artists</p>
-              <div class="subject-counter">0</div>
+              <div class="artists-counter head-count">0</div>
             </div>
             <div class="option-box option-box9">
               <i class="fa-solid fa-images fa-style"></i>
               <p class="side-title">Image</p>
-              <div class="subject-counter">0</div>
+              <div class="image-counter head-count">0</div>
             </div>
           </div>
         </div>
         <div class="main-menu">
           <div class="main-program">
             <!--  #1  -->
-            <div class="subject hidden">
+            <div class="subject">
               <div class="title-box">
                 <i class="fa-solid fa-eye mini-icon"></i>
                 <h1>Subjects</h1>
@@ -182,7 +183,7 @@
               <div class="title-box">
                 <i class="fa-solid fa-pen-nib mini-icon"></i>
                 <h1>Design</h1>
-                <div class="design-counter ctr-style">0</div>
+                <div class="designs-counter ctr-style">0</div>
               </div>
               <div class="searchbox">
                 <h2 class="subtitle">Define your subjects in the artwork</h2>
@@ -204,7 +205,7 @@
               <div class="title-box">
                 <i class="fa-solid fa-sun mini-icon"></i>
                 <h1>Lightning</h1>
-                <div class="lightning-counter ctr-style">0</div>
+                <div class="lightnings-counter ctr-style">0</div>
               </div>
               <div class="searchbox">
                 <h2 class="subtitle">Define your subjects in the artwork</h2>
@@ -248,7 +249,7 @@
               <div class="title-box">
                 <i class="fa-solid fa-camera mini-icon"></i>
                 <h1>Camera</h1>
-                <div class="colors-counter ctr-style">0</div>
+                <div class="cameras-counter ctr-style">0</div>
               </div>
               <div class="searchbox">
                 <h2 class="subtitle">Define your subjects in the artwork</h2>
@@ -270,7 +271,7 @@
               <div class="title-box">
                 <i class="fa-solid fa-user mini-icon"></i>
                 <h1>Artists</h1>
-                <div class="colors-counter ctr-style">0</div>
+                <div class="artists-counter ctr-style">0</div>
               </div>
               <div class="searchbox">
                 <h2 class="subtitle">Define your subjects in the artwork</h2>
@@ -288,11 +289,11 @@
               </div>
             </div>
             <!--  #8  -->
-            <div class="artists">
+            <div class="image hidden">
               <div class="title-box">
                 <i class="fa-solid fa-images mini-icon"></i>
                 <h1>Image</h1>
-                <div class="colors-counter ctr-style">0</div>
+                <div class="images-counter ctr-style">0</div>
               </div>
               <div class="imagebox">
                 <h2 class="subtitle">Define your image properties</h2>
@@ -323,7 +324,7 @@
                 </div>
               </div>
             </div>
-            <div class="modal-boxes hidden">
+            <div class="modal-boxes">
               <div class="sub1 modal-style">
                 <div class="subjects-1 subjects-style" data-id="humans">
                   <div class="modal-name-style">Humans</div>

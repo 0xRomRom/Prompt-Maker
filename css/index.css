@@ -245,24 +245,19 @@ li:hover {
   font-family: "Open Sans";
   font-weight: 600;
   font-size: 0.9rem;
-  /* border: 1px solid white; */
+  border: none !important;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .side-title {
   font-size: 1.4rem;
   position: absolute;
   left: 4.5rem;
+  border: none !important;
 }
 
-.side-title1 {
-  font-size: 1.4rem;
-  color: #6a6b6e;
-  position: absolute;
-  left: 4.5rem;
-}
-
-.subject-counter {
+.head-count {
   border-radius: 50%;
   width: 1.75rem;
   height: 1.75rem;
@@ -273,12 +268,17 @@ li:hover {
   position: absolute;
   text-align: center;
   left: 13rem;
+  transition: 0.2s ease-in-out;
 }
 
 .fa-style {
   font-size: 1.7rem;
   position: absolute;
   left: 1.75rem;
+}
+
+.fa-solid {
+  border: none !important;
 }
 
 .main-program {
