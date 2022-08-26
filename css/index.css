@@ -294,7 +294,7 @@ li:hover {
   /* border: 1px solid white; */
 }
 
-.subject-title-box {
+.title-box {
   position: relative;
   width: 100%;
   height: 4rem;
@@ -308,17 +308,17 @@ li:hover {
   color: white;
 }
 
-.subjects-eye {
+.mini-icon {
   position: relative;
   top: 0.2rem;
   font-size: 2rem;
   color: white;
 }
-.subjects-counter {
+
+.ctr-style {
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
@@ -331,12 +331,12 @@ li:hover {
   font-size: 0.9rem;
 }
 
-.subject-subtitle {
+.subtitle {
   display: inline-block;
   width: 100%;
 }
 
-.subjects-searchbox {
+.searchbox {
   position: relative;
   width: 100%;
   height: 6rem;
@@ -352,7 +352,7 @@ li:hover {
   width: 100%;
 }
 
-.searchbox-1 {
+.search-input {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -360,7 +360,7 @@ li:hover {
   width: 100%;
 }
 
-.search1 {
+.search-style {
   border-radius: 4px;
   border: none;
   height: 1.5rem;
@@ -371,7 +371,7 @@ li:hover {
   font-family: "Open Sans";
 }
 
-.search1-button {
+.search-btn-style {
   font-family: "Open Sans";
   font-weight: 600;
   background-color: transparent;
@@ -504,6 +504,97 @@ li:hover {
   align-items: flex-start;
   flex-direction: row;
 }
+
+.image-buttonbox1 {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  height: 6rem;
+  margin-top: 0.7rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-btn-style {
+  background-color: #121930;
+  padding: 0.7rem 2.2rem;
+  color: white;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  position: relative;
+  width: 32.5%;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+.img-btn-style:hover {
+  background-color: #1b2548;
+}
+
+.img-subtitle2 {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  top: 10rem;
+}
+
+.image-buttonbox2 {
+  position: absolute;
+  top: 13rem;
+  width: 100%;
+  height: 9.6rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.drag-drop {
+  position: relative;
+  height: 100%;
+  width: 32.4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0rem 1rem;
+  background-color: transparent;
+  font-family: "Open Sans";
+  font-weight: 800;
+  border: 1px solid #121930;
+  color: white;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.drag-drop:hover {
+  background-color: #121930;
+}
+
+.imagebox {
+  position: relative;
+  width: 100%;
+  top: 1rem;
+  height: 23rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 0.6rem;
+}
+
+/* Media Queries */
 
 @media only screen and (max-width: 1900px) {
   .subjects-style {
