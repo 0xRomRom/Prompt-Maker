@@ -225,7 +225,8 @@ li:hover {
   width: 80%;
   left: 7%;
   top: 15rem;
-  height: 38rem;
+  height: 40rem;
+  /* border: 2px solid white; */
 }
 
 .main-menu {
