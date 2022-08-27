@@ -37,6 +37,12 @@ export const sub3 = document.querySelector(".sub3");
 export const loc1 = document.querySelector(".loc1");
 export const loc2 = document.querySelector(".loc2");
 export const loc3 = document.querySelector(".loc3");
+export const the1 = document.querySelector(".the1");
+export const the2 = document.querySelector(".the2");
+export const the3 = document.querySelector(".the3");
+export const des1 = document.querySelector(".des1");
+export const des2 = document.querySelector(".des2");
+export const des3 = document.querySelector(".des3");
 
 export const mainProgram = document.querySelector(".main-program");
 export const subjectBoxes = document.querySelector(".modal-boxes");
@@ -45,7 +51,6 @@ import { dot1, dot2, dot3 } from "./script.js";
 
 let g = "rgb(40,37,38)";
 let gb = "2px solid rgb(40,37,38)";
-
 let w = "white";
 let wb = "2px solid white";
 
@@ -97,12 +102,12 @@ optionBox1.addEventListener("click", () => {
   dot1.className = "dot-1 d1 dot";
   dot2.className = "dot-2 d2 dot";
   dot3.className = "dot-3 d3 dot";
+  sub1.classList.remove("hidden");
   subject.classList.remove("hidden");
   location.classList.add("hidden");
-  sub1.classList.remove("hidden");
+  themes.classList.add("hidden");
   loc1.classList.add("hidden");
-  loc2.classList.add("hidden");
-  loc3.classList.add("hidden");
+  the1.classList.add("hidden");
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox1,
@@ -137,18 +142,18 @@ optionBox1.addEventListener("click", () => {
 
 optionBox2.addEventListener("click", () => {
   resetDots();
-  opacity(mainProgram, subjectBoxes);
   dot1.className = "dot-4 d1 dot";
   dot2.className = "dot-5 d2 dot";
   dot3.className = "dot-6 d3 dot";
-  subject.classList.add("hidden");
+  loc1.classList.remove("hidden");
   location.classList.remove("hidden");
+  subject.classList.add("hidden");
+  themes.classList.add("hidden");
   sub1.classList.add("hidden");
   sub2.classList.add("hidden");
   sub3.classList.add("hidden");
-  loc1.classList.remove("hidden");
-  mainProgram.classList.add("fadeOpacity");
-  subjectBoxes.classList.add("fadeOpacity");
+  the1.classList.add("hidden");
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox2,
     locationCounter,
@@ -182,6 +187,16 @@ optionBox2.addEventListener("click", () => {
 
 optionBox3.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-7 d1 dot";
+  dot2.className = "dot-8 d2 dot";
+  dot3.className = "dot-9 d3 dot";
+  the1.classList.remove("hidden");
+  themes.classList.remove("hidden");
+  subject.classList.add("hidden");
+  location.classList.add("hidden");
+  loc1.classList.add("hidden");
+  sub1.classList.add("hidden");
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox3,
     themesCounter,
@@ -215,6 +230,11 @@ optionBox3.addEventListener("click", () => {
 
 optionBox4.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-10 d1 dot";
+  dot2.className = "dot-11 d2 dot";
+  dot3.className = "dot-12 d3 dot";
+
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox4,
     designCounter,
@@ -248,6 +268,10 @@ optionBox4.addEventListener("click", () => {
 
 optionBox5.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-13 d1 dot";
+  dot2.className = "dot-14 d2 dot";
+  dot3.className = "dot-15 d3 dot";
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox5,
     lightningCounter,
@@ -281,6 +305,10 @@ optionBox5.addEventListener("click", () => {
 
 optionBox6.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-16 d1 dot";
+  dot2.className = "dot-17 d2 dot";
+  dot3.className = "dot-18 d3 dot";
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox6,
     colorsCounter,
@@ -314,6 +342,10 @@ optionBox6.addEventListener("click", () => {
 
 optionBox7.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-19 d1 dot";
+  dot2.className = "dot-20 d2 dot";
+  dot3.className = "dot-21 d3 dot";
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox7,
     cameraCounter,
@@ -347,6 +379,10 @@ optionBox7.addEventListener("click", () => {
 
 optionBox8.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-22 d1 dot";
+  dot2.className = "dot-23 d2 dot";
+  dot3.className = "dot-24 d3 dot";
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox8,
     artistsCounter,
@@ -380,6 +416,10 @@ optionBox8.addEventListener("click", () => {
 
 optionBox9.addEventListener("click", () => {
   resetDots();
+  dot1.className = "dot-25 d1 dot";
+  dot2.className = "dot-26 d2 dot";
+  dot3.className = "dot-27 d3 dot";
+  opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox9,
     imageCounter,
