@@ -43,6 +43,9 @@ export const the3 = document.querySelector(".the3");
 export const des1 = document.querySelector(".des1");
 export const des2 = document.querySelector(".des2");
 export const des3 = document.querySelector(".des3");
+export const lig1 = document.querySelector(".lig1");
+export const lig2 = document.querySelector(".lig2");
+export const lig3 = document.querySelector(".lig3");
 
 export const mainProgram = document.querySelector(".main-program");
 export const subjectBoxes = document.querySelector(".modal-boxes");
@@ -79,6 +82,14 @@ optionBox9.style.color = g;
 imageCounter.style.color = g;
 imageCounter.style.border = gb;
 
+const hide = (el) => {
+  el.classList.add("hidden");
+};
+
+const show = (el) => {
+  el.classList.remove("hidden");
+};
+
 const opacity = (i1, i2) => {
   i1.classList.add("fadeOpacity");
   i2.classList.add("fadeOpacity");
@@ -102,12 +113,25 @@ optionBox1.addEventListener("click", () => {
   dot1.className = "dot-1 d1 dot";
   dot2.className = "dot-2 d2 dot";
   dot3.className = "dot-3 d3 dot";
-  sub1.classList.remove("hidden");
-  subject.classList.remove("hidden");
-  location.classList.add("hidden");
-  themes.classList.add("hidden");
-  loc1.classList.add("hidden");
-  the1.classList.add("hidden");
+
+  show(sub1);
+  show(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox1,
@@ -145,14 +169,25 @@ optionBox2.addEventListener("click", () => {
   dot1.className = "dot-4 d1 dot";
   dot2.className = "dot-5 d2 dot";
   dot3.className = "dot-6 d3 dot";
-  loc1.classList.remove("hidden");
-  location.classList.remove("hidden");
-  subject.classList.add("hidden");
-  themes.classList.add("hidden");
-  sub1.classList.add("hidden");
-  sub2.classList.add("hidden");
-  sub3.classList.add("hidden");
-  the1.classList.add("hidden");
+
+  show(loc1);
+  show(location);
+  hide(subject);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox2,
@@ -190,12 +225,25 @@ optionBox3.addEventListener("click", () => {
   dot1.className = "dot-7 d1 dot";
   dot2.className = "dot-8 d2 dot";
   dot3.className = "dot-9 d3 dot";
-  the1.classList.remove("hidden");
-  themes.classList.remove("hidden");
-  subject.classList.add("hidden");
-  location.classList.add("hidden");
-  loc1.classList.add("hidden");
-  sub1.classList.add("hidden");
+
+  show(the1);
+  show(themes);
+  hide(subject);
+  hide(location);
+  hide(design);
+  hide(lightning);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox3,
@@ -234,6 +282,25 @@ optionBox4.addEventListener("click", () => {
   dot2.className = "dot-11 d2 dot";
   dot3.className = "dot-12 d3 dot";
 
+  show(des1);
+  show(design);
+  hide(themes);
+  hide(subject);
+  hide(location);
+  hide(lightning);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox4,
@@ -271,6 +338,26 @@ optionBox5.addEventListener("click", () => {
   dot1.className = "dot-13 d1 dot";
   dot2.className = "dot-14 d2 dot";
   dot3.className = "dot-15 d3 dot";
+
+  show(lig1);
+  show(lightning);
+  hide(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox5,
