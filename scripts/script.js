@@ -1,26 +1,39 @@
 "use strict";
 
+import {
+  totalCounter,
+  subjectCounter,
+  locationCounter,
+  themesCounter,
+  designCounter,
+  lightningCounter,
+  colorsCounter,
+  cameraCounter,
+  artistsCounter,
+  imageCounter,
+} from "./animate.js";
+
+import {
+  optionBox1,
+  optionBox2,
+  optionBox3,
+  optionBox4,
+  optionBox5,
+  optionBox6,
+  optionBox7,
+  optionBox8,
+  optionBox9,
+} from "./animate.js";
+
+import { sub1, sub2, sub3, loc1, loc2, loc3 } from "./animate.js";
+import { subjectBoxes } from "./animate.js";
+
 const promptString = document.querySelector(".prompt-string");
 const copyPromptString = document.querySelector(".copy-prompt");
-const subjectBoxes = document.querySelector(".modal-boxes");
-const dot1 = document.querySelector(".dot-1");
-const dot2 = document.querySelector(".dot-2");
-const dot3 = document.querySelector(".dot-3");
 
-const sub1 = document.querySelector(".sub1");
-const sub2 = document.querySelector(".sub2");
-const sub3 = document.querySelector(".sub3");
-
-export const totalCounter = document.querySelector(".total-selection-counter");
-export const subjectCounter = document.querySelector(".subject-counter");
-export const locationCounter = document.querySelector(".location-counter");
-export const themesCounter = document.querySelector(".themes-counter");
-export const designCounter = document.querySelector(".design-counter");
-export const lightningCounter = document.querySelector(".lightning-counter");
-export const colorsCounter = document.querySelector(".colors-counter");
-export const cameraCounter = document.querySelector(".camera-counter");
-export const artistsCounter = document.querySelector(".artists-counter");
-export const imageCounter = document.querySelector(".image-counter");
+export const dot1 = document.querySelector(".dot-1");
+export const dot2 = document.querySelector(".dot-2");
+export const dot3 = document.querySelector(".dot-3");
 
 const subjectMiniCounter = document.querySelector(".subjects-counter");
 const locationMiniCounter = document.querySelector(".locations-counter");
@@ -31,16 +44,6 @@ const colorsMiniCounter = document.querySelector(".colors-counter");
 const cameraMiniCounter = document.querySelector(".cameras-counter");
 const artistMiniCounter = document.querySelector(".artists-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
-
-export const optionBox1 = document.querySelector(".option-box1");
-export const optionBox2 = document.querySelector(".option-box2");
-export const optionBox3 = document.querySelector(".option-box3");
-export const optionBox4 = document.querySelector(".option-box4");
-export const optionBox5 = document.querySelector(".option-box5");
-export const optionBox6 = document.querySelector(".option-box6");
-export const optionBox7 = document.querySelector(".option-box7");
-export const optionBox8 = document.querySelector(".option-box8");
-export const optionBox9 = document.querySelector(".option-box9");
 
 //Init//
 let totalCount = 0;
@@ -60,6 +63,7 @@ dotArray.forEach((dot) => {
   dot.addEventListener("click", (e) => {
     if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
     let dotIndex = +e.target.classList[0].slice(4) - 1;
+    console.log(dotIndex);
     menuTransitions(e);
     if (dotIndex === 0) {
       sub1.classList.remove("hidden");
@@ -76,6 +80,26 @@ dotArray.forEach((dot) => {
       sub2.classList.add("hidden");
       sub3.classList.remove("hidden");
     }
+    if (dotIndex === 3) {
+      sub3.classList.add("hidden");
+      loc1.classList.remove("hidden");
+      loc2.classList.add("hidden");
+      loc3.classList.add("hidden");
+    }
+    if (dotIndex === 4) {
+      loc1.classList.add("hidden");
+      loc2.classList.remove("hidden");
+      loc3.classList.add("hidden");
+      sub3.classList.add("hidden");
+    }
+    if (dotIndex === 5) {
+      sub3.classList.add("hidden");
+      loc1.classList.add("hidden");
+      loc2.classList.add("hidden");
+      loc3.classList.remove("hidden");
+    }
+    console.log(dotIndex);
+    menuTransitions(e);
   });
 });
 
