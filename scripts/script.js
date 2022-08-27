@@ -62,7 +62,7 @@ export const dot3 = document.querySelector(".dot-3");
 
 const subjectMiniCounter = document.querySelector(".subjects-counter");
 const locationMiniCounter = document.querySelector(".locations-counter");
-const themeMiniCounter = document.querySelector(".themes-counter");
+const themeMiniCounter = document.querySelector(".themes-mini-counter");
 const designMiniCounter = document.querySelector(".designs-counter");
 const lightningMiniCounter = document.querySelector(".lightnings-counter");
 const colorsMiniCounter = document.querySelector(".colors-mini-counter");
