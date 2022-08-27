@@ -10,6 +10,8 @@ export const camera = document.querySelector(".camera");
 export const artists = document.querySelector(".artists");
 export const image = document.querySelector(".image");
 
+export const buttonBox = document.querySelector(".hover-buttons");
+
 export const optionBox1 = document.querySelector(".option-box1");
 export const optionBox2 = document.querySelector(".option-box2");
 export const optionBox3 = document.querySelector(".option-box3");
@@ -46,6 +48,15 @@ export const des3 = document.querySelector(".des3");
 export const lig1 = document.querySelector(".lig1");
 export const lig2 = document.querySelector(".lig2");
 export const lig3 = document.querySelector(".lig3");
+export const col1 = document.querySelector(".col1");
+export const col2 = document.querySelector(".col2");
+export const col3 = document.querySelector(".col3");
+export const cam1 = document.querySelector(".cam1");
+export const cam2 = document.querySelector(".cam2");
+export const cam3 = document.querySelector(".cam3");
+export const art1 = document.querySelector(".art1");
+export const art2 = document.querySelector(".art2");
+export const art3 = document.querySelector(".art3");
 
 export const mainProgram = document.querySelector(".main-program");
 export const subjectBoxes = document.querySelector(".modal-boxes");
@@ -116,10 +127,15 @@ optionBox1.addEventListener("click", () => {
 
   show(sub1);
   show(subject);
+  show(buttonBox);
+  show(subjectBoxes);
   hide(location);
   hide(themes);
   hide(design);
   hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(artists);
   hide(loc1);
   hide(loc2);
   hide(loc3);
@@ -132,6 +148,17 @@ optionBox1.addEventListener("click", () => {
   hide(lig1);
   hide(lig2);
   hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox1,
@@ -172,10 +199,15 @@ optionBox2.addEventListener("click", () => {
 
   show(loc1);
   show(location);
+  show(buttonBox);
+  show(subjectBoxes);
   hide(subject);
   hide(themes);
   hide(design);
   hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(artists);
   hide(sub1);
   hide(sub2);
   hide(sub3);
@@ -188,6 +220,17 @@ optionBox2.addEventListener("click", () => {
   hide(lig1);
   hide(lig2);
   hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox2,
@@ -228,10 +271,15 @@ optionBox3.addEventListener("click", () => {
 
   show(the1);
   show(themes);
+  show(buttonBox);
+  show(subjectBoxes);
   hide(subject);
   hide(location);
   hide(design);
   hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(artists);
   hide(sub1);
   hide(sub2);
   hide(sub3);
@@ -244,6 +292,17 @@ optionBox3.addEventListener("click", () => {
   hide(lig1);
   hide(lig2);
   hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox3,
@@ -284,10 +343,15 @@ optionBox4.addEventListener("click", () => {
 
   show(des1);
   show(design);
+  show(buttonBox);
+  show(subjectBoxes);
   hide(themes);
   hide(subject);
   hide(location);
   hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(artists);
   hide(sub1);
   hide(sub2);
   hide(sub3);
@@ -300,6 +364,16 @@ optionBox4.addEventListener("click", () => {
   hide(lig1);
   hide(lig2);
   hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
 
   opacity(mainProgram, subjectBoxes);
   styleReducer(
@@ -341,10 +415,15 @@ optionBox5.addEventListener("click", () => {
 
   show(lig1);
   show(lightning);
+  show(buttonBox);
+  show(subjectBoxes);
   hide(subject);
   hide(location);
   hide(themes);
   hide(design);
+  hide(colors);
+  hide(camera);
+  hide(artists);
   hide(sub1);
   hide(sub2);
   hide(sub3);
@@ -357,6 +436,16 @@ optionBox5.addEventListener("click", () => {
   hide(des1);
   hide(des2);
   hide(des3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
 
   opacity(mainProgram, subjectBoxes);
   styleReducer(
@@ -395,6 +484,41 @@ optionBox6.addEventListener("click", () => {
   dot1.className = "dot-16 d1 dot";
   dot2.className = "dot-17 d2 dot";
   dot3.className = "dot-18 d3 dot";
+
+  show(col1);
+  show(colors);
+  show(buttonBox);
+  show(subjectBoxes);
+  hide(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(camera);
+  hide(artists);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox6,
@@ -432,6 +556,41 @@ optionBox7.addEventListener("click", () => {
   dot1.className = "dot-19 d1 dot";
   dot2.className = "dot-20 d2 dot";
   dot3.className = "dot-21 d3 dot";
+
+  show(cam1);
+  show(camera);
+  show(buttonBox);
+  show(subjectBoxes);
+  hide(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(colors);
+  hide(artists);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox7,
@@ -469,6 +628,41 @@ optionBox8.addEventListener("click", () => {
   dot1.className = "dot-22 d1 dot";
   dot2.className = "dot-23 d2 dot";
   dot3.className = "dot-24 d3 dot";
+
+  show(art1);
+  show(artists);
+  show(buttonBox);
+  show(subjectBoxes);
+  hide(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(image);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox8,
@@ -506,6 +700,44 @@ optionBox9.addEventListener("click", () => {
   dot1.className = "dot-25 d1 dot";
   dot2.className = "dot-26 d2 dot";
   dot3.className = "dot-27 d3 dot";
+
+  show(image);
+  hide(subject);
+  hide(location);
+  hide(themes);
+  hide(design);
+  hide(lightning);
+  hide(colors);
+  hide(camera);
+  hide(artists);
+  hide(sub1);
+  hide(sub2);
+  hide(sub3);
+  hide(loc1);
+  hide(loc2);
+  hide(loc3);
+  hide(the1);
+  hide(the2);
+  hide(the3);
+  hide(des1);
+  hide(des2);
+  hide(des3);
+  hide(lig1);
+  hide(lig2);
+  hide(lig3);
+  hide(col1);
+  hide(col2);
+  hide(col3);
+  hide(cam1);
+  hide(cam2);
+  hide(cam3);
+  hide(art1);
+  hide(art2);
+  hide(art3);
+
+  hide(buttonBox);
+  hide(subjectBoxes);
+
   opacity(mainProgram, subjectBoxes);
   styleReducer(
     optionBox9,

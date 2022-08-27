@@ -25,7 +25,32 @@ import {
   optionBox9,
 } from "./animate.js";
 
-import { sub1, sub2, sub3, loc1, loc2, loc3 } from "./animate.js";
+import {
+  sub1,
+  sub2,
+  sub3,
+  loc1,
+  loc2,
+  loc3,
+  the1,
+  the2,
+  the3,
+  des1,
+  des2,
+  des3,
+  lig1,
+  lig2,
+  lig3,
+  col1,
+  col2,
+  col3,
+  cam1,
+  cam2,
+  cam3,
+  art1,
+  art2,
+  art3,
+} from "./animate.js";
 import { subjectBoxes } from "./animate.js";
 
 const promptString = document.querySelector(".prompt-string");
@@ -79,9 +104,8 @@ dotArray.forEach((dot) => {
       sub1.classList.add("hidden");
       sub2.classList.add("hidden");
       sub3.classList.remove("hidden");
-    }
+    } //
     if (dotIndex === 3) {
-      sub3.classList.add("hidden");
       loc1.classList.remove("hidden");
       loc2.classList.add("hidden");
       loc3.classList.add("hidden");
@@ -97,6 +121,96 @@ dotArray.forEach((dot) => {
       loc1.classList.add("hidden");
       loc2.classList.add("hidden");
       loc3.classList.remove("hidden");
+    } //
+    if (dotIndex === 6) {
+      the1.classList.remove("hidden");
+      the2.classList.add("hidden");
+      the3.classList.add("hidden");
+    }
+    if (dotIndex === 7) {
+      the2.classList.remove("hidden");
+      the1.classList.add("hidden");
+      the3.classList.add("hidden");
+    }
+    if (dotIndex === 8) {
+      the1.classList.add("hidden");
+      the2.classList.add("hidden");
+      the3.classList.remove("hidden");
+    } //
+    if (dotIndex === 9) {
+      des1.classList.remove("hidden");
+      des2.classList.add("hidden");
+      des3.classList.add("hidden");
+    }
+    if (dotIndex === 10) {
+      des2.classList.remove("hidden");
+      des1.classList.add("hidden");
+      des3.classList.add("hidden");
+    }
+    if (dotIndex === 11) {
+      des1.classList.add("hidden");
+      des2.classList.add("hidden");
+      des3.classList.remove("hidden");
+    } //
+    if (dotIndex === 12) {
+      lig1.classList.remove("hidden");
+      lig2.classList.add("hidden");
+      lig3.classList.add("hidden");
+    }
+    if (dotIndex === 13) {
+      lig2.classList.remove("hidden");
+      lig1.classList.add("hidden");
+      lig3.classList.add("hidden");
+    }
+    if (dotIndex === 14) {
+      lig1.classList.add("hidden");
+      lig2.classList.add("hidden");
+      lig3.classList.remove("hidden");
+    } //
+    if (dotIndex === 15) {
+      col1.classList.remove("hidden");
+      col2.classList.add("hidden");
+      col3.classList.add("hidden");
+    }
+    if (dotIndex === 16) {
+      col2.classList.remove("hidden");
+      col1.classList.add("hidden");
+      col3.classList.add("hidden");
+    }
+    if (dotIndex === 17) {
+      col1.classList.add("hidden");
+      col2.classList.add("hidden");
+      col3.classList.remove("hidden");
+    } //
+    if (dotIndex === 18) {
+      cam1.classList.remove("hidden");
+      cam2.classList.add("hidden");
+      cam3.classList.add("hidden");
+    }
+    if (dotIndex === 19) {
+      cam2.classList.remove("hidden");
+      cam1.classList.add("hidden");
+      cam3.classList.add("hidden");
+    }
+    if (dotIndex === 20) {
+      cam1.classList.add("hidden");
+      cam2.classList.add("hidden");
+      cam3.classList.remove("hidden");
+    } //
+    if (dotIndex === 21) {
+      art1.classList.remove("hidden");
+      art2.classList.add("hidden");
+      art3.classList.add("hidden");
+    }
+    if (dotIndex === 22) {
+      art2.classList.remove("hidden");
+      art1.classList.add("hidden");
+      art3.classList.add("hidden");
+    }
+    if (dotIndex === 23) {
+      art1.classList.add("hidden");
+      art2.classList.add("hidden");
+      art3.classList.remove("hidden");
     }
     console.log(dotIndex);
     menuTransitions(e);
