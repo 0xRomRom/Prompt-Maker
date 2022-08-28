@@ -647,12 +647,28 @@ li:hover {
   margin-top: 1rem;
   padding: .5rem 0;
   font-family: Open Sans;
-  font-size: 1rem;
+  font-size: .6vw;
   font-weight: 700;
 }
 
 .btn-stl:hover {
   background-color: #7630d3cc;
+}
+
+.slideIn {
+  animation: slider 1s ease-in-out forwards;
+}
+
+@keyframes slider {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+
+  to {
+    width: 18%;
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 1900px) {

@@ -665,7 +665,7 @@ li:hover {
   color: white;
   margin-top: 1rem;
   width: 80%;
-  font-size: 1rem;
+  font-size: 0.6vw;
   font-family: "Open Sans";
   font-weight: 700;
   padding: 0.5rem 0rem;
@@ -676,6 +676,22 @@ li:hover {
 .btn-stl:hover {
   background-color: rgba(118, 48, 211, 0.8);
 }
+
+.slideIn {
+  animation: 1s slider ease-in-out forwards;
+}
+
+@keyframes slider {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 18%;
+    opacity: 1;
+  }
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1900px) {

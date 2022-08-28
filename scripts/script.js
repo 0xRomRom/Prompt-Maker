@@ -31,6 +31,7 @@ const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
 
 const loginBox = document.querySelector(".login-box");
+const loginInnerBox = document.querySelector(".login-inputbox");
 const loginButton = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 
@@ -174,6 +175,7 @@ artistsPick.forEach((item) => {
 
 hideLogin.addEventListener("click", () => {
   loginBox.classList.add("hidden");
+  loginInnerBox.classList.add("slideIn");
 });
 
 loginButton.addEventListener("click", () => {
