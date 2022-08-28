@@ -179,7 +179,6 @@ artistsPick.forEach((item) => {
 // Open/close login modal
 loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
-  loginInnerBox.classList.add("slideIn");
 });
 
 hideLogin.addEventListener("click", () => {

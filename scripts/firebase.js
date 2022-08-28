@@ -26,20 +26,20 @@ const auth = getAuth(firebaseApp);
 connectAuthEmulator(auth, "http://localhost:9090");
 
 const loginEmailPassword = async () => {
+  wrongCred.classList.add("hidden");
   const emailTxt = emailInput.value;
   const passwordTxt = passwordInput.value;
+
   try {
     const userCredential = await signInWithEmailAndPassword(
       auth,
       emailTxt,
       passwordTxt
     );
+    console.log(userCredential.user);
   } catch (err) {
     wrongCred.classList.remove("hidden");
-    console.log("Oops no user");
   }
-
-  console.log(userCredential.user);
 };
 
 loginButton.addEventListener("click", loginEmailPassword);

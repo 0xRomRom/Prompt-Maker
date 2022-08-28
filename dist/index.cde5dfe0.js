@@ -690,7 +690,6 @@ artistsPick.forEach((item)=>{
 // Open/close login modal
 loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
-    loginInnerBox.classList.add("slideIn");
 });
 hideLogin.addEventListener("click", ()=>{
     loginBox.classList.add("hidden");
@@ -725,15 +724,15 @@ const firebaseApp = (0, _app.initializeApp)({
 const auth = (0, _auth.getAuth)(firebaseApp);
 (0, _auth.connectAuthEmulator)(auth, "http://localhost:9090");
 const loginEmailPassword = async ()=>{
+    wrongCred.classList.add("hidden");
     const emailTxt = emailInput.value;
     const passwordTxt = passwordInput.value;
     try {
-        const userCredential1 = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+        const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+        console.log(userCredential.user);
     } catch (err) {
         wrongCred.classList.remove("hidden");
-        console.log("Oops no user");
     }
-    console.log(userCredential.user);
 };
 loginButton.addEventListener("click", loginEmailPassword);
 

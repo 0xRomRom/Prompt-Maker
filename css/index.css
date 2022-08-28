@@ -677,25 +677,12 @@ li:hover {
   background-color: rgba(118, 48, 211, 0.8);
 }
 
-.slideIn {
-  animation: 1s slider ease-in-out forwards;
-}
-
 .wrong-credentials {
   font-family: "Open Sans";
   font-weight: 700;
   color: white;
-}
-
-@keyframes slider {
-  from {
-    width: 0%;
-    opacity: 0;
-  }
-  to {
-    width: 18%;
-    opacity: 1;
-  }
+  font-size: 0.9rem;
+  color: red;
 }
 
 /* Media Queries */
