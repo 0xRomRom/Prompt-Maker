@@ -605,6 +605,77 @@ li:hover {
   font-size: 0.6rem;
 }
 
+/* Login modal */
+
+.login-box {
+  background-color: rgb(8, 11, 22);
+  /* background-color: red; */
+  z-index: 50;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-login {
+  color: white;
+  background: transparent;
+  border: transparent;
+  padding: 0.3rem;
+  position: absolute;
+  left: 96%;
+  top: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.hide-login:hover {
+  color: rgb(222, 216, 216);
+}
+
+.login-inputbox {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+}
+
+.inp-stl {
+  margin-bottom: 1.5rem;
+  width: 80%;
+  padding: 0.5rem 0rem 0.5rem 0.5rem;
+  text-align: left;
+  font-family: "Open Sans";
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+}
+
+.btn-stl {
+  background-color: rgb(118, 48, 211);
+  color: white;
+  margin-top: 1rem;
+  width: 80%;
+  font-size: 1rem;
+  font-family: "Open Sans";
+  font-weight: 700;
+  padding: 0.5rem 0rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+
+.btn-stl:hover {
+  background-color: rgba(118, 48, 211, 0.8);
+}
 /* Media Queries */
 
 @media only screen and (max-width: 1900px) {

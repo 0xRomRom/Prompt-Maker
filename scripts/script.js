@@ -13,46 +13,6 @@ import {
   imageCounter,
 } from "./animate.js";
 
-import {
-  optionBox1,
-  optionBox2,
-  optionBox3,
-  optionBox4,
-  optionBox5,
-  optionBox6,
-  optionBox7,
-  optionBox8,
-  optionBox9,
-} from "./animate.js";
-
-import {
-  sub1,
-  sub2,
-  sub3,
-  loc1,
-  loc2,
-  loc3,
-  the1,
-  the2,
-  the3,
-  des1,
-  des2,
-  des3,
-  lig1,
-  lig2,
-  lig3,
-  col1,
-  col2,
-  col3,
-  cam1,
-  cam2,
-  cam3,
-  art1,
-  art2,
-  art3,
-} from "./animate.js";
-import { subjectBoxes } from "./animate.js";
-
 const promptString = document.querySelector(".prompt-string");
 const copyPromptString = document.querySelector(".copy-prompt");
 
@@ -69,6 +29,10 @@ const colorsMiniCounter = document.querySelector(".colors-mini-counter");
 const cameraMiniCounter = document.querySelector(".cameras-counter");
 const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
+
+const loginBox = document.querySelector(".login-box");
+const loginButton = document.querySelector(".login-btn");
+const hideLogin = document.querySelector(".hide-login");
 
 //Init//
 let totalCount = 0;
@@ -206,4 +170,12 @@ artistsPick.forEach((item) => {
     totalCounter.textContent = totalCount;
     promptString.focus();
   });
+});
+
+hideLogin.addEventListener("click", () => {
+  loginBox.classList.add("hidden");
+});
+
+loginButton.addEventListener("click", () => {
+  loginBox.classList.remove("hidden");
 });

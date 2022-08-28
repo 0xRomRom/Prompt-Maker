@@ -833,7 +833,6 @@ dotArray.forEach((dot) => {
   dot.addEventListener("click", (e) => {
     if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
     let dotIndex = +e.target.classList[0].slice(4) - 1;
-    console.log(dotIndex);
     menuTransitions(e);
     if (dotIndex === 0) {
       sub1.classList.remove("hidden");
@@ -957,7 +956,6 @@ dotArray.forEach((dot) => {
       art2.classList.add("hidden");
       art3.classList.remove("hidden");
     }
-    console.log(dotIndex);
     menuTransitions(e);
   });
 });
