@@ -175,9 +175,9 @@ artistsPick.forEach((item) => {
 
 hideLogin.addEventListener("click", () => {
   loginBox.classList.add("hidden");
-  loginInnerBox.classList.add("slideIn");
 });
 
 loginButton.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
+  loginInnerBox.classList.add("slideIn");
 });

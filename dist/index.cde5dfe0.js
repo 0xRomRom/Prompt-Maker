@@ -686,10 +686,10 @@ artistsPick.forEach((item)=>{
 });
 hideLogin.addEventListener("click", ()=>{
     loginBox.classList.add("hidden");
-    loginInnerBox.classList.add("slideIn");
 });
 loginButton.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
+    loginInnerBox.classList.add("slideIn");
 });
 
 },{"./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eMc9v":[function(require,module,exports) {
