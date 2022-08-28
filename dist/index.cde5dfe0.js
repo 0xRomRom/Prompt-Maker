@@ -699,756 +699,7 @@ hideLogin.addEventListener("click", ()=>{
     (0, _firebaseJs.passwordInput).value = "";
 });
 
-},{"./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./firebase.js":"1SoyA"}],"eMc9v":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "subject", ()=>subject);
-parcelHelpers.export(exports, "location", ()=>location);
-parcelHelpers.export(exports, "themes", ()=>themes);
-parcelHelpers.export(exports, "design", ()=>design);
-parcelHelpers.export(exports, "lightning", ()=>lightning);
-parcelHelpers.export(exports, "colors", ()=>colors);
-parcelHelpers.export(exports, "camera", ()=>camera);
-parcelHelpers.export(exports, "artists", ()=>artists);
-parcelHelpers.export(exports, "image", ()=>image);
-parcelHelpers.export(exports, "buttonBox", ()=>buttonBox);
-parcelHelpers.export(exports, "optionBox1", ()=>optionBox1);
-parcelHelpers.export(exports, "optionBox2", ()=>optionBox2);
-parcelHelpers.export(exports, "optionBox3", ()=>optionBox3);
-parcelHelpers.export(exports, "optionBox4", ()=>optionBox4);
-parcelHelpers.export(exports, "optionBox5", ()=>optionBox5);
-parcelHelpers.export(exports, "optionBox6", ()=>optionBox6);
-parcelHelpers.export(exports, "optionBox7", ()=>optionBox7);
-parcelHelpers.export(exports, "optionBox8", ()=>optionBox8);
-parcelHelpers.export(exports, "optionBox9", ()=>optionBox9);
-parcelHelpers.export(exports, "totalCounter", ()=>totalCounter);
-parcelHelpers.export(exports, "subjectCounter", ()=>subjectCounter);
-parcelHelpers.export(exports, "locationCounter", ()=>locationCounter);
-parcelHelpers.export(exports, "themesCounter", ()=>themesCounter);
-parcelHelpers.export(exports, "designCounter", ()=>designCounter);
-parcelHelpers.export(exports, "lightningCounter", ()=>lightningCounter);
-parcelHelpers.export(exports, "colorsCounter", ()=>colorsCounter);
-parcelHelpers.export(exports, "cameraCounter", ()=>cameraCounter);
-parcelHelpers.export(exports, "artistsCounter", ()=>artistsCounter);
-parcelHelpers.export(exports, "imageCounter", ()=>imageCounter);
-parcelHelpers.export(exports, "sub1", ()=>sub1);
-parcelHelpers.export(exports, "sub2", ()=>sub2);
-parcelHelpers.export(exports, "sub3", ()=>sub3);
-parcelHelpers.export(exports, "loc1", ()=>loc1);
-parcelHelpers.export(exports, "loc2", ()=>loc2);
-parcelHelpers.export(exports, "loc3", ()=>loc3);
-parcelHelpers.export(exports, "the1", ()=>the1);
-parcelHelpers.export(exports, "the2", ()=>the2);
-parcelHelpers.export(exports, "the3", ()=>the3);
-parcelHelpers.export(exports, "des1", ()=>des1);
-parcelHelpers.export(exports, "des2", ()=>des2);
-parcelHelpers.export(exports, "des3", ()=>des3);
-parcelHelpers.export(exports, "lig1", ()=>lig1);
-parcelHelpers.export(exports, "lig2", ()=>lig2);
-parcelHelpers.export(exports, "lig3", ()=>lig3);
-parcelHelpers.export(exports, "col1", ()=>col1);
-parcelHelpers.export(exports, "col2", ()=>col2);
-parcelHelpers.export(exports, "col3", ()=>col3);
-parcelHelpers.export(exports, "cam1", ()=>cam1);
-parcelHelpers.export(exports, "cam2", ()=>cam2);
-parcelHelpers.export(exports, "cam3", ()=>cam3);
-parcelHelpers.export(exports, "art1", ()=>art1);
-parcelHelpers.export(exports, "art2", ()=>art2);
-parcelHelpers.export(exports, "art3", ()=>art3);
-parcelHelpers.export(exports, "mainProgram", ()=>mainProgram);
-parcelHelpers.export(exports, "subjectBoxes", ()=>subjectBoxes);
-var _scriptJs = require("./script.js");
-"use strict";
-const subject = document.querySelector(".subject");
-const location = document.querySelector(".location");
-const themes = document.querySelector(".themes");
-const design = document.querySelector(".design");
-const lightning = document.querySelector(".lightning");
-const colors = document.querySelector(".colors");
-const camera = document.querySelector(".camera");
-const artists = document.querySelector(".artists");
-const image = document.querySelector(".image");
-const buttonBox = document.querySelector(".hover-buttons");
-const optionBox1 = document.querySelector(".option-box1");
-const optionBox2 = document.querySelector(".option-box2");
-const optionBox3 = document.querySelector(".option-box3");
-const optionBox4 = document.querySelector(".option-box4");
-const optionBox5 = document.querySelector(".option-box5");
-const optionBox6 = document.querySelector(".option-box6");
-const optionBox7 = document.querySelector(".option-box7");
-const optionBox8 = document.querySelector(".option-box8");
-const optionBox9 = document.querySelector(".option-box9");
-const totalCounter = document.querySelector(".total-selection-counter");
-const subjectCounter = document.querySelector(".subject-counter");
-const locationCounter = document.querySelector(".location-counter");
-const themesCounter = document.querySelector(".themes-counter");
-const designCounter = document.querySelector(".design-counter");
-const lightningCounter = document.querySelector(".lightning-counter");
-const colorsCounter = document.querySelector(".colors-counter");
-const cameraCounter = document.querySelector(".camera-counter");
-const artistsCounter = document.querySelector(".artists-counter");
-const imageCounter = document.querySelector(".image-counter");
-const sub1 = document.querySelector(".sub1");
-const sub2 = document.querySelector(".sub2");
-const sub3 = document.querySelector(".sub3");
-const loc1 = document.querySelector(".loc1");
-const loc2 = document.querySelector(".loc2");
-const loc3 = document.querySelector(".loc3");
-const the1 = document.querySelector(".the1");
-const the2 = document.querySelector(".the2");
-const the3 = document.querySelector(".the3");
-const des1 = document.querySelector(".des1");
-const des2 = document.querySelector(".des2");
-const des3 = document.querySelector(".des3");
-const lig1 = document.querySelector(".lig1");
-const lig2 = document.querySelector(".lig2");
-const lig3 = document.querySelector(".lig3");
-const col1 = document.querySelector(".col1");
-const col2 = document.querySelector(".col2");
-const col3 = document.querySelector(".col3");
-const cam1 = document.querySelector(".cam1");
-const cam2 = document.querySelector(".cam2");
-const cam3 = document.querySelector(".cam3");
-const art1 = document.querySelector(".art1");
-const art2 = document.querySelector(".art2");
-const art3 = document.querySelector(".art3");
-const mainProgram = document.querySelector(".main-program");
-const subjectBoxes = document.querySelector(".modal-boxes");
-let g = "rgb(40,37,38)";
-let gb = "2px solid rgb(40,37,38)";
-let w = "white";
-let wb = "2px solid white";
-optionBox2.style.color = g;
-locationCounter.style.color = g;
-locationCounter.style.border = gb;
-optionBox3.style.color = g;
-themesCounter.style.color = g;
-themesCounter.style.border = gb;
-optionBox4.style.color = g;
-designCounter.style.color = g;
-designCounter.style.border = gb;
-optionBox5.style.color = g;
-lightningCounter.style.color = g;
-lightningCounter.style.border = gb;
-optionBox6.style.color = g;
-colorsCounter.style.color = g;
-colorsCounter.style.border = gb;
-optionBox7.style.color = g;
-cameraCounter.style.color = g;
-cameraCounter.style.border = gb;
-optionBox8.style.color = g;
-artistsCounter.style.color = g;
-artistsCounter.style.border = gb;
-optionBox9.style.color = g;
-imageCounter.style.color = g;
-imageCounter.style.border = gb;
-const hide = (el)=>{
-    el.classList.add("hidden");
-};
-const show = (el)=>{
-    el.classList.remove("hidden");
-};
-const opacity = (i1, i2)=>{
-    i1.classList.add("fadeOpacity");
-    i2.classList.add("fadeOpacity");
-    setTimeout(()=>{
-        i1.classList.remove("fadeOpacity");
-        i2.classList.remove("fadeOpacity");
-    }, 500);
-};
-const resetDots = ()=>{
-    (0, _scriptJs.dot1).style.border = "1px solid rgb(37, 49, 96)";
-    (0, _scriptJs.dot1).style.backgroundColor = "rgb(37, 49, 96)";
-    (0, _scriptJs.dot2).style.border = "1px solid rgb(37, 49, 96)";
-    (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
-    (0, _scriptJs.dot3).style.border = "1px solid rgb(37, 49, 96)";
-    (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
-};
-optionBox1.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-1 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-2 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-3 d3 dot";
-    show(sub1);
-    show(subject);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox1, subjectCounter, subjectCounter, optionBox2, locationCounter, locationCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox2.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-4 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-5 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-6 d3 dot";
-    show(loc1);
-    show(location);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox3.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-7 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-8 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-9 d3 dot";
-    show(the1);
-    show(themes);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(location);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox4.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-10 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-11 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-12 d3 dot";
-    show(des1);
-    show(design);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(themes);
-    hide(subject);
-    hide(location);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox5.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-13 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-14 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-15 d3 dot";
-    show(lig1);
-    show(lightning);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox6.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-16 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-17 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-18 d3 dot";
-    show(col1);
-    show(colors);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox6, colorsCounter, colorsCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox7.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-19 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-20 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-21 d3 dot";
-    show(cam1);
-    show(camera);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox7, cameraCounter, cameraCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox8.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-22 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-23 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-24 d3 dot";
-    show(art1);
-    show(artists);
-    show(buttonBox);
-    show(subjectBoxes);
-    hide(subject);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(image);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox8, artistsCounter, artistsCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox9, imageCounter, imageCounter);
-});
-optionBox9.addEventListener("click", ()=>{
-    resetDots();
-    (0, _scriptJs.dot1).className = "dot-25 d1 dot";
-    (0, _scriptJs.dot2).className = "dot-26 d2 dot";
-    (0, _scriptJs.dot3).className = "dot-27 d3 dot";
-    show(image);
-    hide(subject);
-    hide(location);
-    hide(themes);
-    hide(design);
-    hide(lightning);
-    hide(colors);
-    hide(camera);
-    hide(artists);
-    hide(sub1);
-    hide(sub2);
-    hide(sub3);
-    hide(loc1);
-    hide(loc2);
-    hide(loc3);
-    hide(the1);
-    hide(the2);
-    hide(the3);
-    hide(des1);
-    hide(des2);
-    hide(des3);
-    hide(lig1);
-    hide(lig2);
-    hide(lig3);
-    hide(col1);
-    hide(col2);
-    hide(col3);
-    hide(cam1);
-    hide(cam2);
-    hide(cam3);
-    hide(art1);
-    hide(art2);
-    hide(art3);
-    hide(buttonBox);
-    hide(subjectBoxes);
-    opacity(mainProgram, subjectBoxes);
-    styleReducer(optionBox9, imageCounter, imageCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter);
-});
-const styleReducer = (visible, counter, border, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3, e1, e2, e3, f1, f2, f3, g1, g2, g3, h1, h2, h3)=>{
-    visible.style.color = w;
-    counter.style.color = w;
-    border.style.border = wb;
-    a1.style.color = g;
-    a2.style.color = g;
-    a3.style.border = gb;
-    b1.style.color = g;
-    b2.style.color = g;
-    b3.style.border = gb;
-    c1.style.color = g;
-    c2.style.color = g;
-    c3.style.border = gb;
-    d1.style.color = g;
-    d2.style.color = g;
-    d3.style.border = gb;
-    e1.style.color = g;
-    e2.style.color = g;
-    e3.style.border = gb;
-    f1.style.color = g;
-    f2.style.color = g;
-    f3.style.border = gb;
-    g1.style.color = g;
-    g2.style.color = g;
-    g3.style.border = gb;
-    h1.style.color = g;
-    h2.style.color = g;
-    h3.style.border = gb;
-};
-//Render right content according to button index
-const dotArray = document.querySelectorAll(".dot");
-dotArray.forEach((dot)=>{
-    dot.addEventListener("click", (e)=>{
-        if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
-        let dotIndex = +e.target.classList[0].slice(4) - 1;
-        menuTransitions(e);
-        if (dotIndex === 0) {
-            sub1.classList.remove("hidden");
-            sub2.classList.add("hidden");
-            sub3.classList.add("hidden");
-        }
-        if (dotIndex === 1) {
-            sub1.classList.add("hidden");
-            sub2.classList.remove("hidden");
-            sub3.classList.add("hidden");
-        }
-        if (dotIndex === 2) {
-            sub1.classList.add("hidden");
-            sub2.classList.add("hidden");
-            sub3.classList.remove("hidden");
-        } //
-        if (dotIndex === 3) {
-            loc1.classList.remove("hidden");
-            loc2.classList.add("hidden");
-            loc3.classList.add("hidden");
-        }
-        if (dotIndex === 4) {
-            loc1.classList.add("hidden");
-            loc2.classList.remove("hidden");
-            loc3.classList.add("hidden");
-            sub3.classList.add("hidden");
-        }
-        if (dotIndex === 5) {
-            sub3.classList.add("hidden");
-            loc1.classList.add("hidden");
-            loc2.classList.add("hidden");
-            loc3.classList.remove("hidden");
-        } //
-        if (dotIndex === 6) {
-            the1.classList.remove("hidden");
-            the2.classList.add("hidden");
-            the3.classList.add("hidden");
-        }
-        if (dotIndex === 7) {
-            the2.classList.remove("hidden");
-            the1.classList.add("hidden");
-            the3.classList.add("hidden");
-        }
-        if (dotIndex === 8) {
-            the1.classList.add("hidden");
-            the2.classList.add("hidden");
-            the3.classList.remove("hidden");
-        } //
-        if (dotIndex === 9) {
-            des1.classList.remove("hidden");
-            des2.classList.add("hidden");
-            des3.classList.add("hidden");
-        }
-        if (dotIndex === 10) {
-            des2.classList.remove("hidden");
-            des1.classList.add("hidden");
-            des3.classList.add("hidden");
-        }
-        if (dotIndex === 11) {
-            des1.classList.add("hidden");
-            des2.classList.add("hidden");
-            des3.classList.remove("hidden");
-        } //
-        if (dotIndex === 12) {
-            lig1.classList.remove("hidden");
-            lig2.classList.add("hidden");
-            lig3.classList.add("hidden");
-        }
-        if (dotIndex === 13) {
-            lig2.classList.remove("hidden");
-            lig1.classList.add("hidden");
-            lig3.classList.add("hidden");
-        }
-        if (dotIndex === 14) {
-            lig1.classList.add("hidden");
-            lig2.classList.add("hidden");
-            lig3.classList.remove("hidden");
-        } //
-        if (dotIndex === 15) {
-            col1.classList.remove("hidden");
-            col2.classList.add("hidden");
-            col3.classList.add("hidden");
-        }
-        if (dotIndex === 16) {
-            col2.classList.remove("hidden");
-            col1.classList.add("hidden");
-            col3.classList.add("hidden");
-        }
-        if (dotIndex === 17) {
-            col1.classList.add("hidden");
-            col2.classList.add("hidden");
-            col3.classList.remove("hidden");
-        } //
-        if (dotIndex === 18) {
-            cam1.classList.remove("hidden");
-            cam2.classList.add("hidden");
-            cam3.classList.add("hidden");
-        }
-        if (dotIndex === 19) {
-            cam2.classList.remove("hidden");
-            cam1.classList.add("hidden");
-            cam3.classList.add("hidden");
-        }
-        if (dotIndex === 20) {
-            cam1.classList.add("hidden");
-            cam2.classList.add("hidden");
-            cam3.classList.remove("hidden");
-        } //
-        if (dotIndex === 21) {
-            art1.classList.remove("hidden");
-            art2.classList.add("hidden");
-            art3.classList.add("hidden");
-        }
-        if (dotIndex === 22) {
-            art2.classList.remove("hidden");
-            art1.classList.add("hidden");
-            art3.classList.add("hidden");
-        }
-        if (dotIndex === 23) {
-            art1.classList.add("hidden");
-            art2.classList.add("hidden");
-            art3.classList.remove("hidden");
-        }
-        menuTransitions(e);
-    });
-});
-const menuTransitions = (e)=>{
-    subjectBoxes.classList.add("fadeOut");
-    setTimeout(()=>{
-        subjectBoxes.classList.remove("fadeOut");
-    }, 500);
-    if (e.target.classList.contains("d1")) {
-        (0, _scriptJs.dot1).style.backgroundColor = "rgb(37, 49, 96)";
-        (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
-        (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
-    }
-    if (e.target.classList.contains("d2")) {
-        (0, _scriptJs.dot1).style.backgroundColor = "rgb(8, 11, 22)";
-        (0, _scriptJs.dot2).style.backgroundColor = "rgb(37, 49, 96)";
-        (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
-    }
-    if (e.target.classList.contains("d3")) {
-        (0, _scriptJs.dot1).style.backgroundColor = "rgb(8, 11, 22)";
-        (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
-        (0, _scriptJs.dot3).style.backgroundColor = "rgb(37, 49, 96)";
-    }
-};
-
-},{"./script.js":"jUTag","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"1SoyA":[function(require,module,exports) {
+},{"./firebase.js":"1SoyA","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1SoyA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "emailInput", ()=>emailInput);
@@ -4309,7 +3560,37 @@ function indicator(i) {
     else return service;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fZmft":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"fZmft":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LogLevel", ()=>LogLevel);
@@ -13672,6 +12953,725 @@ var version = "0.20.5";
 }
 registerAuth("Browser" /* BROWSER */ );
 
-},{"@firebase/util":"ePiK6","@firebase/app":"3AcPV","tslib":"lRdW5","@firebase/logger":"fZmft","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lNSW0","jUTag"], "jUTag", "parcelRequire1ccf")
+},{"@firebase/util":"ePiK6","@firebase/app":"3AcPV","tslib":"lRdW5","@firebase/logger":"fZmft","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eMc9v":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "subject", ()=>subject);
+parcelHelpers.export(exports, "location", ()=>location);
+parcelHelpers.export(exports, "themes", ()=>themes);
+parcelHelpers.export(exports, "design", ()=>design);
+parcelHelpers.export(exports, "lightning", ()=>lightning);
+parcelHelpers.export(exports, "colors", ()=>colors);
+parcelHelpers.export(exports, "camera", ()=>camera);
+parcelHelpers.export(exports, "artists", ()=>artists);
+parcelHelpers.export(exports, "image", ()=>image);
+parcelHelpers.export(exports, "buttonBox", ()=>buttonBox);
+parcelHelpers.export(exports, "optionBox1", ()=>optionBox1);
+parcelHelpers.export(exports, "optionBox2", ()=>optionBox2);
+parcelHelpers.export(exports, "optionBox3", ()=>optionBox3);
+parcelHelpers.export(exports, "optionBox4", ()=>optionBox4);
+parcelHelpers.export(exports, "optionBox5", ()=>optionBox5);
+parcelHelpers.export(exports, "optionBox6", ()=>optionBox6);
+parcelHelpers.export(exports, "optionBox7", ()=>optionBox7);
+parcelHelpers.export(exports, "optionBox8", ()=>optionBox8);
+parcelHelpers.export(exports, "optionBox9", ()=>optionBox9);
+parcelHelpers.export(exports, "totalCounter", ()=>totalCounter);
+parcelHelpers.export(exports, "subjectCounter", ()=>subjectCounter);
+parcelHelpers.export(exports, "locationCounter", ()=>locationCounter);
+parcelHelpers.export(exports, "themesCounter", ()=>themesCounter);
+parcelHelpers.export(exports, "designCounter", ()=>designCounter);
+parcelHelpers.export(exports, "lightningCounter", ()=>lightningCounter);
+parcelHelpers.export(exports, "colorsCounter", ()=>colorsCounter);
+parcelHelpers.export(exports, "cameraCounter", ()=>cameraCounter);
+parcelHelpers.export(exports, "artistsCounter", ()=>artistsCounter);
+parcelHelpers.export(exports, "imageCounter", ()=>imageCounter);
+parcelHelpers.export(exports, "sub1", ()=>sub1);
+parcelHelpers.export(exports, "sub2", ()=>sub2);
+parcelHelpers.export(exports, "sub3", ()=>sub3);
+parcelHelpers.export(exports, "loc1", ()=>loc1);
+parcelHelpers.export(exports, "loc2", ()=>loc2);
+parcelHelpers.export(exports, "loc3", ()=>loc3);
+parcelHelpers.export(exports, "the1", ()=>the1);
+parcelHelpers.export(exports, "the2", ()=>the2);
+parcelHelpers.export(exports, "the3", ()=>the3);
+parcelHelpers.export(exports, "des1", ()=>des1);
+parcelHelpers.export(exports, "des2", ()=>des2);
+parcelHelpers.export(exports, "des3", ()=>des3);
+parcelHelpers.export(exports, "lig1", ()=>lig1);
+parcelHelpers.export(exports, "lig2", ()=>lig2);
+parcelHelpers.export(exports, "lig3", ()=>lig3);
+parcelHelpers.export(exports, "col1", ()=>col1);
+parcelHelpers.export(exports, "col2", ()=>col2);
+parcelHelpers.export(exports, "col3", ()=>col3);
+parcelHelpers.export(exports, "cam1", ()=>cam1);
+parcelHelpers.export(exports, "cam2", ()=>cam2);
+parcelHelpers.export(exports, "cam3", ()=>cam3);
+parcelHelpers.export(exports, "art1", ()=>art1);
+parcelHelpers.export(exports, "art2", ()=>art2);
+parcelHelpers.export(exports, "art3", ()=>art3);
+parcelHelpers.export(exports, "mainProgram", ()=>mainProgram);
+parcelHelpers.export(exports, "subjectBoxes", ()=>subjectBoxes);
+var _scriptJs = require("./script.js");
+"use strict";
+const subject = document.querySelector(".subject");
+const location = document.querySelector(".location");
+const themes = document.querySelector(".themes");
+const design = document.querySelector(".design");
+const lightning = document.querySelector(".lightning");
+const colors = document.querySelector(".colors");
+const camera = document.querySelector(".camera");
+const artists = document.querySelector(".artists");
+const image = document.querySelector(".image");
+const buttonBox = document.querySelector(".hover-buttons");
+const optionBox1 = document.querySelector(".option-box1");
+const optionBox2 = document.querySelector(".option-box2");
+const optionBox3 = document.querySelector(".option-box3");
+const optionBox4 = document.querySelector(".option-box4");
+const optionBox5 = document.querySelector(".option-box5");
+const optionBox6 = document.querySelector(".option-box6");
+const optionBox7 = document.querySelector(".option-box7");
+const optionBox8 = document.querySelector(".option-box8");
+const optionBox9 = document.querySelector(".option-box9");
+const totalCounter = document.querySelector(".total-selection-counter");
+const subjectCounter = document.querySelector(".subject-counter");
+const locationCounter = document.querySelector(".location-counter");
+const themesCounter = document.querySelector(".themes-counter");
+const designCounter = document.querySelector(".design-counter");
+const lightningCounter = document.querySelector(".lightning-counter");
+const colorsCounter = document.querySelector(".colors-counter");
+const cameraCounter = document.querySelector(".camera-counter");
+const artistsCounter = document.querySelector(".artists-counter");
+const imageCounter = document.querySelector(".image-counter");
+const sub1 = document.querySelector(".sub1");
+const sub2 = document.querySelector(".sub2");
+const sub3 = document.querySelector(".sub3");
+const loc1 = document.querySelector(".loc1");
+const loc2 = document.querySelector(".loc2");
+const loc3 = document.querySelector(".loc3");
+const the1 = document.querySelector(".the1");
+const the2 = document.querySelector(".the2");
+const the3 = document.querySelector(".the3");
+const des1 = document.querySelector(".des1");
+const des2 = document.querySelector(".des2");
+const des3 = document.querySelector(".des3");
+const lig1 = document.querySelector(".lig1");
+const lig2 = document.querySelector(".lig2");
+const lig3 = document.querySelector(".lig3");
+const col1 = document.querySelector(".col1");
+const col2 = document.querySelector(".col2");
+const col3 = document.querySelector(".col3");
+const cam1 = document.querySelector(".cam1");
+const cam2 = document.querySelector(".cam2");
+const cam3 = document.querySelector(".cam3");
+const art1 = document.querySelector(".art1");
+const art2 = document.querySelector(".art2");
+const art3 = document.querySelector(".art3");
+const mainProgram = document.querySelector(".main-program");
+const subjectBoxes = document.querySelector(".modal-boxes");
+let g = "rgb(40,37,38)";
+let gb = "2px solid rgb(40,37,38)";
+let w = "white";
+let wb = "2px solid white";
+optionBox2.style.color = g;
+locationCounter.style.color = g;
+locationCounter.style.border = gb;
+optionBox3.style.color = g;
+themesCounter.style.color = g;
+themesCounter.style.border = gb;
+optionBox4.style.color = g;
+designCounter.style.color = g;
+designCounter.style.border = gb;
+optionBox5.style.color = g;
+lightningCounter.style.color = g;
+lightningCounter.style.border = gb;
+optionBox6.style.color = g;
+colorsCounter.style.color = g;
+colorsCounter.style.border = gb;
+optionBox7.style.color = g;
+cameraCounter.style.color = g;
+cameraCounter.style.border = gb;
+optionBox8.style.color = g;
+artistsCounter.style.color = g;
+artistsCounter.style.border = gb;
+optionBox9.style.color = g;
+imageCounter.style.color = g;
+imageCounter.style.border = gb;
+const hide = (el)=>{
+    el.classList.add("hidden");
+};
+const show = (el)=>{
+    el.classList.remove("hidden");
+};
+const opacity = (i1, i2)=>{
+    i1.classList.add("fadeOpacity");
+    i2.classList.add("fadeOpacity");
+    setTimeout(()=>{
+        i1.classList.remove("fadeOpacity");
+        i2.classList.remove("fadeOpacity");
+    }, 500);
+};
+const resetDots = ()=>{
+    (0, _scriptJs.dot1).style.border = "1px solid rgb(37, 49, 96)";
+    (0, _scriptJs.dot1).style.backgroundColor = "rgb(37, 49, 96)";
+    (0, _scriptJs.dot2).style.border = "1px solid rgb(37, 49, 96)";
+    (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
+    (0, _scriptJs.dot3).style.border = "1px solid rgb(37, 49, 96)";
+    (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
+};
+optionBox1.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-1 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-2 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-3 d3 dot";
+    show(sub1);
+    show(subject);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox1, subjectCounter, subjectCounter, optionBox2, locationCounter, locationCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox2.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-4 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-5 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-6 d3 dot";
+    show(loc1);
+    show(location);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox3.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-7 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-8 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-9 d3 dot";
+    show(the1);
+    show(themes);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(location);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox4.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-10 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-11 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-12 d3 dot";
+    show(des1);
+    show(design);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(themes);
+    hide(subject);
+    hide(location);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox5.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-13 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-14 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-15 d3 dot";
+    show(lig1);
+    show(lightning);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox6.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-16 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-17 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-18 d3 dot";
+    show(col1);
+    show(colors);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox6, colorsCounter, colorsCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox7.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-19 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-20 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-21 d3 dot";
+    show(cam1);
+    show(camera);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox7, cameraCounter, cameraCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox8.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-22 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-23 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-24 d3 dot";
+    show(art1);
+    show(artists);
+    show(buttonBox);
+    show(subjectBoxes);
+    hide(subject);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(image);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox8, artistsCounter, artistsCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox9, imageCounter, imageCounter);
+});
+optionBox9.addEventListener("click", ()=>{
+    resetDots();
+    (0, _scriptJs.dot1).className = "dot-25 d1 dot";
+    (0, _scriptJs.dot2).className = "dot-26 d2 dot";
+    (0, _scriptJs.dot3).className = "dot-27 d3 dot";
+    show(image);
+    hide(subject);
+    hide(location);
+    hide(themes);
+    hide(design);
+    hide(lightning);
+    hide(colors);
+    hide(camera);
+    hide(artists);
+    hide(sub1);
+    hide(sub2);
+    hide(sub3);
+    hide(loc1);
+    hide(loc2);
+    hide(loc3);
+    hide(the1);
+    hide(the2);
+    hide(the3);
+    hide(des1);
+    hide(des2);
+    hide(des3);
+    hide(lig1);
+    hide(lig2);
+    hide(lig3);
+    hide(col1);
+    hide(col2);
+    hide(col3);
+    hide(cam1);
+    hide(cam2);
+    hide(cam3);
+    hide(art1);
+    hide(art2);
+    hide(art3);
+    hide(buttonBox);
+    hide(subjectBoxes);
+    opacity(mainProgram, subjectBoxes);
+    styleReducer(optionBox9, imageCounter, imageCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter);
+});
+const styleReducer = (visible, counter, border, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3, e1, e2, e3, f1, f2, f3, g1, g2, g3, h1, h2, h3)=>{
+    visible.style.color = w;
+    counter.style.color = w;
+    border.style.border = wb;
+    a1.style.color = g;
+    a2.style.color = g;
+    a3.style.border = gb;
+    b1.style.color = g;
+    b2.style.color = g;
+    b3.style.border = gb;
+    c1.style.color = g;
+    c2.style.color = g;
+    c3.style.border = gb;
+    d1.style.color = g;
+    d2.style.color = g;
+    d3.style.border = gb;
+    e1.style.color = g;
+    e2.style.color = g;
+    e3.style.border = gb;
+    f1.style.color = g;
+    f2.style.color = g;
+    f3.style.border = gb;
+    g1.style.color = g;
+    g2.style.color = g;
+    g3.style.border = gb;
+    h1.style.color = g;
+    h2.style.color = g;
+    h3.style.border = gb;
+};
+//Render right content according to button index
+const dotArray = document.querySelectorAll(".dot");
+dotArray.forEach((dot)=>{
+    dot.addEventListener("click", (e)=>{
+        if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
+        let dotIndex = +e.target.classList[0].slice(4) - 1;
+        menuTransitions(e);
+        if (dotIndex === 0) {
+            sub1.classList.remove("hidden");
+            sub2.classList.add("hidden");
+            sub3.classList.add("hidden");
+        }
+        if (dotIndex === 1) {
+            sub1.classList.add("hidden");
+            sub2.classList.remove("hidden");
+            sub3.classList.add("hidden");
+        }
+        if (dotIndex === 2) {
+            sub1.classList.add("hidden");
+            sub2.classList.add("hidden");
+            sub3.classList.remove("hidden");
+        } //
+        if (dotIndex === 3) {
+            loc1.classList.remove("hidden");
+            loc2.classList.add("hidden");
+            loc3.classList.add("hidden");
+        }
+        if (dotIndex === 4) {
+            loc1.classList.add("hidden");
+            loc2.classList.remove("hidden");
+            loc3.classList.add("hidden");
+            sub3.classList.add("hidden");
+        }
+        if (dotIndex === 5) {
+            sub3.classList.add("hidden");
+            loc1.classList.add("hidden");
+            loc2.classList.add("hidden");
+            loc3.classList.remove("hidden");
+        } //
+        if (dotIndex === 6) {
+            the1.classList.remove("hidden");
+            the2.classList.add("hidden");
+            the3.classList.add("hidden");
+        }
+        if (dotIndex === 7) {
+            the2.classList.remove("hidden");
+            the1.classList.add("hidden");
+            the3.classList.add("hidden");
+        }
+        if (dotIndex === 8) {
+            the1.classList.add("hidden");
+            the2.classList.add("hidden");
+            the3.classList.remove("hidden");
+        } //
+        if (dotIndex === 9) {
+            des1.classList.remove("hidden");
+            des2.classList.add("hidden");
+            des3.classList.add("hidden");
+        }
+        if (dotIndex === 10) {
+            des2.classList.remove("hidden");
+            des1.classList.add("hidden");
+            des3.classList.add("hidden");
+        }
+        if (dotIndex === 11) {
+            des1.classList.add("hidden");
+            des2.classList.add("hidden");
+            des3.classList.remove("hidden");
+        } //
+        if (dotIndex === 12) {
+            lig1.classList.remove("hidden");
+            lig2.classList.add("hidden");
+            lig3.classList.add("hidden");
+        }
+        if (dotIndex === 13) {
+            lig2.classList.remove("hidden");
+            lig1.classList.add("hidden");
+            lig3.classList.add("hidden");
+        }
+        if (dotIndex === 14) {
+            lig1.classList.add("hidden");
+            lig2.classList.add("hidden");
+            lig3.classList.remove("hidden");
+        } //
+        if (dotIndex === 15) {
+            col1.classList.remove("hidden");
+            col2.classList.add("hidden");
+            col3.classList.add("hidden");
+        }
+        if (dotIndex === 16) {
+            col2.classList.remove("hidden");
+            col1.classList.add("hidden");
+            col3.classList.add("hidden");
+        }
+        if (dotIndex === 17) {
+            col1.classList.add("hidden");
+            col2.classList.add("hidden");
+            col3.classList.remove("hidden");
+        } //
+        if (dotIndex === 18) {
+            cam1.classList.remove("hidden");
+            cam2.classList.add("hidden");
+            cam3.classList.add("hidden");
+        }
+        if (dotIndex === 19) {
+            cam2.classList.remove("hidden");
+            cam1.classList.add("hidden");
+            cam3.classList.add("hidden");
+        }
+        if (dotIndex === 20) {
+            cam1.classList.add("hidden");
+            cam2.classList.add("hidden");
+            cam3.classList.remove("hidden");
+        } //
+        if (dotIndex === 21) {
+            art1.classList.remove("hidden");
+            art2.classList.add("hidden");
+            art3.classList.add("hidden");
+        }
+        if (dotIndex === 22) {
+            art2.classList.remove("hidden");
+            art1.classList.add("hidden");
+            art3.classList.add("hidden");
+        }
+        if (dotIndex === 23) {
+            art1.classList.add("hidden");
+            art2.classList.add("hidden");
+            art3.classList.remove("hidden");
+        }
+        menuTransitions(e);
+    });
+});
+const menuTransitions = (e)=>{
+    subjectBoxes.classList.add("fadeOut");
+    setTimeout(()=>{
+        subjectBoxes.classList.remove("fadeOut");
+    }, 500);
+    if (e.target.classList.contains("d1")) {
+        (0, _scriptJs.dot1).style.backgroundColor = "rgb(37, 49, 96)";
+        (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
+        (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
+    }
+    if (e.target.classList.contains("d2")) {
+        (0, _scriptJs.dot1).style.backgroundColor = "rgb(8, 11, 22)";
+        (0, _scriptJs.dot2).style.backgroundColor = "rgb(37, 49, 96)";
+        (0, _scriptJs.dot3).style.backgroundColor = "rgb(8, 11, 22)";
+    }
+    if (e.target.classList.contains("d3")) {
+        (0, _scriptJs.dot1).style.backgroundColor = "rgb(8, 11, 22)";
+        (0, _scriptJs.dot2).style.backgroundColor = "rgb(8, 11, 22)";
+        (0, _scriptJs.dot3).style.backgroundColor = "rgb(37, 49, 96)";
+    }
+};
+
+},{"./script.js":"jUTag","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lNSW0","jUTag"], "jUTag", "parcelRequire1ccf")
 
 //# sourceMappingURL=index.cde5dfe0.js.map

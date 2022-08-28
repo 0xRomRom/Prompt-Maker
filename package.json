@@ -2,9 +2,9 @@
   "name": "prompt-maker",
   "version": "1.0.0",
   "description": "Query creator for AI image generators",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel ./index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
