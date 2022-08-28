@@ -569,6 +569,8 @@ let colorsCount = 0;
 let cameraCount = 0;
 let artistsCount = 0;
 let imageCount = 0;
+(0, _firebaseJs.emailInput).value = "";
+(0, _firebaseJs.passwordInput).value = "";
 ////////
 //Copy resulting query
 copyPromptString.addEventListener("click", ()=>{

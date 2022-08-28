@@ -47,6 +47,8 @@ let colorsCount = 0;
 let cameraCount = 0;
 let artistsCount = 0;
 let imageCount = 0;
+emailInput.value = "";
+passwordInput.value = "";
 ////////
 
 //Copy resulting query
