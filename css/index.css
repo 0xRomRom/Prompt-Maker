@@ -681,6 +681,12 @@ li:hover {
   animation: 1s slider ease-in-out forwards;
 }
 
+.wrong-credentials {
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: white;
+}
+
 @keyframes slider {
   from {
     width: 0%;

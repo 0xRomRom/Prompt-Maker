@@ -10,7 +10,7 @@
     <title>Prompt Maker - AI Query Generator</title>
     <script defer="" src="/index.cde5dfe0.js"></script>
     <script defer="" src="./scripts/animate.js"></script>
-    <script defer="" src="/index.baebe1e3.js"></script>
+    <script defer="" src="./scripts/firebase.js"></script>
     <script src="https://kit.fontawesome.com/5f3c108898.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -1126,8 +1126,9 @@
         <button class="hide-login">X</button>
         <div class="login-inputbox">
           <img src="/Promptmaker_Logo.2d1bbef5.png" class="brand-logo">
-          <input type="text" class="username-input inp-stl" placeholder="Username">
-          <input type="password" class="password-input inp-stl" placeholder="Password">
+          <input type="text" class="username-input inp-stl" placeholder="Username" autocomplete="off">
+          <input type="password" class="password-input inp-stl" placeholder="Password" autocomplete="off">
+          <p class="wrong-credentials hidden">Wrong e-mail or password</p>
           <button class="login-button btn-stl">Login</button>
           <button class="signup-button btn-stl">Sign Up</button>
         </div>

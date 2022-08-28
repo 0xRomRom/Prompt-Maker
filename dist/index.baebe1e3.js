@@ -532,21 +532,42 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SoyA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "wrongCred", ()=>wrongCred);
 var _app = require("firebase/app");
-var _auth = require("firebase/auth"); // const firebaseApp = initializeApp({
- //   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
- //   authDomain: "prompt-maker.firebaseapp.com",
- //   projectId: "prompt-maker",
- //   storageBucket: "prompt-maker.appspot.com",
- //   messagingSenderId: "449676529770",
- //   appId: "1:449676529770:web:470531242f944aa58dfa13",
- //   measurementId: "G-DWN7577Z1B",
- // });
- // const auth = getAuth(firebaseApp);
- // connectAuthEmulator(auth, "http://localhost:9099");
+var _auth = require("firebase/auth");
 "use strict";
+const loginButton = document.querySelector(".login-button");
+const signupButton = document.querySelector(".signup-button");
+const emailInput = document.querySelector(".username-input");
+const passwordInput = document.querySelector(".password-input");
+const wrongCred = document.querySelector(".wrong-credentials");
+const firebaseApp = (0, _app.initializeApp)({
+    apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
+    authDomain: "prompt-maker.firebaseapp.com",
+    projectId: "prompt-maker",
+    storageBucket: "prompt-maker.appspot.com",
+    messagingSenderId: "449676529770",
+    appId: "1:449676529770:web:470531242f944aa58dfa13",
+    measurementId: "G-DWN7577Z1B"
+});
+const auth = (0, _auth.getAuth)(firebaseApp);
+(0, _auth.connectAuthEmulator)(auth, "http://localhost:9090");
+const loginEmailPassword = async ()=>{
+    const emailTxt = emailInput.value;
+    const passwordTxt = passwordInput.value;
+    try {
+        const userCredential1 = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+    } catch (err) {
+        wrongCred.classList.remove("hidden");
+        console.log("Oops no user");
+    }
+    console.log(userCredential.user);
+};
+loginButton.addEventListener("click", loginEmailPassword);
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");

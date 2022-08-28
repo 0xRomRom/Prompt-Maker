@@ -1,0 +1,10 @@
+{
+  "emulators": {
+    "auth": {
+      "port": 9090
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

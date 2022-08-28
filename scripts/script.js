@@ -1,5 +1,6 @@
 "use strict";
 
+import { wrongCred, emailInput, passwordInput } from "./firebase.js";
 import {
   totalCounter,
   subjectCounter,
@@ -32,7 +33,7 @@ const imageMiniCounter = document.querySelector(".imagess-counter");
 
 const loginBox = document.querySelector(".login-box");
 const loginInnerBox = document.querySelector(".login-inputbox");
-const loginButton = document.querySelector(".login-btn");
+const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 
 //Init//
@@ -173,11 +174,15 @@ artistsPick.forEach((item) => {
   });
 });
 
-hideLogin.addEventListener("click", () => {
-  loginBox.classList.add("hidden");
-});
-
-loginButton.addEventListener("click", () => {
+// Open/close login modal
+loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
   loginInnerBox.classList.add("slideIn");
+});
+
+hideLogin.addEventListener("click", () => {
+  loginBox.classList.add("hidden");
+  wrongCred.classList.add("hidden");
+  emailInput.value = "";
+  passwordInput.value = "";
 });
