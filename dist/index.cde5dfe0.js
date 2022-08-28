@@ -537,6 +537,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "dot1", ()=>dot1);
 parcelHelpers.export(exports, "dot2", ()=>dot2);
 parcelHelpers.export(exports, "dot3", ()=>dot3);
+parcelHelpers.export(exports, "loginBox", ()=>loginBox);
 var _firebaseJs = require("./firebase.js");
 var _animateJs = require("./animate.js");
 "use strict";
@@ -706,9 +707,14 @@ parcelHelpers.export(exports, "passwordInput", ()=>passwordInput);
 parcelHelpers.export(exports, "wrongCred", ()=>wrongCred);
 var _app = require("firebase/app");
 var _auth = require("firebase/auth");
+var _scriptJs = require("./script.js");
 "use strict";
 const loginButton = document.querySelector(".login-button");
+const loginBtn = document.querySelector(".login-btn");
+const logoutBtn = document.querySelector(".logout-btn");
+const logoutButton = document.querySelector(".logout-button");
 const signupButton = document.querySelector(".signup-button");
+const displayUser = document.querySelector(".display-user");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
@@ -727,16 +733,59 @@ const loginEmailPassword = async ()=>{
     wrongCred.classList.add("hidden");
     const emailTxt = emailInput.value;
     const passwordTxt = passwordInput.value;
-    try {
-        const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
-        console.log(userCredential.user);
-    } catch (err) {
-        wrongCred.classList.remove("hidden");
-    }
+    const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+    console.log(userCredential.user);
+// try {
+//   const userCredential = await signInWithEmailAndPassword(
+//     auth,
+//     emailTxt,
+//     passwordTxt
+//   );
+//   console.log(userCredential.user);
+// } catch (err) {
+//   wrongCred.classList.remove("hidden");
+// }
 };
 loginButton.addEventListener("click", loginEmailPassword);
+const createAccount = async ()=>{
+    const emailTxt = emailInput.value;
+    const passwordTxt = passwordInput.value;
+    const userCredential = await (0, _auth.createUserWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+    console.log(userCredential.user);
+// try {
+//   const userCredential = await signInWithEmailAndPassword(
+//     auth,
+//     emailTxt,
+//     passwordTxt
+//   );
+//   console.log(userCredential.user);
+// } catch (err) {
+//   wrongCred.classList.remove("hidden");
+// }
+};
+signupButton.addEventListener("click", createAccount);
+const monitorAuthState = async ()=>{
+    (0, _auth.onAuthStateChanged)(auth, (user)=>{
+        if (user) {
+            (0, _scriptJs.loginBox).classList.add("hidden");
+            loginBtn.classList.add("hidden");
+            logoutBtn.classList.remove("hidden");
+            console.log(auth.email);
+            displayUser.textContent = `Welcome, ${user.email.charAt(0).toUpperCase() + user.email.slice(1, 5)}`;
+        } else {
+            // loginBox.classList.remove("hidden");
+            loginBtn.classList.remove("hidden");
+            logoutBtn.classList.add("hidden");
+        }
+    });
+};
+monitorAuthState();
+const logout = async ()=>{
+    await (0, _auth.signOut)(auth);
+};
+logoutBtn.addEventListener("click", logout);
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./script.js":"jUTag"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");

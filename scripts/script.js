@@ -31,7 +31,7 @@ const cameraMiniCounter = document.querySelector(".cameras-counter");
 const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
 
-const loginBox = document.querySelector(".login-box");
+export const loginBox = document.querySelector(".login-box");
 const loginInnerBox = document.querySelector(".login-inputbox");
 const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
