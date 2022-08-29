@@ -1,6 +1,12 @@
 "use strict";
 
-import { wrongCred, emailInput, passwordInput } from "./firebase.js";
+import {
+  wrongCred,
+  emailInput,
+  passwordInput,
+  signupBox,
+  loginInputBox,
+} from "./firebase.js";
 import {
   totalCounter,
   subjectCounter,
@@ -179,11 +185,13 @@ artistsPick.forEach((item) => {
 // Open/close login modal
 loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
+  loginInputBox.classList.remove("hidden");
 });
 
 hideLogin.addEventListener("click", () => {
   loginBox.classList.add("hidden");
   wrongCred.classList.add("hidden");
+  signupBox.classList.add("hidden");
   emailInput.value = "";
   passwordInput.value = "";
 });

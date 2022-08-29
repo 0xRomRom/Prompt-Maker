@@ -691,10 +691,12 @@ artistsPick.forEach((item)=>{
 // Open/close login modal
 loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
+    (0, _firebaseJs.loginInputBox).classList.remove("hidden");
 });
 hideLogin.addEventListener("click", ()=>{
     loginBox.classList.add("hidden");
     (0, _firebaseJs.wrongCred).classList.add("hidden");
+    (0, _firebaseJs.signupBox).classList.add("hidden");
     (0, _firebaseJs.emailInput).value = "";
     (0, _firebaseJs.passwordInput).value = "";
 });
@@ -702,6 +704,8 @@ hideLogin.addEventListener("click", ()=>{
 },{"./firebase.js":"1SoyA","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1SoyA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "loginInputBox", ()=>loginInputBox);
+parcelHelpers.export(exports, "signupBox", ()=>signupBox);
 parcelHelpers.export(exports, "emailInput", ()=>emailInput);
 parcelHelpers.export(exports, "passwordInput", ()=>passwordInput);
 parcelHelpers.export(exports, "usernameRegister", ()=>usernameRegister);
