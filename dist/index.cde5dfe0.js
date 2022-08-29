@@ -712,7 +712,6 @@ var _scriptJs = require("./script.js");
 const loginButton = document.querySelector(".login-button");
 const loginBtn = document.querySelector(".login-btn");
 const logoutBtn = document.querySelector(".logout-btn");
-const logoutButton = document.querySelector(".logout-button");
 const signupButton = document.querySelector(".signup-button");
 const displayUser = document.querySelector(".display-user");
 const emailInput = document.querySelector(".username-input");
@@ -728,25 +727,8 @@ const firebaseApp = (0, _app.initializeApp)({
     measurementId: "G-DWN7577Z1B"
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
-(0, _auth.connectAuthEmulator)(auth, "http://localhost:9090");
-const loginEmailPassword = async ()=>{
-    wrongCred.classList.add("hidden");
-    const emailTxt = emailInput.value;
-    const passwordTxt = passwordInput.value;
-    const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
-    console.log(userCredential.user);
-// try {
-//   const userCredential = await signInWithEmailAndPassword(
-//     auth,
-//     emailTxt,
-//     passwordTxt
-//   );
-//   console.log(userCredential.user);
-// } catch (err) {
-//   wrongCred.classList.remove("hidden");
-// }
-};
-loginButton.addEventListener("click", loginEmailPassword);
+// connectAuthEmulator(auth, "http://localhost:9090");
+//Create Account
 const createAccount = async ()=>{
     const emailTxt = emailInput.value;
     const passwordTxt = passwordInput.value;
@@ -764,26 +746,50 @@ const createAccount = async ()=>{
 // }
 };
 signupButton.addEventListener("click", createAccount);
+//Login
+const loginEmailPassword = async ()=>{
+    wrongCred.classList.add("hidden");
+    const emailTxt = emailInput.value;
+    const passwordTxt = passwordInput.value;
+    // const userCredential = await signInWithEmailAndPassword(
+    //   auth,
+    //   emailTxt,
+    //   passwordTxt
+    // );
+    // console.log(userCredential.user);
+    try {
+        const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+        console.log(userCredential.user);
+    } catch (err) {
+        wrongCred.classList.remove("hidden");
+    }
+};
+loginButton.addEventListener("click", loginEmailPassword);
+//Logout
+const logout = async ()=>{
+    await (0, _auth.signOut)(auth);
+    displayUser.textContent = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    wrongCred.classList.add("hidden");
+};
+logoutBtn.addEventListener("click", logout);
+//Check if user is logged in
 const monitorAuthState = async ()=>{
     (0, _auth.onAuthStateChanged)(auth, (user)=>{
         if (user) {
             (0, _scriptJs.loginBox).classList.add("hidden");
             loginBtn.classList.add("hidden");
             logoutBtn.classList.remove("hidden");
-            console.log(auth.email);
-            displayUser.textContent = `Welcome, ${user.email.charAt(0).toUpperCase() + user.email.slice(1, 5)}`;
+            console.log(user.email);
+            displayUser.textContent = `Welcome`;
         } else {
-            // loginBox.classList.remove("hidden");
             loginBtn.classList.remove("hidden");
             logoutBtn.classList.add("hidden");
         }
     });
 };
-monitorAuthState();
-const logout = async ()=>{
-    await (0, _auth.signOut)(auth);
-};
-logoutBtn.addEventListener("click", logout);
+monitorAuthState(); // firebase emulators:start --only auth
 
 },{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./script.js":"jUTag"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

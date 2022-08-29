@@ -13,7 +13,6 @@ import { loginBox } from "./script.js";
 const loginButton = document.querySelector(".login-button");
 const loginBtn = document.querySelector(".login-btn");
 const logoutBtn = document.querySelector(".logout-btn");
-const logoutButton = document.querySelector(".logout-button");
 const signupButton = document.querySelector(".signup-button");
 const displayUser = document.querySelector(".display-user");
 export const emailInput = document.querySelector(".username-input");
@@ -31,34 +30,9 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-connectAuthEmulator(auth, "http://localhost:9090");
+// connectAuthEmulator(auth, "http://localhost:9090");
 
-const loginEmailPassword = async () => {
-  wrongCred.classList.add("hidden");
-  const emailTxt = emailInput.value;
-  const passwordTxt = passwordInput.value;
-
-  const userCredential = await signInWithEmailAndPassword(
-    auth,
-    emailTxt,
-    passwordTxt
-  );
-  console.log(userCredential.user);
-
-  // try {
-  //   const userCredential = await signInWithEmailAndPassword(
-  //     auth,
-  //     emailTxt,
-  //     passwordTxt
-  //   );
-  //   console.log(userCredential.user);
-  // } catch (err) {
-  //   wrongCred.classList.remove("hidden");
-  // }
-};
-
-loginButton.addEventListener("click", loginEmailPassword);
-
+//Create Account
 const createAccount = async () => {
   const emailTxt = emailInput.value;
   const passwordTxt = passwordInput.value;
@@ -69,7 +43,6 @@ const createAccount = async () => {
     passwordTxt
   );
   console.log(userCredential.user);
-
   // try {
   //   const userCredential = await signInWithEmailAndPassword(
   //     auth,
@@ -81,21 +54,54 @@ const createAccount = async () => {
   //   wrongCred.classList.remove("hidden");
   // }
 };
-
 signupButton.addEventListener("click", createAccount);
 
+//Login
+const loginEmailPassword = async () => {
+  wrongCred.classList.add("hidden");
+  const emailTxt = emailInput.value;
+  const passwordTxt = passwordInput.value;
+
+  // const userCredential = await signInWithEmailAndPassword(
+  //   auth,
+  //   emailTxt,
+  //   passwordTxt
+  // );
+  // console.log(userCredential.user);
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      emailTxt,
+      passwordTxt
+    );
+    console.log(userCredential.user);
+  } catch (err) {
+    wrongCred.classList.remove("hidden");
+  }
+};
+loginButton.addEventListener("click", loginEmailPassword);
+
+//Logout
+const logout = async () => {
+  await signOut(auth);
+  displayUser.textContent = "";
+  emailInput.value = "";
+  passwordInput.value = "";
+  wrongCred.classList.add("hidden");
+};
+logoutBtn.addEventListener("click", logout);
+
+//Check if user is logged in
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       loginBox.classList.add("hidden");
       loginBtn.classList.add("hidden");
       logoutBtn.classList.remove("hidden");
-      console.log(auth.email);
-      displayUser.textContent = `Welcome, ${
-        user.email.charAt(0).toUpperCase() + user.email.slice(1, 5)
-      }`;
+      console.log(user.email);
+      displayUser.textContent = `Welcome`;
     } else {
-      // loginBox.classList.remove("hidden");
       loginBtn.classList.remove("hidden");
       logoutBtn.classList.add("hidden");
     }
@@ -103,8 +109,4 @@ const monitorAuthState = async () => {
 };
 monitorAuthState();
 
-const logout = async () => {
-  await signOut(auth);
-};
-
-logoutBtn.addEventListener("click", logout);
+// firebase emulators:start --only auth
