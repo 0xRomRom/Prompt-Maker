@@ -59,16 +59,6 @@ const createAccount = async () => {
   usernameRegister.value = "";
   passwordRegister.value = "";
   console.log(userCredential.user);
-  // try {
-  //   const userCredential = await signInWithEmailAndPassword(
-  //     auth,
-  //     emailTxt,
-  //     passwordTxt
-  //   );
-  //   console.log(userCredential.user);
-  // } catch (err) {
-  //   wrongCred.classList.remove("hidden");
-  // }
 };
 signupButton.addEventListener("click", createAccount);
 
@@ -77,13 +67,6 @@ const loginEmailPassword = async () => {
   wrongCred.classList.add("hidden");
   const emailTxt = emailInput.value;
   const passwordTxt = passwordInput.value;
-
-  // const userCredential = await signInWithEmailAndPassword(
-  //   auth,
-  //   emailTxt,
-  //   passwordTxt
-  // );
-  // console.log(userCredential.user);
 
   try {
     const userCredential = await signInWithEmailAndPassword(

@@ -613,7 +613,7 @@ li:hover {
   color: #ded8d8;
 }
 
-.login-inputbox, .signup-inputbox {
+.login-inputbox {
   height: 25rem;
   width: 22rem;
   background-color: #121930;
@@ -622,6 +622,26 @@ li:hover {
   justify-content: center;
   align-items: center;
   display: flex;
+  position: absolute;
+}
+
+.signup-inputbox {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  border-radius: .4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.brand-logo2 {
+  height: 3.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: -17.5rem;
+  left: -46rem;
 }
 
 .display-user {
@@ -670,6 +690,16 @@ li:hover {
   font-family: Open Sans;
   font-size: .9rem;
   font-weight: 700;
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media only screen and (max-width: 1900px) {
