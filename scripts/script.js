@@ -41,6 +41,7 @@ export const loginBox = document.querySelector(".login-box");
 const loginInnerBox = document.querySelector(".login-inputbox");
 const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
+const signupBack = document.querySelector(".signup-back");
 
 //Init//
 let totalCount = 0;
@@ -194,4 +195,9 @@ hideLogin.addEventListener("click", () => {
   signupBox.classList.add("hidden");
   emailInput.value = "";
   passwordInput.value = "";
+});
+
+signupBack.addEventListener("click", () => {
+  signupBox.classList.add("hidden");
+  loginInputBox.classList.remove("hidden");
 });

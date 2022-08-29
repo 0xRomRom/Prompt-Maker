@@ -559,6 +559,7 @@ const loginBox = document.querySelector(".login-box");
 const loginInnerBox = document.querySelector(".login-inputbox");
 const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
+const signupBack = document.querySelector(".signup-back");
 //Init//
 let totalCount = 0;
 let subjectCount = 0;
@@ -699,6 +700,10 @@ hideLogin.addEventListener("click", ()=>{
     (0, _firebaseJs.signupBox).classList.add("hidden");
     (0, _firebaseJs.emailInput).value = "";
     (0, _firebaseJs.passwordInput).value = "";
+});
+signupBack.addEventListener("click", ()=>{
+    (0, _firebaseJs.signupBox).classList.add("hidden");
+    (0, _firebaseJs.loginInputBox).classList.remove("hidden");
 });
 
 },{"./firebase.js":"1SoyA","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1SoyA":[function(require,module,exports) {

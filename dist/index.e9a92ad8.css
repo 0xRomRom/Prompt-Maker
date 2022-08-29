@@ -692,6 +692,19 @@ li:hover {
   left: 0;
 }
 
+.fa-arrow-left {
+  color: #b1aeae;
+  cursor: pointer;
+  font-size: 2rem;
+  position: relative;
+  top: -5rem;
+  left: -8.5rem;
+}
+
+.fa-arrow-left:hover {
+  color: #fff;
+}
+
 @media only screen and (max-width: 1900px) {
   .subjects-style {
     width: 15.15rem;
