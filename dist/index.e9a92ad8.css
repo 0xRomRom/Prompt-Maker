@@ -640,7 +640,7 @@ li:hover {
   height: 3.2rem;
   cursor: pointer;
   position: absolute;
-  top: -17.5rem;
+  top: -16.5rem;
   left: -46rem;
 }
 
@@ -693,7 +693,7 @@ li:hover {
 }
 
 .canvas {
-  height: 100vh;
+  height: 96vh;
   width: 100vw;
   z-index: 0;
   display: flex;
