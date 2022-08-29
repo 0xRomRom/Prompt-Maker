@@ -646,6 +646,17 @@ li:hover {
   border-radius: 0.4rem;
 }
 
+.signup-inputbox {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+}
+
 .inp-stl {
   margin-bottom: 1.5rem;
   width: 80%;

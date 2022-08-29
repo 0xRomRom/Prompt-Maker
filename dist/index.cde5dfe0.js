@@ -704,6 +704,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "emailInput", ()=>emailInput);
 parcelHelpers.export(exports, "passwordInput", ()=>passwordInput);
+parcelHelpers.export(exports, "usernameRegister", ()=>usernameRegister);
+parcelHelpers.export(exports, "passwordRegister", ()=>passwordRegister);
 parcelHelpers.export(exports, "wrongCred", ()=>wrongCred);
 var _app = require("firebase/app");
 var _auth = require("firebase/auth");
@@ -713,9 +715,14 @@ const loginButton = document.querySelector(".login-button");
 const loginBtn = document.querySelector(".login-btn");
 const logoutBtn = document.querySelector(".logout-btn");
 const signupButton = document.querySelector(".signup-button");
+const signupForwards = document.querySelector(".signup-forwards");
+const loginInputBox = document.querySelector(".login-inputbox");
+const signupBox = document.querySelector(".signup-inputbox");
 const displayUser = document.querySelector(".display-user");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
+const usernameRegister = document.querySelector(".username-register");
+const passwordRegister = document.querySelector(".password-register");
 const wrongCred = document.querySelector(".wrong-credentials");
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -728,11 +735,21 @@ const firebaseApp = (0, _app.initializeApp)({
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
 // connectAuthEmulator(auth, "http://localhost:9090");
+//Show Signup modal
+signupForwards.addEventListener("click", (e)=>{
+    e.preventDefault();
+    loginInputBox.classList.add("hidden");
+    signupBox.classList.remove("hidden");
+});
 //Create Account
 const createAccount = async ()=>{
-    const emailTxt = emailInput.value;
-    const passwordTxt = passwordInput.value;
+    const emailTxt = usernameRegister.value;
+    const passwordTxt = passwordRegister.value;
     const userCredential = await (0, _auth.createUserWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+    signupBox.classList.add("hidden");
+    loginInputBox.classList.add("hidden");
+    usernameRegister.value = "";
+    passwordRegister.value = "";
     console.log(userCredential.user);
 // try {
 //   const userCredential = await signInWithEmailAndPassword(
@@ -772,6 +789,9 @@ const logout = async ()=>{
     emailInput.value = "";
     passwordInput.value = "";
     wrongCred.classList.add("hidden");
+    (0, _scriptJs.loginBox).classList.add("hidden");
+    signupBox.classList.add("hidden");
+    loginInputBox.classList.remove("hidden");
 };
 logoutBtn.addEventListener("click", logout);
 //Check if user is logged in
