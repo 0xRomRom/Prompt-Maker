@@ -700,6 +700,7 @@ li:hover {
   padding: 0.5rem 0rem;
   cursor: pointer;
   border-radius: 0.4rem;
+  border: none;
 }
 
 .btn-stl:hover {
@@ -719,7 +720,7 @@ li:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 96vh;
+  height: 100vh;
   width: 100vw;
   z-index: 0;
 }
