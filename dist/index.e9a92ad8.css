@@ -624,6 +624,15 @@ li:hover {
   display: flex;
 }
 
+.display-user {
+  cursor: unset;
+}
+
+.display-user:hover {
+  cursor: unset;
+  color: #6a6b6e;
+}
+
 .inp-stl {
   width: 80%;
   text-align: left;

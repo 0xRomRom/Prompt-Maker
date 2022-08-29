@@ -657,6 +657,14 @@ li:hover {
   border-radius: 0.4rem;
 }
 
+.display-user {
+  cursor: unset;
+}
+.display-user:hover {
+  cursor: unset;
+  color: #6a6b6e;
+}
+
 .inp-stl {
   margin-bottom: 1.5rem;
   width: 80%;
