@@ -341,8 +341,7 @@ li:hover {
   color: white;
 }
 
-.about-content {
-  /* border: 1px solid white; */
+.help-content {
   position: absolute;
   width: 82.5vw;
   height: 44rem;
@@ -350,7 +349,7 @@ li:hover {
   top: 15rem;
 }
 
-.about-title {
+.help-title {
   font-family: "Open Sans";
   color: white;
   font-size: 3rem;
@@ -359,7 +358,7 @@ li:hover {
   top: 1.6rem;
 }
 
-.about-subtitle {
+.help-subtitle {
   font-family: "Open Sans";
   color: white;
   position: absolute;
@@ -368,7 +367,7 @@ li:hover {
   font-size: 1.2rem;
 }
 
-.about-text {
+.help-text {
   color: white;
   font-family: "Open Sans";
   position: absolute;
@@ -387,6 +386,60 @@ li:hover {
   height: 95%;
   top: 3%;
   left: 67.2%;
-
   width: 27vw;
+}
+
+.video-box {
+  position: relative;
+  height: 20rem;
+  width: 32.3vw;
+  left: 50vw;
+  top: 6rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px white;
+}
+
+.video-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.faq-title {
+  color: white;
+  font-family: "Open Sans";
+  font-size: 2.3rem;
+  position: relative;
+  top: 7rem;
+}
+
+.faq-box {
+  position: relative;
+  top: 10rem;
+  /* background-color: red; */
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.faq-btn {
+  background-color: #121930;
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: "Open Sans";
+  height: 100%;
+  width: 33%;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
+}
+
+.faq-btn:hover {
+  background-color: #192343;
 }
