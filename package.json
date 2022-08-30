@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/0xRomRom/Prompt-Maker#readme",
   "dependencies": {
-    "firebase": "^9.9.3"
+    "firebase": "^9.9.3",
+    "masonry-layout": "^4.2.2"
   },
   "devDependencies": {
     "parcel": "^2.7.0",
