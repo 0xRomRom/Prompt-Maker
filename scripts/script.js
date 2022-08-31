@@ -1,31 +1,31 @@
 "use strict";
 
-import {
-  wrongCred,
-  emailInput,
-  passwordInput,
-  signupBox,
-  loginInputBox,
-} from "./firebase.js";
-import {
-  totalCounter,
-  subjectCounter,
-  locationCounter,
-  themesCounter,
-  designCounter,
-  lightningCounter,
-  colorsCounter,
-  cameraCounter,
-  artistsCounter,
-  imageCounter,
-} from "./animate.js";
+const loginInputBox = document.querySelector(".login-inputbox");
+const signupBox = document.querySelector(".signup-inputbox");
+const displayUser = document.querySelector(".display-user");
+const emailInput = document.querySelector(".username-input");
+const passwordInput = document.querySelector(".password-input");
+const usernameRegister = document.querySelector(".username-register");
+const passwordRegister = document.querySelector(".password-register");
+const wrongCred = document.querySelector(".wrong-credentials");
+
+const totalCounter = document.querySelector(".total-selection-counter");
+const subjectCounter = document.querySelector(".subject-counter");
+const locationCounter = document.querySelector(".location-counter");
+const themesCounter = document.querySelector(".themes-counter");
+const designCounter = document.querySelector(".design-counter");
+const lightningCounter = document.querySelector(".lightning-counter");
+const colorsCounter = document.querySelector(".colors-counter");
+const cameraCounter = document.querySelector(".camera-counter");
+const artistsCounter = document.querySelector(".artists-counter");
+const imageCounter = document.querySelector(".image-counter");
 
 const promptString = document.querySelector(".prompt-string");
 const copyPromptString = document.querySelector(".copy-prompt");
 
-export const dot1 = document.querySelector(".dot-1");
-export const dot2 = document.querySelector(".dot-2");
-export const dot3 = document.querySelector(".dot-3");
+const dot1 = document.querySelector(".dot-1");
+const dot2 = document.querySelector(".dot-2");
+const dot3 = document.querySelector(".dot-3");
 
 const subjectMiniCounter = document.querySelector(".subjects-counter");
 const locationMiniCounter = document.querySelector(".locations-counter");
@@ -37,10 +37,10 @@ const cameraMiniCounter = document.querySelector(".cameras-counter");
 const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
 
-export const loginBox = document.querySelector(".login-box");
-export const loginNav = document.querySelector(".login-btn");
-export const hideLogin = document.querySelector(".hide-login");
-export const signupBack = document.querySelector(".signup-back");
+const loginBox = document.querySelector(".login-box");
+const loginNav = document.querySelector(".login-btn");
+const hideLogin = document.querySelector(".hide-login");
+const signupBack = document.querySelector(".signup-back");
 
 //Init//
 let totalCount = 0;

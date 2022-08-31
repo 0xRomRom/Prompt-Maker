@@ -1,16 +1,16 @@
 "use strict";
 
-export const subject = document.querySelector(".subject");
-export const location = document.querySelector(".location");
-export const themes = document.querySelector(".themes");
-export const design = document.querySelector(".design");
-export const lightning = document.querySelector(".lightning");
-export const colors = document.querySelector(".colors");
-export const camera = document.querySelector(".camera");
-export const artists = document.querySelector(".artists");
-export const image = document.querySelector(".image");
+const subject = document.querySelector(".subject");
+const location = document.querySelector(".location");
+const themes = document.querySelector(".themes");
+const design = document.querySelector(".design");
+const lightning = document.querySelector(".lightning");
+const colors = document.querySelector(".colors");
+const camera = document.querySelector(".camera");
+const artists = document.querySelector(".artists");
+const image = document.querySelector(".image");
 
-export const buttonBox = document.querySelector(".hover-buttons");
+const buttonBox = document.querySelector(".hover-buttons");
 
 const optionBox1 = document.querySelector(".option-box1");
 const optionBox2 = document.querySelector(".option-box2");
@@ -22,16 +22,15 @@ const optionBox7 = document.querySelector(".option-box7");
 const optionBox8 = document.querySelector(".option-box8");
 const optionBox9 = document.querySelector(".option-box9");
 
-export const totalCounter = document.querySelector(".total-selection-counter");
-export const subjectCounter = document.querySelector(".subject-counter");
-export const locationCounter = document.querySelector(".location-counter");
-export const themesCounter = document.querySelector(".themes-counter");
-export const designCounter = document.querySelector(".design-counter");
-export const lightningCounter = document.querySelector(".lightning-counter");
-export const colorsCounter = document.querySelector(".colors-counter");
-export const cameraCounter = document.querySelector(".camera-counter");
-export const artistsCounter = document.querySelector(".artists-counter");
-export const imageCounter = document.querySelector(".image-counter");
+const subjectCounter = document.querySelector(".subject-counter");
+const locationCounter = document.querySelector(".location-counter");
+const themesCounter = document.querySelector(".themes-counter");
+const designCounter = document.querySelector(".design-counter");
+const lightningCounter = document.querySelector(".lightning-counter");
+const colorsCounter = document.querySelector(".colors-counter");
+const cameraCounter = document.querySelector(".camera-counter");
+const artistsCounter = document.querySelector(".artists-counter");
+const imageCounter = document.querySelector(".image-counter");
 
 const sub1 = document.querySelector(".sub1");
 const sub2 = document.querySelector(".sub2");
@@ -58,10 +57,42 @@ const art1 = document.querySelector(".art1");
 const art2 = document.querySelector(".art2");
 const art3 = document.querySelector(".art3");
 
-export const mainProgram = document.querySelector(".main-program");
-export const subjectBoxes = document.querySelector(".modal-boxes");
+const mainProgram = document.querySelector(".main-program");
+const subjectBoxes = document.querySelector(".modal-boxes");
 
-import { dot1, dot2, dot3 } from "./script.js";
+const dot1 = document.querySelector(".dot-1");
+const dot2 = document.querySelector(".dot-2");
+const dot3 = document.querySelector(".dot-3");
+
+let g = "rgb(40,37,38)";
+let gb = "2px solid rgb(40,37,38)";
+let w = "white";
+let wb = "2px solid white";
+
+optionBox2.style.color = g;
+locationCounter.style.color = g;
+locationCounter.style.border = gb;
+optionBox3.style.color = g;
+themesCounter.style.color = g;
+themesCounter.style.border = gb;
+optionBox4.style.color = g;
+designCounter.style.color = g;
+designCounter.style.border = gb;
+optionBox5.style.color = g;
+lightningCounter.style.color = g;
+lightningCounter.style.border = gb;
+optionBox6.style.color = g;
+colorsCounter.style.color = g;
+colorsCounter.style.border = gb;
+optionBox7.style.color = g;
+cameraCounter.style.color = g;
+cameraCounter.style.border = gb;
+optionBox8.style.color = g;
+artistsCounter.style.color = g;
+artistsCounter.style.border = gb;
+optionBox9.style.color = g;
+imageCounter.style.color = g;
+imageCounter.style.border = gb;
 
 const hide = (el) => {
   el.classList.add("hidden");

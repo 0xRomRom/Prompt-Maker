@@ -3,26 +3,25 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  connectAuthEmulator,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { loginBox } from "./script.js";
+const loginBox = document.querySelector(".login-box");
 const loginButton = document.querySelector(".login-button");
 const loginBtn = document.querySelector(".login-btn");
 const logoutBtn = document.querySelector(".logout-btn");
 const signupButton = document.querySelector(".signup-button");
 const signupForwards = document.querySelector(".signup-forwards");
-export const loginInputBox = document.querySelector(".login-inputbox");
-export const signupBox = document.querySelector(".signup-inputbox");
+const loginInputBox = document.querySelector(".login-inputbox");
+const signupBox = document.querySelector(".signup-inputbox");
 const displayUser = document.querySelector(".display-user");
-export const emailInput = document.querySelector(".username-input");
-export const passwordInput = document.querySelector(".password-input");
-export const usernameRegister = document.querySelector(".username-register");
-export const passwordRegister = document.querySelector(".password-register");
-export const wrongCred = document.querySelector(".wrong-credentials");
+const emailInput = document.querySelector(".username-input");
+const passwordInput = document.querySelector(".password-input");
+const usernameRegister = document.querySelector(".username-register");
+const passwordRegister = document.querySelector(".password-register");
+const wrongCred = document.querySelector(".wrong-credentials");
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
