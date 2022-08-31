@@ -38,10 +38,9 @@ const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
 
 export const loginBox = document.querySelector(".login-box");
-const loginInnerBox = document.querySelector(".login-inputbox");
-const loginNav = document.querySelector(".login-btn");
-const hideLogin = document.querySelector(".hide-login");
-const signupBack = document.querySelector(".signup-back");
+export const loginNav = document.querySelector(".login-btn");
+export const hideLogin = document.querySelector(".hide-login");
+export const signupBack = document.querySelector(".signup-back");
 
 //Init//
 let totalCount = 0;

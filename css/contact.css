@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  letter-spacing: 3px;
+}
+
+html {
+  background-color: rgb(8, 11, 22);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.interface {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(8, 11, 22);
+  overflow-x: hidden;
+}
+
+a {
+  color: #6a6b6e;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: white;
+}
+
+nav {
+  position: absolute;
+  background-color: #121930;
+  height: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.links-box {
+  background-color: #121930;
+  height: 40%;
+  width: 100%;
+}
+
+.box-width {
+  position: relative;
+  width: 83vw;
+  height: 2rem;
+  height: 100%;
+  left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.brand-logo {
+  position: absolute;
+  height: 3.2rem;
+  top: 1.4rem;
+  left: 3rem;
+  cursor: pointer;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row;
+  color: #6a6b6e;
+  width: 100%;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Open Sans";
+  position: relative;
+  top: -0.8rem;
+}
+
+.flex-list1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding-left: 26rem;
+  list-style: none;
+}
+
+.flex-list2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+  padding-right: 0.5rem;
+}
+
+.result-box {
+  background-color: #121930;
+  height: 30%;
+  width: 100vw;
+}
+
+.box-width2 {
+  position: relative;
+  width: 83vw;
+  height: 2rem;
+  height: 100%;
+  left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.prompt-flex {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.prompt-string {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 8px 0px 0px 8px;
+  background-color: black;
+  border: 1.5px solid white;
+  z-index: 5;
+  color: white;
+  font-family: "Open Sans";
+  padding-left: 0.5rem;
+}
+
+.copy-prompt {
+  position: relative;
+  border-radius: 8px;
+  background-color: black;
+  border: 1.5px solid white;
+  border-left: none;
+  width: 5.5rem;
+  left: -0.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.copy-prompt:hover {
+  text-shadow: 0px 0px 5px white;
+}
+
+.copy {
+  color: white;
+  font-size: 1.6rem;
+}
+
+li:hover {
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.icons-box {
+  background-color: #121930;
+  height: 30%;
+  width: 100vw;
+}
+
+.box-width3 {
+  position: relative;
+  width: 83vw;
+  height: 2rem;
+  height: 100%;
+  left: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.4rem;
+}
+
+.icon-size {
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.total-selection-counter {
+  font-family: "Open Sans";
+  color: white;
+  border-radius: 50%;
+  border: 1px solid #00e4ff;
+  padding-right: 0.3rem;
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Login modal */
+
+.login-box {
+  background-color: rgb(8, 11, 22);
+  /* background-color: red; */
+  z-index: 50;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-login {
+  color: white;
+  background: transparent;
+  border: transparent;
+  padding: 0.3rem;
+  position: absolute;
+  left: 96%;
+  top: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.hide-login:hover {
+  color: rgb(222, 216, 216);
+}
+
+.login-inputbox {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  position: absolute;
+}
+
+.signup-inputbox {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  position: absolute;
+}
+
+.brand-logo2 {
+  position: absolute;
+  height: 3.2rem;
+  top: -16.5rem;
+  left: -46rem;
+  cursor: pointer;
+}
+
+.display-user {
+  cursor: unset;
+}
+.display-user:hover {
+  cursor: unset;
+  color: #6a6b6e;
+}
+
+.inp-stl {
+  margin-bottom: 1.5rem;
+  width: 80%;
+  padding: 0.5rem 0rem 0.5rem 0.5rem;
+  text-align: left;
+  font-family: "Open Sans";
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+}
+
+.btn-stl {
+  background-color: rgb(118, 48, 211);
+  color: white;
+  margin-top: 1rem;
+  width: 80%;
+  font-size: 0.6vw;
+  font-family: "Open Sans";
+  font-weight: 700;
+  padding: 0.5rem 0rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: none;
+}
+
+.btn-stl:hover {
+  background-color: rgba(118, 48, 211, 0.8);
+}
+
+.wrong-credentials {
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: white;
+  font-size: 0.9rem;
+  color: red;
+}
+
+.canvas {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
+.fa-arrow-left {
+  font-size: 2rem;
+  color: rgb(177, 174, 174);
+  position: relative;
+  top: -5rem;
+  left: -8.5rem;
+  cursor: pointer;
+}
+
+.fa-arrow-left:hover {
+  color: white;
+}
+
+.contact-content {
+  position: relative;
+  width: 97.5vw;
+  height: 44rem;
+  left: 3rem;
+  top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.contact-title {
+  font-family: "Open Sans";
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  position: absolute;
+  top: 1.6rem;
+  left: 0rem;
+}
+
+.contact-subtitle {
+  font-family: "Open Sans";
+  color: white;
+  position: absolute;
+  top: 5.6rem;
+  left: 0rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+.contact-modal {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 0.4rem;
+  margin-right: 20px;
+  background-color: #121930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0px 0px 10px rgb(33, 32, 98);
+}
+
+.contact-modal-title {
+  font-family: "Open Sans";
+  color: #ced0d6;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.form-text {
+  resize: none;
+  height: 20rem;
+  border-radius: 0.5rem;
+  font-family: "Open Sans";
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  border: none;
+  background-color: #ced0d6;
+}
+
+.form-email {
+  position: relative;
+  width: 40%;
+  height: 1.5rem;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  border-radius: 0.3rem;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 800;
+  background-color: #ced0d6;
+}
+
+.email-label {
+  color: #ced0d6;
+  font-family: "Open Sans";
+  font-weight: 800;
+}
+
+.submit-contact {
+  padding: 0.75rem 3rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-family: "Open Sans";
+  background-color: rgb(85, 41, 144);
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 5px rgb(85, 41, 144);
+}
+
+.submit-contact:hover {
+  background-color: rgb(118, 48, 211);
+}

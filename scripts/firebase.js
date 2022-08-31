@@ -77,6 +77,7 @@ const loginEmailPassword = async () => {
     console.log(userCredential.user);
   } catch (err) {
     wrongCred.classList.remove("hidden");
+    console.log(err);
   }
 };
 loginButton.addEventListener("click", loginEmailPassword);
