@@ -715,6 +715,15 @@ li:hover {
   color: #fff;
 }
 
+.option-box2, .option-box3, .option-box4, .option-box5, .option-box6, .option-box7, .option-box8, .option-box9 {
+  color: #282526;
+}
+
+.c-reset {
+  color: #282526;
+  border: 2px solid #282526;
+}
+
 @media only screen and (max-width: 1900px) {
   .subjects-style {
     width: 15.15rem;

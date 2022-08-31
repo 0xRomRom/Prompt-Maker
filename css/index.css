@@ -748,6 +748,36 @@ li:hover {
   color: white;
 }
 
+.option-box2 {
+  color: rgb(40, 37, 38);
+}
+.option-box3 {
+  color: rgb(40, 37, 38);
+}
+.option-box4 {
+  color: rgb(40, 37, 38);
+}
+.option-box5 {
+  color: rgb(40, 37, 38);
+}
+.option-box6 {
+  color: rgb(40, 37, 38);
+}
+.option-box7 {
+  color: rgb(40, 37, 38);
+}
+.option-box8 {
+  color: rgb(40, 37, 38);
+}
+.option-box9 {
+  color: rgb(40, 37, 38);
+}
+
+.c-reset {
+  color: rgb(40, 37, 38);
+  border: 2px solid rgb(40, 37, 38);
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1900px) {
