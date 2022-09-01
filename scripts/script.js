@@ -43,6 +43,7 @@ const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 
 const lightbox = document.querySelector(".outer-lightbox");
+const lightboxContent = document.querySelector(".lightbox");
 const closeLightbox = document.querySelector(".close-lightbox");
 
 //Init//
@@ -206,4 +207,5 @@ signupBack.addEventListener("click", () => {
 
 closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
+  lightboxContent.innerHTML = "";
 });

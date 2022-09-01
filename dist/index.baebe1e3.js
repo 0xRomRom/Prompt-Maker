@@ -660,9 +660,8 @@ allSubs.forEach((item)=>{
     item.addEventListener("click", ()=>{
         const storage = (0, _storage.getStorage)();
         let iLen = Object.keys(subAnimals).length;
-        console.log(iLen);
         for(let i = 0; i < iLen; i++)(0, _storage.getDownloadURL)((0, _storage.ref)(storage, `/subject/${item.dataset.id}/${i}.png`)).then((url)=>{
-            console.log(url);
+            // console.log(url);
             addtoDiv(url, i);
             lightboxDiv.classList.remove("hidden");
         }).catch((error)=>{
@@ -676,7 +675,6 @@ allSubs.forEach((item)=>{
     // promptString.focus();
     });
 });
-console.log(Object.values(subAnimals)[0]);
 
 },{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

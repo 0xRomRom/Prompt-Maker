@@ -570,6 +570,7 @@ const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const lightbox = document.querySelector(".outer-lightbox");
+const lightboxContent = document.querySelector(".lightbox");
 const closeLightbox = document.querySelector(".close-lightbox");
 //Init//
 let totalCount = 0;
@@ -718,6 +719,7 @@ signupBack.addEventListener("click", ()=>{
 });
 closeLightbox.addEventListener("click", ()=>{
     lightbox.classList.add("hidden");
+    lightboxContent.innerHTML = "";
 });
 
 },{}]},["lNSW0","jUTag"], "jUTag", "parcelRequire1ccf")

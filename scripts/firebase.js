@@ -154,11 +154,10 @@ allSubs.forEach((item) => {
   item.addEventListener("click", () => {
     const storage = getStorage();
     let iLen = Object.keys(subAnimals).length;
-    console.log(iLen);
     for (let i = 0; i < iLen; i++) {
       getDownloadURL(ref(storage, `/subject/${item.dataset.id}/${i}.png`))
         .then((url) => {
-          console.log(url);
+          // console.log(url);
           addtoDiv(url, i);
           lightboxDiv.classList.remove("hidden");
         })
@@ -175,5 +174,3 @@ allSubs.forEach((item) => {
     // promptString.focus();
   });
 });
-
-console.log(Object.values(subAnimals)[0]);
