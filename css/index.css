@@ -6,6 +6,24 @@
   letter-spacing: 3px;
 }
 
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 1rem;
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  color: white;
+  background: white;
+  border-radius: 1rem;
+  width: 0.5rem;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
 html {
   background-color: rgb(8, 11, 22);
 }
@@ -776,6 +794,160 @@ li:hover {
 .c-reset {
   color: rgb(40, 37, 38);
   border: 2px solid rgb(40, 37, 38);
+}
+
+.outer-lightbox {
+  position: absolute;
+  left: -2.5vw;
+  top: -1.5rem;
+  width: 80rem;
+  height: 43rem;
+  background-color: #121930;
+  z-index: 75;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  gap: 0rem;
+  border-radius: 0.2rem;
+}
+
+.lightbox {
+  position: absolute;
+  left: 2.5rem;
+  top: 13rem;
+  width: 90%;
+  height: 25rem;
+  background-color: #121930;
+  z-index: 75;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  gap: 0.5rem;
+  padding-right: 1rem;
+}
+
+.lightbox-imgdiv {
+  position: relative;
+  height: 12rem;
+  width: 17rem;
+  border: 1px solid white;
+  background-color: rgb(14, 19, 38);
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+}
+
+.lightbox-imgdiv:hover {
+  border: 3px solid rgb(0, 252, 255);
+  border-radius: 0.2rem;
+}
+
+.lightbox-txt {
+  color: white;
+  position: relative;
+  top: -0.25rem;
+  font-family: "Open Sans";
+  font-weight: 800;
+  background-color: rgb(14, 19, 38);
+  text-align: center;
+  font-weight: 800;
+  width: 97%;
+  margin-left: 0.21rem;
+}
+
+.lightbox-title {
+  position: absolute;
+  color: white;
+  font-family: "Open Sans";
+  top: 2rem;
+  left: 2.7rem;
+  font-size: 2.3rem;
+  text-shadow: 0px 0px 3px black;
+}
+
+.lightbox-subtitle {
+  position: absolute;
+  color: white;
+  font-family: "Open Sans";
+  top: 6.5rem;
+  left: 2.7rem;
+  font-size: 1.2rem;
+}
+
+.lightbox-cat {
+  color: rgb(109, 111, 120);
+  position: relative;
+  top: 10rem;
+  left: 2.7rem;
+  font-family: "Open Sans";
+}
+
+.close-lightbox {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: "Open Sans";
+  position: relative;
+  left: 59.8rem;
+  top: 1.5rem;
+  cursor: pointer;
+}
+
+.search-templates {
+  position: relative;
+  top: 9.5rem;
+  left: 41.7rem;
+  border-radius: 0.3rem;
+  padding: 0.25rem 0.8rem;
+  border: none;
+  color: rgb(52, 58, 78);
+  background-color: transparent;
+  border: 2px solid rgb(52, 58, 78);
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.search-templates:hover {
+  color: rgb(61, 66, 82);
+}
+
+.clear-close {
+  top: 40rem;
+  left: 27rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+}
+
+.select-styles {
+  top: 40rem;
+  left: 37.5rem;
+}
+
+.cta-stl {
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  background-color: transparent;
 }
 
 /* Media Queries */

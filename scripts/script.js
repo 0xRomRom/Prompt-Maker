@@ -42,6 +42,9 @@ const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 
+const lightbox = document.querySelector(".outer-lightbox");
+const closeLightbox = document.querySelector(".close-lightbox");
+
 //Init//
 let totalCount = 0;
 let subjectCount = 0;
@@ -70,19 +73,19 @@ const appendToQuery = (string) => {
 };
 
 //Subjects UI updater
-let subjectPick = document.querySelectorAll(".box1");
-subjectPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    subjectCount++;
-    totalCount++;
-    subjectCounter.textContent = subjectCount;
-    subjectMiniCounter.textContent = subjectCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
+// let subjectPick = document.querySelectorAll(".box1");
+// subjectPick.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     appendToQuery(item.dataset.id);
+//     console.log(item.dataset.id);
+//     subjectCount++;
+//     totalCount++;
+//     subjectCounter.textContent = subjectCount;
+//     subjectMiniCounter.textContent = subjectCount;
+//     totalCounter.textContent = totalCount;
+//     promptString.focus();
+//   });
+// });
 
 let locationPick = document.querySelectorAll(".box2");
 locationPick.forEach((item) => {
@@ -182,7 +185,7 @@ artistsPick.forEach((item) => {
   });
 });
 
-// Open/close login modal
+// Open/close login modal/lightbox
 loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
   loginInputBox.classList.remove("hidden");
@@ -199,4 +202,8 @@ hideLogin.addEventListener("click", () => {
 signupBack.addEventListener("click", () => {
   signupBox.classList.add("hidden");
   loginInputBox.classList.remove("hidden");
+});
+
+closeLightbox.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
 });

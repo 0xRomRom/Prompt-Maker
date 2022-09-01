@@ -1,6 +1,7 @@
 "use strict";
 
 import { initializeApp } from "firebase/app";
+import { ref, getStorage, getDownloadURL } from "firebase/storage";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -22,6 +23,7 @@ const passwordInput = document.querySelector(".password-input");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
 const wrongCred = document.querySelector(".wrong-credentials");
+const lightboxDiv = document.querySelector(".outer-lightbox");
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -112,3 +114,66 @@ const monitorAuthState = async () => {
 monitorAuthState();
 
 // firebase emulators:start --only auth
+
+const subAnimals = {
+  0: "Alpaca",
+  1: "Cheetah",
+  2: "Bull",
+  3: "Eagle",
+  4: "Falcon",
+  5: "Fox",
+  6: "Frog",
+  7: "Hamster",
+  8: "Horse",
+  9: "Lion",
+  10: "Lizard",
+  11: "Monkey",
+  12: "Owl",
+  13: "Parrot",
+  14: "Shark",
+  15: "Snake",
+};
+
+const addtoDiv = (img, i) => {
+  const lightbox = document.querySelector(".lightbox");
+  const lightDiv = document.createElement("div");
+  const newImg = document.createElement("img");
+  const newPar = document.createElement("p");
+  newPar.textContent = Object.values(subAnimals)[i];
+  newImg.className = "lightbox-img";
+  lightDiv.className = "lightbox-imgdiv";
+  newPar.className = "lightbox-txt";
+  newImg.setAttribute("src", img);
+  lightDiv.appendChild(newImg);
+  lightDiv.appendChild(newPar);
+  lightbox.appendChild(lightDiv);
+};
+
+let allSubs = document.querySelectorAll(".subjects-style");
+allSubs.forEach((item) => {
+  item.addEventListener("click", () => {
+    const storage = getStorage();
+    let iLen = Object.keys(subAnimals).length;
+    console.log(iLen);
+    for (let i = 0; i < iLen; i++) {
+      getDownloadURL(ref(storage, `/subject/${item.dataset.id}/${i}.png`))
+        .then((url) => {
+          console.log(url);
+          addtoDiv(url, i);
+          lightboxDiv.classList.remove("hidden");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    // subjectCount++;
+    // totalCount++;
+    // subjectCounter.textContent = subjectCount;
+    // subjectMiniCounter.textContent = subjectCount;
+    // totalCounter.textContent = totalCount;
+    // promptString.focus();
+  });
+});
+
+console.log(Object.values(subAnimals)[0]);
