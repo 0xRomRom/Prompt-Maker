@@ -6,9 +6,11 @@ const loginBox = document.querySelector(".login-box");
 const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
+const emailInput = document.querySelector(".username-input");
+const passwordInput = document.querySelector(".password-input");
+const wrongCred = document.querySelector(".wrong-credentials");
 
 loginNav.addEventListener("click", () => {
-  console.log("hi");
   loginBox.classList.remove("hidden");
   loginInputBox.classList.remove("hidden");
 });
