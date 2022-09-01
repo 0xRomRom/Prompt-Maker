@@ -798,26 +798,53 @@ li:hover {
 
 .outer-lightbox {
   position: absolute;
-  left: -2.5vw;
-  top: -1.5rem;
-  width: 80rem;
-  height: 43rem;
+  left: -19.5rem;
+  top: -11rem;
+  width: 90vw;
+  height: 53rem;
   background-color: #121930;
   z-index: 75;
-  display: flex;
+  /* display: flex; */
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   overflow-x: hidden;
   gap: 0rem;
   border-radius: 0.2rem;
+  z-index: 110;
+}
+
+.lightbox-shade {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(8, 11, 22, 0.8);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.lightbox-upper {
+  position: relative;
+  left: 2.5rem;
+  top: 1rem;
+  width: 95%;
+  height: 18rem;
+  background-color: #121930;
+  z-index: 75;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  gap: 0.5rem;
 }
 
 .lightbox {
-  position: absolute;
+  position: relative;
   left: 2.5rem;
-  top: 13rem;
-  width: 90%;
+  top: 2.5rem;
+  width: 95%;
   height: 25rem;
   background-color: #121930;
   z-index: 75;
@@ -828,13 +855,12 @@ li:hover {
   flex-wrap: wrap;
   overflow-x: hidden;
   gap: 0.5rem;
-  padding-right: 1rem;
 }
 
 .lightbox-imgdiv {
   position: relative;
   height: 12rem;
-  width: 17rem;
+  width: 16rem;
   border: 1px solid white;
   background-color: rgb(14, 19, 38);
   border: 3px solid transparent;
@@ -866,12 +892,10 @@ li:hover {
 }
 
 .lightbox-title {
-  position: absolute;
   color: white;
   font-family: "Open Sans";
-  top: 2rem;
-  left: 2.7rem;
-  font-size: 2.3rem;
+  font-size: 4rem;
+  font-weight: 700;
   text-shadow: 0px 0px 3px black;
 }
 
@@ -879,17 +903,36 @@ li:hover {
   position: absolute;
   color: white;
   font-family: "Open Sans";
-  top: 6.5rem;
-  left: 2.7rem;
+  top: 5.5rem;
   font-size: 1.2rem;
+  display: block;
+  width: 100%;
+}
+
+.lightbox-top-row {
+  position: relative;
+  top: 1rem;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .lightbox-cat {
   color: rgb(109, 111, 120);
   position: relative;
-  top: 10rem;
-  left: 2.7rem;
   font-family: "Open Sans";
+}
+
+.lightbox-lower {
+  position: relative;
+  top: 6.5rem;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .close-lightbox {
@@ -899,16 +942,10 @@ li:hover {
   font-size: 2.5rem;
   font-weight: 600;
   font-family: "Open Sans";
-  position: relative;
-  left: 59.8rem;
-  top: 1.5rem;
   cursor: pointer;
 }
 
 .search-templates {
-  position: relative;
-  top: 9.5rem;
-  left: 41.7rem;
   border-radius: 0.3rem;
   padding: 0.25rem 0.8rem;
   border: none;
@@ -922,32 +959,37 @@ li:hover {
   align-items: center;
   gap: 0.2rem;
   cursor: pointer;
+  width: 20rem;
+  margin-right: 4rem;
 }
 
 .search-templates:hover {
   color: rgb(61, 66, 82);
 }
 
-.clear-close {
-  top: 40rem;
-  left: 27rem;
-  padding: 0.3rem 1rem;
-  cursor: pointer;
-}
-
-.select-styles {
-  top: 40rem;
-  left: 37.5rem;
+.cta-center {
+  position: absolute;
+  top: 49rem;
+  width: 100%;
+  gap: 1rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .cta-stl {
-  padding: 0.3rem 1rem;
+  padding: 0.1rem 1.5rem;
   cursor: pointer;
-  position: absolute;
   color: white;
   border: 2px solid white;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   background-color: transparent;
+  font-size: 1.75rem;
+}
+
+.cta-stl:hover {
+  background-color: #1b2a5c;
 }
 
 /* Media Queries */

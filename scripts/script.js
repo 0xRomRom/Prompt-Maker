@@ -45,6 +45,8 @@ const signupBack = document.querySelector(".signup-back");
 const lightbox = document.querySelector(".outer-lightbox");
 const lightboxContent = document.querySelector(".lightbox");
 const closeLightbox = document.querySelector(".close-lightbox");
+const newPar = document.querySelector(".lightbox-txt");
+const lightboxShade = document.querySelector(".lightbox-shade");
 
 //Init//
 let totalCount = 0;
@@ -207,5 +209,12 @@ signupBack.addEventListener("click", () => {
 
 closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
   lightboxContent.innerHTML = "";
+  newPar.textContent = "";
+});
+
+lightboxShade.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
 });

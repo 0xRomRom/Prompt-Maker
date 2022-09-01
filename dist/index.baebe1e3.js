@@ -551,6 +551,7 @@ const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
 const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
+const lightboxShade = document.querySelector(".lightbox-shade");
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -641,6 +642,16 @@ const subAnimals = {
     14: "Shark",
     15: "Snake"
 };
+const subBuildings = {
+    0: "Boarding House",
+    1: "Castle",
+    2: "Cathedral",
+    3: "Conservatory",
+    4: "Greenhouse",
+    5: "Hospital",
+    6: "Igloo"
+};
+const allSubs = document.querySelectorAll(".subjects-style");
 const addtoDiv = (img, i)=>{
     const lightbox = document.querySelector(".lightbox");
     const lightDiv = document.createElement("div");
@@ -654,25 +665,19 @@ const addtoDiv = (img, i)=>{
     lightDiv.appendChild(newImg);
     lightDiv.appendChild(newPar);
     lightbox.appendChild(lightDiv);
+    lightboxShade.classList.remove("hidden");
+    lightboxDiv.classList.remove("hidden");
 };
-let allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item)=>{
-    item.addEventListener("click", ()=>{
+    item.addEventListener("click", (e)=>{
+        console.log(e);
         const storage = (0, _storage.getStorage)();
-        let iLen = Object.keys(subAnimals).length;
+        const iLen = Object.keys(subAnimals).length;
         for(let i = 0; i < iLen; i++)(0, _storage.getDownloadURL)((0, _storage.ref)(storage, `/subject/${item.dataset.id}/${i}.png`)).then((url)=>{
-            // console.log(url);
             addtoDiv(url, i);
-            lightboxDiv.classList.remove("hidden");
-        }).catch((error)=>{
-            console.log(error);
+        }).catch((err)=>{
+            console.log(err);
         });
-    // subjectCount++;
-    // totalCount++;
-    // subjectCounter.textContent = subjectCount;
-    // subjectMiniCounter.textContent = subjectCount;
-    // totalCounter.textContent = totalCount;
-    // promptString.focus();
     });
 });
 
