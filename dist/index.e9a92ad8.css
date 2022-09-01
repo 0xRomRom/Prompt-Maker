@@ -771,7 +771,7 @@ li:hover {
 
 .lightbox-upper {
   width: 95%;
-  height: 18rem;
+  height: 14rem;
   z-index: 75;
   background-color: #121930;
   flex-flow: wrap;
@@ -787,7 +787,7 @@ li:hover {
 
 .lightbox {
   width: 95%;
-  height: 25rem;
+  height: 31rem;
   z-index: 75;
   background-color: #121930;
   flex-flow: wrap;
@@ -796,7 +796,7 @@ li:hover {
   gap: .5rem;
   display: flex;
   position: relative;
-  top: 2.5rem;
+  top: 2rem;
   left: 2.5rem;
   overflow-x: hidden;
 }
@@ -874,7 +874,7 @@ li:hover {
   align-items: center;
   display: flex;
   position: relative;
-  top: 6.5rem;
+  top: 4rem;
 }
 
 .close-lightbox {
@@ -924,8 +924,8 @@ li:hover {
   background-color: #0000;
   border: 2px solid #fff;
   border-radius: .7rem;
-  padding: .1rem 1.5rem;
-  font-size: 1.75rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
 }
 
 .cta-stl:hover {
