@@ -535,6 +535,7 @@ function hmrAcceptRun(bundle, id) {
 var _app = require("firebase/app");
 var _storage = require("firebase/storage");
 var _auth = require("firebase/auth");
+var _catIndexJs = require("./catIndex.js");
 "use strict";
 const loginBox = document.querySelector(".login-box");
 const loginButton = document.querySelector(".login-button");
@@ -624,40 +625,13 @@ const monitorAuthState = async ()=>{
 };
 monitorAuthState();
 // firebase emulators:start --only auth
-const subAnimals = {
-    0: "Alpaca",
-    1: "Cheetah",
-    2: "Bull",
-    3: "Eagle",
-    4: "Falcon",
-    5: "Fox",
-    6: "Frog",
-    7: "Hamster",
-    8: "Horse",
-    9: "Lion",
-    10: "Lizard",
-    11: "Monkey",
-    12: "Owl",
-    13: "Parrot",
-    14: "Shark",
-    15: "Snake"
-};
-const subBuildings = {
-    0: "Boarding House",
-    1: "Castle",
-    2: "Cathedral",
-    3: "Conservatory",
-    4: "Greenhouse",
-    5: "Hospital",
-    6: "Igloo"
-};
 const allSubs = document.querySelectorAll(".subjects-style");
 const addtoDiv = (img, i)=>{
     const lightbox = document.querySelector(".lightbox");
     const lightDiv = document.createElement("div");
     const newImg = document.createElement("img");
     const newPar = document.createElement("p");
-    newPar.textContent = Object.values(subAnimals)[i];
+    newPar.textContent = Object.values((0, _catIndexJs.subAnimals))[i];
     newImg.className = "lightbox-img";
     lightDiv.className = "lightbox-imgdiv";
     newPar.className = "lightbox-txt";
@@ -672,7 +646,7 @@ allSubs.forEach((item)=>{
     item.addEventListener("click", (e)=>{
         console.log(e);
         const storage = (0, _storage.getStorage)();
-        const iLen = Object.keys(subAnimals).length;
+        const iLen = Object.keys((0, _catIndexJs.subAnimals)).length;
         for(let i = 0; i < iLen; i++)(0, _storage.getDownloadURL)((0, _storage.ref)(storage, `/subject/${item.dataset.id}/${i}.png`)).then((url)=>{
             addtoDiv(url, i);
         }).catch((err)=>{
@@ -681,7 +655,7 @@ allSubs.forEach((item)=>{
     });
 });
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH","./catIndex.js":"8U2wf"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");
@@ -15893,6 +15867,40 @@ function registerStorage() {
 }
 registerStorage();
 
-},{"@firebase/app":"3AcPV","@firebase/util":"ePiK6","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5VBqy","1SoyA"], "1SoyA", "parcelRequire1ccf")
+},{"@firebase/app":"3AcPV","@firebase/util":"ePiK6","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8U2wf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "subAnimals", ()=>subAnimals);
+parcelHelpers.export(exports, "subBuildings", ()=>subBuildings);
+"use strict";
+const subAnimals = {
+    0: "Alpaca",
+    1: "Cheetah",
+    2: "Bull",
+    3: "Eagle",
+    4: "Falcon",
+    5: "Fox",
+    6: "Frog",
+    7: "Hamster",
+    8: "Horse",
+    9: "Lion",
+    10: "Lizard",
+    11: "Monkey",
+    12: "Owl",
+    13: "Parrot",
+    14: "Shark",
+    15: "Snake"
+};
+const subBuildings = {
+    0: "Boarding House",
+    1: "Castle",
+    2: "Cathedral",
+    3: "Conservatory",
+    4: "Greenhouse",
+    5: "Hospital",
+    6: "Igloo"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5VBqy","1SoyA"], "1SoyA", "parcelRequire1ccf")
 
 //# sourceMappingURL=index.baebe1e3.js.map

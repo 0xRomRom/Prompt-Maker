@@ -214,13 +214,17 @@ li:hover {
 .login-box {
   background-color: rgb(8, 11, 22);
   /* background-color: red; */
-  z-index: 50;
-  position: absolute;
+  z-index: 150;
+  position: sticky;
+  top: -0rem;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: fixed;
+  overflow-y: hidden;
 }
 
 .hide-login {
@@ -324,7 +328,7 @@ li:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   z-index: 0;
 }

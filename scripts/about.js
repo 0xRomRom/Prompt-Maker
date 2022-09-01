@@ -1,6 +1,5 @@
 "use strict";
 
-import Masonry from "masonry-layout";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
@@ -25,12 +24,4 @@ hideLogin.addEventListener("click", () => {
 signupBack.addEventListener("click", () => {
   signupBox.classList.add("hidden");
   loginInputBox.classList.remove("hidden");
-});
-
-window.addEventListener("load", () => {
-  const grid = document.querySelector(".grid");
-
-  const masonry = new Masonry(grid, {
-    itemSelector: ".grid-item",
-  });
 });

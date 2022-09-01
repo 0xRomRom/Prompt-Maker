@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prompt Maker - AI Query Generator</title>
-    <script defer type="module" src="./scripts/firebase.js"></script>
     <script defer src="./scripts/loginCanvas.js"></script>
+    <script defer src="./scripts/contact.js"></script>
     <script
       src="https://kit.fontawesome.com/5f3c108898.js"
       crossorigin="anonymous"
@@ -31,11 +31,11 @@
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./help.html">Help</a></li>
                 <li><a href="./gallery.html">Gallery</a></li>
-                <li>Contact</li>
+                <li><a href="./contact.html">Contact</a></li>
               </ul>
               <ul class="flex-list2">
                 <li class="display-user"></li>
-                <li class="login-btn hidden">Login</li>
+                <li class="login-btn">Login</li>
                 <li class="logout-btn hidden">Logout</li>
                 <li>Get Pro</li>
               </ul>
@@ -70,14 +70,21 @@
         <h1 class="contact-subtitle">
           <i>We're here for you</i>
         </h1>
-      <div class="contact-modal">
-        <h2 class="contact-modal-title">Get in contact with the Prompt Maker team </h2>
-        <textarea rows="4" cols="50" class="form-text" maxlength="414" required></textarea>
-        <label for="email" class="email-label">Your E-mail address</label>
-        <input type="email" class="form-email" id="email" required>
-        <button class="submit-contact">Submit</button>
-      </div>
-      </div>
+        <div class="contact-modal">
+          <h2 class="contact-modal-title">
+            Get in contact with the Prompt Maker team
+          </h2>
+          <textarea
+            rows="4"
+            cols="50"
+            class="form-text"
+            maxlength="414"
+            required
+          ></textarea>
+          <label for="email" class="email-label">Your E-mail address</label>
+          <input type="email" class="form-email" id="email" required />
+          <button class="submit-contact">Submit</button>
+        </div>
       </div>
       <div class="login-box hidden">
         <button class="hide-login">X</button>
@@ -114,10 +121,8 @@
             placeholder="Password"
             autocomplete="off"
           />
-
           <button class="signup-button btn-stl">Sign Up</button>
         </div>
-        <canvas id="canvas">Canvas is not supported in your browser.</canvas>
       </div>
     </div>
   </body>
