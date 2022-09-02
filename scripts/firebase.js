@@ -176,6 +176,8 @@ allSubs.forEach((item) => {
   });
 });
 
+stringArray = [];
+
 //Toggle between borders
 lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList.contains("lightbox")) return;
@@ -185,7 +187,9 @@ lightboxParent.addEventListener("click", (e) => {
   console.log(Object.values(refObject)[`${+e.target.classList[1].slice(1)}`]);
   if (e.target.offsetParent.classList.contains("selected")) {
     console.log("damn");
-    outputText.textContent +=
-      Object.values(refObject)[+e.target.classList[1].slice(1)] + `, `;
+    stringArray.push(
+      ` ` + Object.values(refObject)[+e.target.classList[1].slice(1)]
+    );
+    outputText.textContent = stringArray.toString();
   }
 });
