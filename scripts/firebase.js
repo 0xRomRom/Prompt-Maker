@@ -41,6 +41,8 @@ const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
 
 const clearClose = document.querySelector(".clear-close");
+const selectStyles = document.querySelector(".select-styles");
+const promptString = document.querySelector(".prompt-string");
 //Init
 
 //
@@ -192,8 +194,7 @@ lightboxParent.addEventListener("click", (e) => {
   }
 });
 
-const allElements = document.querySelectorAll("*");
-
+//Clear styles
 clearClose.addEventListener("click", () => {
   stringArray = [];
   outputText.textContent = "";
@@ -201,7 +202,11 @@ clearClose.addEventListener("click", () => {
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
   });
-  console.log(selectedDivs);
+});
 
-  // allBoxes.style.border = "3px solid #121930;";
+//Apply styles
+selectStyles.addEventListener("click", () => {
+  promptString.value += stringArray.toString();
+  lightboxDiv.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
 });

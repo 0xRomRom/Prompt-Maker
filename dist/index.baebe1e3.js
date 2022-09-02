@@ -566,6 +566,8 @@ const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
 const clearClose = document.querySelector(".clear-close");
+const selectStyles = document.querySelector(".select-styles");
+const promptString = document.querySelector(".prompt-string");
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -680,7 +682,7 @@ lightboxParent.addEventListener("click", (e)=>{
         outputText.textContent = stringArray.toString();
     }
 });
-const allElements = document.querySelectorAll("*");
+//Clear styles
 clearClose.addEventListener("click", ()=>{
     stringArray = [];
     outputText.textContent = "";
@@ -688,8 +690,12 @@ clearClose.addEventListener("click", ()=>{
     selectedDivs.forEach((item)=>{
         item.className = "lightbox-imgdiv";
     });
-    console.log(selectedDivs);
-// allBoxes.style.border = "3px solid #121930;";
+});
+//Apply styles
+selectStyles.addEventListener("click", ()=>{
+    promptString.value += stringArray.toString();
+    lightboxDiv.classList.add("hidden");
+    lightboxShade.classList.add("hidden");
 });
 
 },{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/storage":"9dDUH","./catIndex.js":"8U2wf","./animate.js":"eMc9v"}],"5wGMN":[function(require,module,exports) {
