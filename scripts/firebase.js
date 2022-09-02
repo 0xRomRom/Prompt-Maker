@@ -38,6 +38,7 @@ const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
 const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
+const outputText = document.querySelector(".output-txt");
 
 //Init
 
@@ -150,24 +151,7 @@ const addtoDiv = (img, i) => {
   lightboxDiv.classList.remove("hidden");
 };
 
-// const allModals = document.querySelectorAll(".modal-boxes");
-// allModals.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     for (let [key, value] of Object.entries(indexObject)) {
-//       console.log(key);
-//       console.log(value);
-//       if (e.target.offsetParent.dataset.id === key) {
-//         console.log("Match");
-//         refObject = value;
-//       }
-//     }
-
-//     console.log(e.target.offsetParent.dataset.id);
-
-//     console.log(targetCategory);
-//   });
-// });
-
+//Check index for required content & render accordingly
 const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -196,5 +180,8 @@ allSubs.forEach((item) => {
 lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList.contains("lightbox")) return;
   e.target.offsetParent.classList.toggle("selected");
-  console.log(e.target.classList[1].slice(1));
+  console.log(+e.target.classList[1].slice(1));
+  console.log(Object.values(refObject)[`${+e.target.classList[1].slice(1)}`]);
+  outputText.textContent +=
+    Object.values(refObject)[+e.target.classList[1].slice(1)] + `, `;
 });

@@ -802,6 +802,18 @@ li:hover {
   border: 3px solid #0000 !important;
 }
 
+.output-txt {
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  max-width: 25rem;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 700;
+  position: absolute;
+  top: -1rem;
+  left: 2.8rem;
+}
+
 .lightbox-imgdiv {
   height: 12rem;
   width: 16rem;
