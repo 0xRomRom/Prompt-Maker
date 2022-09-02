@@ -757,6 +757,7 @@ li:hover {
   top: -11rem;
   left: -19.5rem;
   overflow-x: hidden;
+  border: 3px solid #0000 !important;
 }
 
 .lightbox-shade {
@@ -798,6 +799,7 @@ li:hover {
   top: 2rem;
   left: 2.5rem;
   overflow-x: hidden;
+  border: 3px solid #0000 !important;
 }
 
 .lightbox-imgdiv {
@@ -805,7 +807,7 @@ li:hover {
   width: 16rem;
   cursor: pointer;
   background-color: #0e1326;
-  border: 3px solid #0000;
+  border: 3px solid #121930;
   position: relative;
 }
 
@@ -817,7 +819,6 @@ li:hover {
 
 .lightbox-imgdiv:hover {
   border: 3px solid #232a63;
-  border-radius: .2rem;
 }
 
 .lightbox-txt {

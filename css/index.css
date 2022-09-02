@@ -812,6 +812,7 @@ li:hover {
   gap: 0rem;
   border-radius: 0.2rem;
   z-index: 110;
+  border: 3px solid transparent !important;
 }
 
 .lightbox-shade {
@@ -855,15 +856,15 @@ li:hover {
   flex-wrap: wrap;
   overflow-x: hidden;
   gap: 0.5rem;
+  border: 3px solid transparent !important;
 }
 
 .lightbox-imgdiv {
   position: relative;
   height: 12rem;
   width: 16rem;
-  border: 1px solid white;
   background-color: rgb(14, 19, 38);
-  border: 3px solid transparent;
+  border: 3px solid #121930;
   cursor: pointer;
 }
 
@@ -875,7 +876,6 @@ li:hover {
 
 .lightbox-imgdiv:hover {
   border: 3px solid rgb(35, 42, 99);
-  border-radius: 0.2rem;
 }
 
 .lightbox-txt {

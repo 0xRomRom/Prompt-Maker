@@ -156,13 +156,25 @@ allSubs.forEach((item) => {
   });
 });
 
+//Toggle between borders
+let borderBool = false;
 lightboxParent.addEventListener("click", (e) => {
   console.log(e.target.classList[1].slice(1));
-  console.log(e.target.offsetParent);
+  console.log(e.target.offsetParent.firstChild.classList[1].slice(1));
   if (e.target.offsetParent.style.border === "4px solid rgb(0, 228, 225)") {
-    e.target.offsetParent.style.border = "none";
-    console.log("Yes");
+    e.target.offsetParent.style.border = "initial";
+    borderBool = true;
     return;
   }
   e.target.offsetParent.style.border = "4px solid rgb(0, 228, 225)";
+  borderBool = false;
+});
+
+lightboxParent.addEventListener("mouseover", (e) => {
+  if (!borderBool) return;
+  e.target.offsetParent.style.border = "3px solid rgb(35, 42, 99)";
+});
+lightboxParent.addEventListener("mouseout", (e) => {
+  if (!borderBool) return;
+  e.target.offsetParent.style.border = "3px solid transparent";
 });
