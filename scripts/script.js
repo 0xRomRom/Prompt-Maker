@@ -211,7 +211,6 @@ closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxContent.innerHTML = "";
-  newPar.textContent = "";
 });
 
 lightboxShade.addEventListener("click", () => {

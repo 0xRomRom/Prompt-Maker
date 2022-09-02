@@ -71,7 +71,6 @@ nav {
 
 .brand-logo {
   height: 3.2rem;
-  cursor: pointer;
   position: absolute;
   top: 1.4rem;
   left: 3rem;
@@ -817,7 +816,7 @@ li:hover {
 }
 
 .lightbox-imgdiv:hover {
-  border: 3px solid #00fcff;
+  border: 3px solid #232a63;
   border-radius: .2rem;
 }
 

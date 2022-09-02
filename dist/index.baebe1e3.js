@@ -532,6 +532,9 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SoyA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "firebaseApp", ()=>firebaseApp);
 var _app = require("firebase/app");
 var _storage = require("firebase/storage");
 var _auth = require("firebase/auth");
@@ -553,6 +556,8 @@ const passwordRegister = document.querySelector(".password-register");
 const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
+const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
+const lightboxParent = document.querySelector(".lightbox");
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -625,15 +630,14 @@ const monitorAuthState = async ()=>{
 };
 monitorAuthState();
 // firebase emulators:start --only auth
-const allSubs = document.querySelectorAll(".subjects-style");
 const addtoDiv = (img, i)=>{
     const lightbox = document.querySelector(".lightbox");
     const lightDiv = document.createElement("div");
     const newImg = document.createElement("img");
     const newPar = document.createElement("p");
     newPar.textContent = Object.values((0, _catIndexJs.subAnimals))[i];
-    newImg.className = "lightbox-img";
-    lightDiv.className = "lightbox-imgdiv";
+    newImg.className = `lightbox-img ${"a" + i}`;
+    lightDiv.className = `lightbox-imgdiv`;
     newPar.className = "lightbox-txt";
     newImg.setAttribute("src", img);
     lightDiv.appendChild(newImg);
@@ -642,6 +646,7 @@ const addtoDiv = (img, i)=>{
     lightboxShade.classList.remove("hidden");
     lightboxDiv.classList.remove("hidden");
 };
+const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item)=>{
     item.addEventListener("click", (e)=>{
         console.log(e);
@@ -654,8 +659,18 @@ allSubs.forEach((item)=>{
         });
     });
 });
+lightboxParent.addEventListener("click", (e)=>{
+    console.log(e.target.classList[1].slice(1));
+    console.log(e.target.offsetParent);
+    if (e.target.offsetParent.style.border === "4px solid rgb(0, 228, 225)") {
+        e.target.offsetParent.style.border = "none";
+        console.log("Yes");
+        return;
+    }
+    e.target.offsetParent.style.border = "4px solid rgb(0, 228, 225)";
+});
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH","./catIndex.js":"8U2wf"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH","./catIndex.js":"8U2wf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");

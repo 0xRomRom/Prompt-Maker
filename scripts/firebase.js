@@ -28,8 +28,10 @@ const passwordRegister = document.querySelector(".password-register");
 const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
+const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
+const lightboxParent = document.querySelector(".lightbox");
 
-const firebaseApp = initializeApp({
+export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
   authDomain: "prompt-maker.firebaseapp.com",
   projectId: "prompt-maker",
@@ -119,16 +121,14 @@ monitorAuthState();
 
 // firebase emulators:start --only auth
 
-const allSubs = document.querySelectorAll(".subjects-style");
-
 const addtoDiv = (img, i) => {
   const lightbox = document.querySelector(".lightbox");
   const lightDiv = document.createElement("div");
   const newImg = document.createElement("img");
   const newPar = document.createElement("p");
   newPar.textContent = Object.values(subAnimals)[i];
-  newImg.className = "lightbox-img";
-  lightDiv.className = "lightbox-imgdiv";
+  newImg.className = `lightbox-img ${"a" + i}`;
+  lightDiv.className = `lightbox-imgdiv`;
   newPar.className = "lightbox-txt";
   newImg.setAttribute("src", img);
   lightDiv.appendChild(newImg);
@@ -138,6 +138,7 @@ const addtoDiv = (img, i) => {
   lightboxDiv.classList.remove("hidden");
 };
 
+const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item) => {
   item.addEventListener("click", (e) => {
     console.log(e);
@@ -153,4 +154,15 @@ allSubs.forEach((item) => {
         });
     }
   });
+});
+
+lightboxParent.addEventListener("click", (e) => {
+  console.log(e.target.classList[1].slice(1));
+  console.log(e.target.offsetParent);
+  if (e.target.offsetParent.style.border === "4px solid rgb(0, 228, 225)") {
+    e.target.offsetParent.style.border = "none";
+    console.log("Yes");
+    return;
+  }
+  e.target.offsetParent.style.border = "4px solid rgb(0, 228, 225)";
 });

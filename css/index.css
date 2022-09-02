@@ -73,7 +73,6 @@ nav {
   height: 3.2rem;
   top: 1.4rem;
   left: 3rem;
-  cursor: pointer;
 }
 
 .nav-flex {
@@ -875,7 +874,7 @@ li:hover {
 }
 
 .lightbox-imgdiv:hover {
-  border: 3px solid rgb(0, 252, 255);
+  border: 3px solid rgb(35, 42, 99);
   border-radius: 0.2rem;
 }
 
