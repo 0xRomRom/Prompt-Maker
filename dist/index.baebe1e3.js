@@ -670,10 +670,14 @@ allSubs.forEach((item)=>{
 //Toggle between borders
 lightboxParent.addEventListener("click", (e)=>{
     if (e.target.classList.contains("lightbox")) return;
+    if (e.target.offsetParent.classList.contains("selected")) return;
     e.target.offsetParent.classList.toggle("selected");
     console.log(+e.target.classList[1].slice(1));
     console.log(Object.values(refObject)[`${+e.target.classList[1].slice(1)}`]);
-    outputText.textContent += Object.values(refObject)[+e.target.classList[1].slice(1)] + `, `;
+    if (e.target.offsetParent.classList.contains("selected")) {
+        console.log("damn");
+        outputText.textContent += Object.values(refObject)[+e.target.classList[1].slice(1)] + `, `;
+    }
 });
 
 },{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/storage":"9dDUH","./catIndex.js":"8U2wf","./animate.js":"eMc9v"}],"5wGMN":[function(require,module,exports) {
