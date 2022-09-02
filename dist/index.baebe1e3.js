@@ -550,6 +550,25 @@ const indexObject = {
     buildings: (0, _catIndexJs.buildings)
 };
 let refObject = {};
+const totalCounter = document.querySelector(".total-selection-counter");
+const subjectCounter = document.querySelector(".subject-counter");
+const locationCounter = document.querySelector(".location-counter");
+const themesCounter = document.querySelector(".themes-counter");
+const designCounter = document.querySelector(".design-counter");
+const lightningCounter = document.querySelector(".lightning-counter");
+const colorsCounter = document.querySelector(".colors-counter");
+const cameraCounter = document.querySelector(".camera-counter");
+const artistsCounter = document.querySelector(".artists-counter");
+const imageCounter = document.querySelector(".image-counter");
+const subjectMiniCounter = document.querySelector(".subjects-counter");
+const locationMiniCounter = document.querySelector(".locations-counter");
+const themeMiniCounter = document.querySelector(".themes-mini-counter");
+const designMiniCounter = document.querySelector(".designs-counter");
+const lightningMiniCounter = document.querySelector(".lightnings-counter");
+const colorsMiniCounter = document.querySelector(".colors-mini-counter");
+const cameraMiniCounter = document.querySelector(".cameras-counter");
+const artistMiniCounter = document.querySelector(".artists-mini-counter");
+const imageMiniCounter = document.querySelector(".imagess-counter");
 const loginBox = document.querySelector(".login-box");
 const loginButton = document.querySelector(".login-button");
 const loginBtn = document.querySelector(".login-btn");
@@ -573,6 +592,18 @@ const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
+//Init
+//
+let totalCount = 0;
+let subjectCount = 0;
+let locationCount = 0;
+let themesCount = 0;
+let designCount = 0;
+let lightningCount = 0;
+let colorsCount = 0;
+let cameraCount = 0;
+let artistsCount = 0;
+let imageCount = 0;
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -685,7 +716,6 @@ allSubs.forEach((item)=>{
 let stringArray = [];
 //Toggle between borders
 lightboxParent.addEventListener("click", (e)=>{
-    // console.log(e.target.classList[0]);
     if (e.target.classList[0] === "lightbox-imgdiv") return;
     if (e.target.classList.contains("lightbox")) return;
     if (e.target.offsetParent.classList.contains("selected")) return;
@@ -707,6 +737,13 @@ clearClose.addEventListener("click", ()=>{
 //Apply styles
 selectStyles.addEventListener("click", ()=>{
     promptString.value += stringArray.toString();
+    totalCount += +stringArray.length;
+    subjectCount += +stringArray.length;
+    subjectCounter.textContent = "";
+    subjectMiniCounter.textContent = "";
+    subjectCounter.textContent = subjectCount;
+    subjectMiniCounter.textContent = subjectCount;
+    totalCounter.textContent = totalCount;
     lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
     lightboxParent.innerHTML = "";
