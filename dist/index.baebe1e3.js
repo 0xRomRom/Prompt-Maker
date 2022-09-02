@@ -685,6 +685,8 @@ allSubs.forEach((item)=>{
 let stringArray = [];
 //Toggle between borders
 lightboxParent.addEventListener("click", (e)=>{
+    // console.log(e.target.classList[0]);
+    if (e.target.classList[0] === "lightbox-imgdiv") return;
     if (e.target.classList.contains("lightbox")) return;
     if (e.target.offsetParent.classList.contains("selected")) return;
     e.target.offsetParent.classList.toggle("selected");
