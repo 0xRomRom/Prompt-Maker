@@ -47,6 +47,7 @@ const lightboxContent = document.querySelector(".lightbox");
 const closeLightbox = document.querySelector(".close-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
 const newPar = document.querySelector(".lightbox-txt");
+const promptCopied = document.querySelector(".prompt-copied");
 
 //Init//
 let totalCount = 0;
@@ -65,127 +66,15 @@ passwordInput.value = "";
 
 //Copy resulting query
 copyPromptString.addEventListener("click", () => {
+  if (promptString.value < 3) return;
   promptString.select();
   document.execCommand("copy");
-  alert("Query Copied!");
-});
-
-//Append selection to query
-const appendToQuery = (string) => {
-  promptString.value += `${string.charAt(0).toUpperCase() + string.slice(1)}, `;
-};
-
-//Subjects UI updater
-// let subjectPick = document.querySelectorAll(".box1");
-// subjectPick.forEach((item) => {
-//   item.addEventListener("click", () => {
-//     appendToQuery(item.dataset.id);
-//     console.log(item.dataset.id);
-//     subjectCount++;
-//     totalCount++;
-//     subjectCounter.textContent = subjectCount;
-//     subjectMiniCounter.textContent = subjectCount;
-//     totalCounter.textContent = totalCount;
-//     promptString.focus();
-//   });
-// });
-
-let locationPick = document.querySelectorAll(".box2");
-locationPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    locationCount++;
-    totalCount++;
-    locationCounter.textContent = locationCount;
-    locationMiniCounter.textContent = locationCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let themesPick = document.querySelectorAll(".box3");
-themesPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    themesCount++;
-    totalCount++;
-    themesCounter.textContent = themesCount;
-    themeMiniCounter.textContent = themesCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let designPick = document.querySelectorAll(".box4");
-designPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    designCount++;
-    totalCount++;
-    designCounter.textContent = designCount;
-    designMiniCounter.textContent = designCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let lightningPick = document.querySelectorAll(".box5");
-lightningPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    lightningCount++;
-    totalCount++;
-    lightningCounter.textContent = lightningCount;
-    lightningMiniCounter.textContent = lightningCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let colorsPick = document.querySelectorAll(".box6");
-colorsPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    colorsCount++;
-    totalCount++;
-    colorsCounter.textContent = colorsCount;
-    colorsMiniCounter.textContent = colorsCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let cameraPick = document.querySelectorAll(".box7");
-cameraPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    cameraCount++;
-    totalCount++;
-    cameraCounter.textContent = cameraCount;
-    cameraMiniCounter.textContent = cameraCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
-});
-
-let artistsPick = document.querySelectorAll(".box8");
-artistsPick.forEach((item) => {
-  item.addEventListener("click", () => {
-    appendToQuery(item.dataset.id);
-    console.log(item.dataset.id);
-    artistsCount++;
-    totalCount++;
-    artistsCounter.textContent = artistsCount;
-    artistMiniCounter.textContent = artistsCount;
-    totalCounter.textContent = totalCount;
-    promptString.focus();
-  });
+  promptCopied.classList.remove("hidden");
+  promptCopied.classList.add("dropdown");
+  setTimeout(() => {
+    promptCopied.classList.add("hidden");
+    promptCopied.classList.remove("dropdown");
+  }, 2000);
 });
 
 // Open/close login modal/lightbox

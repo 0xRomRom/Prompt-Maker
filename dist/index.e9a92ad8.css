@@ -101,6 +101,46 @@ a:hover {
   color: #fff;
 }
 
+.prompt-copied {
+  z-index: 200;
+  height: 3rem;
+  width: 13rem;
+  color: #fff;
+  background-color: #080b16;
+  border: 2px solid #fff;
+  border-radius: .8rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  position: absolute;
+  top: -4rem;
+  left: 40%;
+  box-shadow: 0 0 7px #fff;
+}
+
+.dropdown {
+  animation: dropdown 2s ease-in-out forwards;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 1;
+    transform: scaleY(0rem);
+    position: absolute;
+  }
+
+  to {
+    opacity: 0;
+    transform: scaleY(3rem);
+    position: absolute;
+    top: 4rem;
+  }
+}
+
 .flex-list1 {
   flex-direction: row;
   justify-content: center;
