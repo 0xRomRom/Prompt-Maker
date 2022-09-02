@@ -232,7 +232,7 @@ selectStyles.addEventListener("click", () => {
 });
 
 closeLightbox.addEventListener("click", () => {
-  lightbox.classList.add("hidden");
+  lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
   stringArray = [];
@@ -248,7 +248,7 @@ closeLightbox.addEventListener("click", () => {
 });
 
 lightboxShade.addEventListener("click", () => {
-  lightbox.classList.add("hidden");
+  lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
   stringArray = [];

@@ -652,7 +652,7 @@ const addtoDiv = (img, i)=>{
     selectedDivs.forEach((item)=>{
         item.className = "lightbox-imgdiv";
     });
-    const lightbox1 = document.querySelector(".lightbox");
+    const lightbox = document.querySelector(".lightbox");
     const lightDiv = document.createElement("div");
     const newImg = document.createElement("img");
     const newPar = document.createElement("p");
@@ -664,7 +664,7 @@ const addtoDiv = (img, i)=>{
     newImg.setAttribute("src", img);
     lightDiv.appendChild(newImg);
     lightDiv.appendChild(newPar);
-    lightbox1.appendChild(lightDiv);
+    lightbox.appendChild(lightDiv);
     lightboxShade.classList.remove("hidden");
     lightboxDiv.classList.remove("hidden");
 };
@@ -721,7 +721,7 @@ selectStyles.addEventListener("click", ()=>{
     promptString.value += `,`;
 });
 closeLightbox.addEventListener("click", ()=>{
-    lightbox.classList.add("hidden");
+    lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
     lightboxParent.innerHTML = "";
     stringArray = [];
@@ -736,7 +736,7 @@ closeLightbox.addEventListener("click", ()=>{
     });
 });
 lightboxShade.addEventListener("click", ()=>{
-    lightbox.classList.add("hidden");
+    lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
     lightboxParent.innerHTML = "";
     stringArray = [];
