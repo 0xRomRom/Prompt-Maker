@@ -1,6 +1,6 @@
 "use strict";
 
-export const subAnimals = {
+export const animals = {
   0: "Alpaca",
   1: "Cheetah",
   2: "Bull",
@@ -18,7 +18,7 @@ export const subAnimals = {
   14: "Shark",
   15: "Snake",
 };
-export const subBuildings = {
+export const buildings = {
   0: "Boarding House",
   1: "Castle",
   2: "Cathedral",

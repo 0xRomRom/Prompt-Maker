@@ -69,6 +69,11 @@ let gb = "2px solid rgb(40,37,38)";
 let w = "white";
 let wb = "2px solid white";
 
+//Init//
+export let targetCategory = "subject";
+
+///////
+
 optionBox2.style.color = g;
 locationCounter.style.color = g;
 locationCounter.style.border = gb;
@@ -121,6 +126,7 @@ const resetDots = () => {
 };
 
 optionBox1.addEventListener("click", () => {
+  let targetCategory = "subject";
   resetDots();
   dot1.className = "dot-1 d1 dot";
   dot2.className = "dot-2 d2 dot";
@@ -193,6 +199,7 @@ optionBox1.addEventListener("click", () => {
 });
 
 optionBox2.addEventListener("click", () => {
+  let targetCategory = "location";
   resetDots();
   dot1.className = "dot-4 d1 dot";
   dot2.className = "dot-5 d2 dot";
@@ -265,6 +272,7 @@ optionBox2.addEventListener("click", () => {
 });
 
 optionBox3.addEventListener("click", () => {
+  let targetCategory = "themes";
   resetDots();
   dot1.className = "dot-7 d1 dot";
   dot2.className = "dot-8 d2 dot";
@@ -337,6 +345,7 @@ optionBox3.addEventListener("click", () => {
 });
 
 optionBox4.addEventListener("click", () => {
+  let targetCategory = "design";
   resetDots();
   dot1.className = "dot-10 d1 dot";
   dot2.className = "dot-11 d2 dot";
@@ -409,6 +418,7 @@ optionBox4.addEventListener("click", () => {
 });
 
 optionBox5.addEventListener("click", () => {
+  let targetCategory = "lightning";
   resetDots();
   dot1.className = "dot-13 d1 dot";
   dot2.className = "dot-14 d2 dot";
@@ -481,6 +491,7 @@ optionBox5.addEventListener("click", () => {
 });
 
 optionBox6.addEventListener("click", () => {
+  let targetCategory = "colors";
   resetDots();
   dot1.className = "dot-16 d1 dot";
   dot2.className = "dot-17 d2 dot";
@@ -553,6 +564,7 @@ optionBox6.addEventListener("click", () => {
 });
 
 optionBox7.addEventListener("click", () => {
+  let targetCategory = "camera";
   resetDots();
   dot1.className = "dot-19 d1 dot";
   dot2.className = "dot-20 d2 dot";
@@ -625,6 +637,8 @@ optionBox7.addEventListener("click", () => {
 });
 
 optionBox8.addEventListener("click", () => {
+  let targetCategory = "artists";
+  console.log(targetCategory);
   resetDots();
   dot1.className = "dot-22 d1 dot";
   dot2.className = "dot-23 d2 dot";

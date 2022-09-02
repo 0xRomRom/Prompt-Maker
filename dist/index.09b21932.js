@@ -532,6 +532,9 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"eMc9v":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "targetCategory", ()=>targetCategory);
 "use strict";
 const subject = document.querySelector(".subject");
 const location = document.querySelector(".location");
@@ -594,6 +597,8 @@ let g = "rgb(40,37,38)";
 let gb = "2px solid rgb(40,37,38)";
 let w = "white";
 let wb = "2px solid white";
+let targetCategory = "subject";
+///////
 optionBox2.style.color = g;
 locationCounter.style.color = g;
 locationCounter.style.border = gb;
@@ -1194,6 +1199,6 @@ const menuTransitions = (e)=>{
     }
 };
 
-},{}]},["kncrP","eMc9v"], "eMc9v", "parcelRequire1ccf")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kncrP","eMc9v"], "eMc9v", "parcelRequire1ccf")
 
 //# sourceMappingURL=index.09b21932.js.map

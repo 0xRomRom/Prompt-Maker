@@ -10,7 +10,15 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { subAnimals, subBuildings } from "./catIndex.js";
+import { animals, buildings } from "./catIndex.js";
+import { targetCategory } from "./animate.js";
+
+const indexObject = {
+  animals: animals,
+  buildings: buildings,
+};
+
+let refObject = {};
 
 const loginBox = document.querySelector(".login-box");
 const loginButton = document.querySelector(".login-button");
@@ -30,6 +38,10 @@ const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
 const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
+
+//Init
+
+//
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -126,7 +138,7 @@ const addtoDiv = (img, i) => {
   const lightDiv = document.createElement("div");
   const newImg = document.createElement("img");
   const newPar = document.createElement("p");
-  newPar.textContent = Object.values(subAnimals)[i];
+  newPar.textContent = Object.values(animals)[i];
   newImg.className = `lightbox-img ${"a" + i}`;
   lightDiv.className = `lightbox-imgdiv`;
   newPar.className = "lightbox-txt";
@@ -138,14 +150,38 @@ const addtoDiv = (img, i) => {
   lightboxDiv.classList.remove("hidden");
 };
 
+// const allModals = document.querySelectorAll(".modal-boxes");
+// allModals.forEach((item) => {
+//   item.addEventListener("click", (e) => {
+//     for (let [key, value] of Object.entries(indexObject)) {
+//       console.log(key);
+//       console.log(value);
+//       if (e.target.offsetParent.dataset.id === key) {
+//         console.log("Match");
+//         refObject = value;
+//       }
+//     }
+
+//     console.log(e.target.offsetParent.dataset.id);
+
+//     console.log(targetCategory);
+//   });
+// });
+
 const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item) => {
   item.addEventListener("click", (e) => {
-    console.log(e);
+    for (let [key, value] of Object.entries(indexObject)) {
+      if (e.target.offsetParent.dataset.id === key) {
+        refObject = value;
+      }
+    }
     const storage = getStorage();
-    const iLen = Object.keys(subAnimals).length;
+    const iLen = Object.keys(refObject).length;
     for (let i = 0; i < iLen; i++) {
-      getDownloadURL(ref(storage, `/subject/${item.dataset.id}/${i}.png`))
+      getDownloadURL(
+        ref(storage, `/${targetCategory}/${item.dataset.id}/${i}.png`)
+      )
         .then((url) => {
           addtoDiv(url, i);
         })
