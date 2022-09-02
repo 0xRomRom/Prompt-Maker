@@ -660,28 +660,13 @@ allSubs.forEach((item)=>{
     });
 });
 //Toggle between borders
-let borderBool = false;
 lightboxParent.addEventListener("click", (e)=>{
+    if (e.target.classList.contains("lightbox")) return;
+    e.target.offsetParent.classList.toggle("selected");
     console.log(e.target.classList[1].slice(1));
-    console.log(e.target.offsetParent.firstChild.classList[1].slice(1));
-    if (e.target.offsetParent.style.border === "4px solid rgb(0, 228, 225)") {
-        e.target.offsetParent.style.border = "initial";
-        borderBool = true;
-        return;
-    }
-    e.target.offsetParent.style.border = "4px solid rgb(0, 228, 225)";
-    borderBool = false;
-});
-lightboxParent.addEventListener("mouseover", (e)=>{
-    if (!borderBool) return;
-    e.target.offsetParent.style.border = "3px solid rgb(35, 42, 99)";
-});
-lightboxParent.addEventListener("mouseout", (e)=>{
-    if (!borderBool) return;
-    e.target.offsetParent.style.border = "3px solid transparent";
 });
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f","firebase/storage":"9dDUH","./catIndex.js":"8U2wf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/storage":"9dDUH","./catIndex.js":"8U2wf"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");

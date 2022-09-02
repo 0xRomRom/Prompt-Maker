@@ -992,6 +992,10 @@ li:hover {
   background-color: #1b2a5c;
 }
 
+.selected {
+  border: 4px solid rgb(0, 228, 225) !important;
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 1900px) {
