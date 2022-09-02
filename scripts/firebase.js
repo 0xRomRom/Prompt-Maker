@@ -176,8 +176,7 @@ allSubs.forEach((item) => {
   });
 });
 
-stringArray = [];
-
+let stringArray = [];
 //Toggle between borders
 lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList.contains("lightbox")) return;
