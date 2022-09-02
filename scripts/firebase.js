@@ -13,6 +13,8 @@ import {
 import { animals, buildings } from "./catIndex.js";
 import { targetCategory } from "./animate.js";
 
+const indexArr = [animals, buildings];
+
 const indexObject = {
   animals: animals,
   buildings: buildings,
@@ -40,6 +42,7 @@ const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
 
+const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
@@ -71,7 +74,6 @@ signupForwards.addEventListener("click", (e) => {
 const createAccount = async () => {
   const emailTxt = usernameRegister.value;
   const passwordTxt = passwordRegister.value;
-
   const userCredential = await createUserWithEmailAndPassword(
     auth,
     emailTxt,
@@ -138,11 +140,18 @@ monitorAuthState();
 // firebase emulators:start --only auth
 
 const addtoDiv = (img, i) => {
+  stringArray = [];
+  outputText.textContent = "";
+  const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
+  selectedDivs.forEach((item) => {
+    item.className = "lightbox-imgdiv";
+  });
   const lightbox = document.querySelector(".lightbox");
   const lightDiv = document.createElement("div");
   const newImg = document.createElement("img");
   const newPar = document.createElement("p");
-  newPar.textContent = Object.values(animals)[i];
+  newPar.textContent = "";
+  newPar.textContent = Object.values(refObject)[i];
   newImg.className = `lightbox-img ${"a" + i}`;
   lightDiv.className = `lightbox-imgdiv`;
   newPar.className = "lightbox-txt";
@@ -186,7 +195,6 @@ lightboxParent.addEventListener("click", (e) => {
   if (e.target.offsetParent.classList.contains("selected")) return;
   e.target.offsetParent.classList.toggle("selected");
   if (e.target.offsetParent.classList.contains("selected")) {
-    console.log("damn");
     stringArray.push(
       ` ` + Object.values(refObject)[+e.target.classList[1].slice(1)]
     );
@@ -209,4 +217,48 @@ selectStyles.addEventListener("click", () => {
   promptString.value += stringArray.toString();
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
+  lightboxParent.innerHTML = "";
+  stringArray = [];
+  outputText.textContent = "";
+  const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
+  selectedDivs.forEach((item) => {
+    item.className = "lightbox-imgdiv";
+  });
+  const innerTexts = document.querySelectorAll(".lightbox-txt");
+  innerTexts.forEach((item) => {
+    item.textContent = "";
+  });
+  promptString.value += `,`;
+});
+
+closeLightbox.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
+  lightboxParent.innerHTML = "";
+  stringArray = [];
+  outputText.textContent = "";
+  const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
+  selectedDivs.forEach((item) => {
+    item.className = "lightbox-imgdiv";
+  });
+  const innerTexts = document.querySelectorAll(".lightbox-txt");
+  innerTexts.forEach((item) => {
+    item.textContent = "";
+  });
+});
+
+lightboxShade.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
+  lightboxParent.innerHTML = "";
+  stringArray = [];
+  outputText.textContent = "";
+  const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
+  selectedDivs.forEach((item) => {
+    item.className = "lightbox-imgdiv";
+  });
+  const innerTexts = document.querySelectorAll(".lightbox-txt");
+  innerTexts.forEach((item) => {
+    item.textContent = "";
+  });
 });
