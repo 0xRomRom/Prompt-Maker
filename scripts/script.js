@@ -69,6 +69,7 @@ let copiedQuery = true;
 
 //Copy resulting query
 copyPromptString.addEventListener("click", () => {
+  if (promptString.value < 3) return;
 copyPromptString.disabled = true;
   promptCopied.classList.remove("hidden");
   promptCopied.classList.add("dropdown");
@@ -87,7 +88,7 @@ copyPromptString.disabled = true;
   }, 3000);
 
   if(!copiedQuery) return;
-  if (promptString.value < 3) return;
+  
   if(copiedQuery) {
     promptString.value = promptString.value.slice(0,-1);
   }
