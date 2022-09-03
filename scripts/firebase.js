@@ -13,14 +13,28 @@ import {
 import { animals, buildings } from "./catIndex.js";
 import { targetCategory } from "./animate.js";
 
-const indexArr = [animals, buildings];
 
 const indexObject = {
   animals: animals,
   buildings: buildings,
 };
 
+//Init
+let stringArray = [];
 let refObject = {};
+let loggedinBool = false;
+let intExpand = 0;
+let totalCount = 0;
+let subjectCount = 0;
+let locationCount = 0;
+let themesCount = 0;
+let designCount = 0;
+let lightningCount = 0;
+let colorsCount = 0;
+let cameraCount = 0;
+let artistsCount = 0;
+let imageCount = 0;
+
 
 const totalCounter = document.querySelector(".total-selection-counter");
 const subjectCounter = document.querySelector(".subject-counter");
@@ -69,18 +83,10 @@ const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
 //Init
 
+
+
 //
 
-let totalCount = 0;
-let subjectCount = 0;
-let locationCount = 0;
-let themesCount = 0;
-let designCount = 0;
-let lightningCount = 0;
-let colorsCount = 0;
-let cameraCount = 0;
-let artistsCount = 0;
-let imageCount = 0;
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -93,7 +99,7 @@ export const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-// connectAuthEmulator(auth, "http://localhost:9090");
+
 
 //Show Signup modal
 signupForwards.addEventListener("click", (e) => {
@@ -152,6 +158,7 @@ const logout = async () => {
 };
 logoutBtn.addEventListener("click", logout);
 
+
 //Check if user is logged in
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
@@ -161,15 +168,15 @@ const monitorAuthState = async () => {
       logoutBtn.classList.remove("hidden");
       console.log(user.email);
       displayUser.textContent = `Welcome`;
+      loggedinBool = true;
     } else {
       loginBtn.classList.remove("hidden");
       logoutBtn.classList.add("hidden");
+      loggedinBool = false;      
     }
   });
 };
 monitorAuthState();
-
-// firebase emulators:start --only auth
 
 const addtoDiv = (img, i) => {
   stringArray = [];
@@ -205,8 +212,12 @@ allSubs.forEach((item) => {
       }
     }
     const storage = getStorage();
-    const iLen = Object.keys(refObject).length;
-    for (let i = 0; i < iLen; i++) {
+    if (!loggedinBool) {
+      intExpand = +Object.keys(refObject).length; // Or 5-100
+      } else {
+        intExpand = +Object.keys(refObject).length;
+      }
+    for (let i = 0; i < intExpand; i++) {
       getDownloadURL(
         ref(storage, `/${targetCategory}/${item.dataset.id}/${i}.png`)
       )
@@ -220,7 +231,7 @@ allSubs.forEach((item) => {
   });
 });
 
-let stringArray = [];
+
 //Toggle between borders
 lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList[0] === "lightbox-imgdiv") return;
@@ -250,8 +261,6 @@ selectStyles.addEventListener("click", () => {
   promptString.value += stringArray.toString();
   totalCount += +stringArray.length;
   subjectCount += +stringArray.length;
-  subjectCounter.textContent = "";
-  subjectMiniCounter.textContent = "";
   subjectCounter.textContent = subjectCount;
   subjectMiniCounter.textContent = subjectCount;
   totalCounter.textContent = totalCount;
@@ -263,10 +272,6 @@ selectStyles.addEventListener("click", () => {
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
-  });
-  const innerTexts = document.querySelectorAll(".lightbox-txt");
-  innerTexts.forEach((item) => {
-    item.textContent = "";
   });
   promptString.value += `,`;
 });
@@ -281,10 +286,6 @@ closeLightbox.addEventListener("click", () => {
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
   });
-  const innerTexts = document.querySelectorAll(".lightbox-txt");
-  innerTexts.forEach((item) => {
-    item.textContent = "";
-  });
 });
 
 lightboxShade.addEventListener("click", () => {
@@ -296,9 +297,5 @@ lightboxShade.addEventListener("click", () => {
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
-  });
-  const innerTexts = document.querySelectorAll(".lightbox-txt");
-  innerTexts.forEach((item) => {
-    item.textContent = "";
   });
 });
