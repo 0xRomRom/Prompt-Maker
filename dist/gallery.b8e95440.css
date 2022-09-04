@@ -40,7 +40,8 @@ nav {
   justify-content: center;
   align-items: center;
   display: flex;
-  position: absolute;
+  position: sticky;
+  top: 0;
 }
 
 .links-box {

@@ -33,7 +33,8 @@ a:hover {
 }
 
 nav {
-  position: absolute;
+  position: sticky;
+  top: 0;
   background-color: #121930;
   height: 12.5rem;
   display: flex;
