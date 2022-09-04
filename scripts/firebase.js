@@ -13,7 +13,6 @@ import {
 import { animals, buildings } from "./catIndex.js";
 import { targetCategory } from "./animate.js";
 
-
 const indexObject = {
   animals: animals,
   buildings: buildings,
@@ -34,7 +33,6 @@ let colorsCount = 0;
 let cameraCount = 0;
 let artistsCount = 0;
 let imageCount = 0;
-
 
 const totalCounter = document.querySelector(".total-selection-counter");
 const subjectCounter = document.querySelector(".subject-counter");
@@ -83,10 +81,7 @@ const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
 //Init
 
-
-
 //
-
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -99,7 +94,6 @@ export const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-
 
 //Show Signup modal
 signupForwards.addEventListener("click", (e) => {
@@ -158,7 +152,6 @@ const logout = async () => {
 };
 logoutBtn.addEventListener("click", logout);
 
-
 //Check if user is logged in
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
@@ -172,7 +165,7 @@ const monitorAuthState = async () => {
     } else {
       loginBtn.classList.remove("hidden");
       logoutBtn.classList.add("hidden");
-      loggedinBool = false;      
+      loggedinBool = false;
     }
   });
 };
@@ -214,9 +207,9 @@ allSubs.forEach((item) => {
     const storage = getStorage();
     if (!loggedinBool) {
       intExpand = +Object.keys(refObject).length; // Or 5-100
-      } else {
-        intExpand = +Object.keys(refObject).length;
-      }
+    } else {
+      intExpand = +Object.keys(refObject).length;
+    }
     for (let i = 0; i < intExpand; i++) {
       getDownloadURL(
         ref(storage, `/${targetCategory}/${item.dataset.id}/${i}.png`)
@@ -231,19 +224,56 @@ allSubs.forEach((item) => {
   });
 });
 
-
 //Toggle between borders
 lightboxParent.addEventListener("click", (e) => {
+  console.log(e.target.offsetParent.lastChild.textContent);
+  if (e.target.classList[0] === "outer-lightbox") return;
   if (e.target.classList[0] === "lightbox-imgdiv") return;
-  if (e.target.classList.contains("lightbox")) return;
-  if (e.target.offsetParent.classList.contains("selected")) return;
-  e.target.offsetParent.classList.toggle("selected");
+  if (e.target.classList[0] === "lightbox") return;
   if (e.target.offsetParent.classList.contains("selected")) {
-    stringArray.push(
-      ` ` + Object.values(refObject)[+e.target.classList[1].slice(1)]
+    e.target.offsetParent.classList.remove("selected");
+
+    const index = stringArray.indexOf(
+      " " + e.target.offsetParent.lastChild.textContent
     );
+    console.log(index);
+    if (index !== -1) {
+      stringArray.splice(index, 1);
+    }
+
+    // stringArray.splice(e.target.offsetParent.lastChild.textContent, 1);
     outputText.textContent = stringArray.toString();
+    return;
   }
+  e.target.offsetParent.classList.add("selected");
+  stringArray.push(
+    " " + Object.values(refObject)[+e.target.classList[1].slice(1)]
+  );
+
+  outputText.textContent = stringArray.toString();
+  console.log(stringArray);
+
+  // if (e.target.offsetParent.classList.contains("selected")) {
+  //   e.target.offsetParent.classList.remove("selected");
+  //   console.log(Object.values(refObject)[+e.target.classList[1].slice(1)]);
+  //   stringArray.map((item) => {
+  //     console.log(item.slice(1));
+  //     if (
+  //       Object.values(refObject)[+e.target.classList[1].slice(1)] ===
+  //       item.slice(1)
+  //     ) {
+  //       stringArray.splice(item);
+  //       return stringArray;
+  //     }
+  //   });
+  // }
+
+  // if (e.target.offsetParent.classList.contains("selected")) {
+  //   console.log(stringArray);
+
+  //   console.log(stringArray);
+  //   outputText.textContent = stringArray.toString();
+  // }
 });
 
 //Clear styles
@@ -273,7 +303,6 @@ selectStyles.addEventListener("click", () => {
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
   });
-  promptString.value += `,`;
 });
 
 closeLightbox.addEventListener("click", () => {

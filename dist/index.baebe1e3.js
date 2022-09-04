@@ -714,14 +714,42 @@ allSubs.forEach((item)=>{
 });
 //Toggle between borders
 lightboxParent.addEventListener("click", (e)=>{
+    console.log(e.target.offsetParent.lastChild.textContent);
+    if (e.target.classList[0] === "outer-lightbox") return;
     if (e.target.classList[0] === "lightbox-imgdiv") return;
-    if (e.target.classList.contains("lightbox")) return;
-    if (e.target.offsetParent.classList.contains("selected")) return;
-    e.target.offsetParent.classList.toggle("selected");
+    if (e.target.classList[0] === "lightbox") return;
     if (e.target.offsetParent.classList.contains("selected")) {
-        stringArray.push(` ` + Object.values(refObject)[+e.target.classList[1].slice(1)]);
+        e.target.offsetParent.classList.remove("selected");
+        const index = stringArray.indexOf(" " + e.target.offsetParent.lastChild.textContent);
+        console.log(index);
+        if (index !== -1) stringArray.splice(index, 1);
+        // stringArray.splice(e.target.offsetParent.lastChild.textContent, 1);
         outputText.textContent = stringArray.toString();
+        return;
     }
+    e.target.offsetParent.classList.add("selected");
+    stringArray.push(" " + Object.values(refObject)[+e.target.classList[1].slice(1)]);
+    outputText.textContent = stringArray.toString();
+    console.log(stringArray);
+// if (e.target.offsetParent.classList.contains("selected")) {
+//   e.target.offsetParent.classList.remove("selected");
+//   console.log(Object.values(refObject)[+e.target.classList[1].slice(1)]);
+//   stringArray.map((item) => {
+//     console.log(item.slice(1));
+//     if (
+//       Object.values(refObject)[+e.target.classList[1].slice(1)] ===
+//       item.slice(1)
+//     ) {
+//       stringArray.splice(item);
+//       return stringArray;
+//     }
+//   });
+// }
+// if (e.target.offsetParent.classList.contains("selected")) {
+//   console.log(stringArray);
+//   console.log(stringArray);
+//   outputText.textContent = stringArray.toString();
+// }
 });
 //Clear styles
 clearClose.addEventListener("click", ()=>{
@@ -749,7 +777,6 @@ selectStyles.addEventListener("click", ()=>{
     selectedDivs.forEach((item)=>{
         item.className = "lightbox-imgdiv";
     });
-    promptString.value += `,`;
 });
 closeLightbox.addEventListener("click", ()=>{
     lightboxDiv.classList.add("hidden");
