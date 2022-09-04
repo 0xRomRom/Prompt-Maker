@@ -601,20 +601,8 @@ copyPromptString.addEventListener("click", ()=>{
         promptCopied.classList.add("hidden");
         promptCopied.classList.remove("dropdown");
     }, 2000);
-    setTimeout(()=>{
-        promptString.value = "";
-        totalCounter.textContent = "0";
-        subjectCounter.textContent = "0";
-        subjectMiniCounter.textContent = "0";
-    }, 3000);
-    if (!copiedQuery) return;
-    if (copiedQuery) promptString.value = promptString.value.slice(0, -1);
-    copiedQuery = false;
     promptString.select();
     document.execCommand("copy");
-    setTimeout(()=>{
-        copiedQuery = true;
-    }, 15000);
 });
 // Open/close login modal/lightbox
 loginNav.addEventListener("click", ()=>{

@@ -49,7 +49,6 @@ const lightboxShade = document.querySelector(".lightbox-shade");
 const newPar = document.querySelector(".lightbox-txt");
 const promptCopied = document.querySelector(".prompt-copied");
 
-
 //Init//
 let totalCount = 0;
 let subjectCount = 0;
@@ -70,36 +69,16 @@ let copiedQuery = true;
 //Copy resulting query
 copyPromptString.addEventListener("click", () => {
   if (promptString.value < 3) return;
-copyPromptString.disabled = true;
+  copyPromptString.disabled = true;
   promptCopied.classList.remove("hidden");
   promptCopied.classList.add("dropdown");
-
   setTimeout(() => {
     copyPromptString.disabled = false;
     promptCopied.classList.add("hidden");
     promptCopied.classList.remove("dropdown");
-    
   }, 2000);
-  setTimeout(() => {
-    promptString.value = '';
-    totalCounter.textContent = '0';
-    subjectCounter.textContent = '0';
-   subjectMiniCounter.textContent = '0';
-  }, 3000);
-
-  if(!copiedQuery) return;
-  
-  if(copiedQuery) {
-    promptString.value = promptString.value.slice(0,-1);
-  }
-  copiedQuery = false;
   promptString.select();
   document.execCommand("copy");
-  
-  
-  setTimeout(() => {
-    copiedQuery = true;
-  }, 15000);
 });
 
 // Open/close login modal/lightbox
