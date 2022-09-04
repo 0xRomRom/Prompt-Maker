@@ -603,6 +603,11 @@ const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
 //Init
+const clearPromptIcon = document.querySelector(".fa-file");
+clearPromptIcon.addEventListener("click", ()=>{
+    promptString.value = "";
+    localStorage.setItem("promptSave", "");
+});
 const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
     promptString.value = promptValue;
