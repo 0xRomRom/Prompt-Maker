@@ -593,8 +593,8 @@ const subjectBoxes = document.querySelector(".modal-boxes");
 const dot1 = document.querySelector(".dot-1");
 const dot2 = document.querySelector(".dot-2");
 const dot3 = document.querySelector(".dot-3");
-let g = "rgb(40,37,38)";
-let gb = "2px solid rgb(40,37,38)";
+let g = "rgb(74, 69, 70)";
+let gb = "2px solid rgb(74, 69, 70)";
 let w = "white";
 let wb = "2px solid white";
 let targetCategory = "subject";
@@ -646,6 +646,7 @@ const resetDots = ()=>{
     dot3.style.backgroundColor = "rgb(8, 11, 22)";
 };
 optionBox1.addEventListener("click", ()=>{
+    let targetCategory = "subject";
     resetDots();
     dot1.className = "dot-1 d1 dot";
     dot2.className = "dot-2 d2 dot";
@@ -687,6 +688,7 @@ optionBox1.addEventListener("click", ()=>{
     styleReducer(optionBox1, subjectCounter, subjectCounter, optionBox2, locationCounter, locationCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox2.addEventListener("click", ()=>{
+    let targetCategory = "location";
     resetDots();
     dot1.className = "dot-4 d1 dot";
     dot2.className = "dot-5 d2 dot";
@@ -728,6 +730,7 @@ optionBox2.addEventListener("click", ()=>{
     styleReducer(optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox3.addEventListener("click", ()=>{
+    let targetCategory = "themes";
     resetDots();
     dot1.className = "dot-7 d1 dot";
     dot2.className = "dot-8 d2 dot";
@@ -769,6 +772,7 @@ optionBox3.addEventListener("click", ()=>{
     styleReducer(optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox4.addEventListener("click", ()=>{
+    let targetCategory = "design";
     resetDots();
     dot1.className = "dot-10 d1 dot";
     dot2.className = "dot-11 d2 dot";
@@ -810,6 +814,7 @@ optionBox4.addEventListener("click", ()=>{
     styleReducer(optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox5.addEventListener("click", ()=>{
+    let targetCategory = "lightning";
     resetDots();
     dot1.className = "dot-13 d1 dot";
     dot2.className = "dot-14 d2 dot";
@@ -851,6 +856,7 @@ optionBox5.addEventListener("click", ()=>{
     styleReducer(optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox6.addEventListener("click", ()=>{
+    let targetCategory = "colors";
     resetDots();
     dot1.className = "dot-16 d1 dot";
     dot2.className = "dot-17 d2 dot";
@@ -892,6 +898,7 @@ optionBox6.addEventListener("click", ()=>{
     styleReducer(optionBox6, colorsCounter, colorsCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox7.addEventListener("click", ()=>{
+    let targetCategory = "camera";
     resetDots();
     dot1.className = "dot-19 d1 dot";
     dot2.className = "dot-20 d2 dot";
@@ -933,6 +940,8 @@ optionBox7.addEventListener("click", ()=>{
     styleReducer(optionBox7, cameraCounter, cameraCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox8.addEventListener("click", ()=>{
+    let targetCategory = "artists";
+    console.log(targetCategory);
     resetDots();
     dot1.className = "dot-22 d1 dot";
     dot2.className = "dot-23 d2 dot";
@@ -1199,6 +1208,36 @@ const menuTransitions = (e)=>{
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kncrP","eMc9v"], "eMc9v", "parcelRequire1ccf")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["kncrP","eMc9v"], "eMc9v", "parcelRequire1ccf")
 
 //# sourceMappingURL=index.09b21932.js.map

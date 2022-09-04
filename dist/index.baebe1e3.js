@@ -602,6 +602,12 @@ const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
+//Init
+const promptValue = localStorage.getItem("promptSave");
+window.addEventListener("load", ()=>{
+    promptString.value = promptValue;
+    console.log(promptValue);
+});
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -731,25 +737,6 @@ lightboxParent.addEventListener("click", (e)=>{
     stringArray.push(" " + Object.values(refObject)[+e.target.classList[1].slice(1)]);
     outputText.textContent = stringArray.toString();
     console.log(stringArray);
-// if (e.target.offsetParent.classList.contains("selected")) {
-//   e.target.offsetParent.classList.remove("selected");
-//   console.log(Object.values(refObject)[+e.target.classList[1].slice(1)]);
-//   stringArray.map((item) => {
-//     console.log(item.slice(1));
-//     if (
-//       Object.values(refObject)[+e.target.classList[1].slice(1)] ===
-//       item.slice(1)
-//     ) {
-//       stringArray.splice(item);
-//       return stringArray;
-//     }
-//   });
-// }
-// if (e.target.offsetParent.classList.contains("selected")) {
-//   console.log(stringArray);
-//   console.log(stringArray);
-//   outputText.textContent = stringArray.toString();
-// }
 });
 //Clear styles
 clearClose.addEventListener("click", ()=>{
@@ -762,7 +749,10 @@ clearClose.addEventListener("click", ()=>{
 });
 //Apply styles
 selectStyles.addEventListener("click", ()=>{
+    const fetchStorage = localStorage.getItem("promptSave");
     promptString.value += stringArray.toString();
+    localStorage.setItem("promptSave", fetchStorage + stringArray.toString() + ",");
+    console.log(localStorage.getItem("promptSave"));
     totalCount += +stringArray.length;
     subjectCount += +stringArray.length;
     subjectCounter.textContent = subjectCount;

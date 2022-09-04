@@ -11,6 +11,12 @@ const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
 
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", () => {
+  promptString.value = loadStorage;
+});
+
 loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");
   loginInputBox.classList.remove("hidden");

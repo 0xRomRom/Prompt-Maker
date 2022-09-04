@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"bsQes":[function(require,module,exports) {
+})({"cEEKW":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "7031f8b770752544";
+module.bundle.HMR_BUNDLE_ID = "329920f5ce97aabe";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -531,40 +531,38 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"8U2wf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "animals", ()=>animals);
-parcelHelpers.export(exports, "buildings", ()=>buildings);
+},{}],"vBRuM":[function(require,module,exports) {
 "use strict";
-const animals = {
-    0: "Alpaca",
-    1: "Cheetah",
-    2: "Bull",
-    3: "Eagle",
-    4: "Falcon",
-    5: "Fox",
-    6: "Frog",
-    7: "Hamster",
-    8: "Horse",
-    9: "Lion",
-    10: "Lizard",
-    11: "Monkey",
-    12: "Owl",
-    13: "Parrot",
-    14: "Shark",
-    15: "Snake"
-};
-const buildings = {
-    0: "Boarding House",
-    1: "Castle",
-    2: "Cathedral",
-    3: "Conservatory",
-    4: "Greenhouse",
-    5: "Hospital",
-    6: "Igloo"
-};
+const loginInputBox = document.querySelector(".login-inputbox");
+const signupBox = document.querySelector(".signup-inputbox");
+const loginBox = document.querySelector(".login-box");
+const loginNav = document.querySelector(".login-btn");
+const hideLogin = document.querySelector(".hide-login");
+const signupBack = document.querySelector(".signup-back");
+const emailInput = document.querySelector(".username-input");
+const passwordInput = document.querySelector(".password-input");
+const wrongCred = document.querySelector(".wrong-credentials");
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", ()=>{
+    promptString.value = loadStorage;
+});
+loginNav.addEventListener("click", ()=>{
+    loginBox.classList.remove("hidden");
+    loginInputBox.classList.remove("hidden");
+});
+hideLogin.addEventListener("click", ()=>{
+    loginBox.classList.add("hidden");
+    wrongCred.classList.add("hidden");
+    signupBox.classList.add("hidden");
+    emailInput.value = "";
+    passwordInput.value = "";
+});
+signupBack.addEventListener("click", ()=>{
+    signupBox.classList.add("hidden");
+    loginInputBox.classList.remove("hidden");
+});
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["bsQes","8U2wf"], "8U2wf", "parcelRequire1ccf")
+},{}]},["cEEKW","vBRuM"], "vBRuM", "parcelRequire1ccf")
 
-//# sourceMappingURL=index.70752544.js.map
+//# sourceMappingURL=about.ce97aabe.js.map
