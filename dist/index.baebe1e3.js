@@ -535,6 +535,7 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "firebaseApp", ()=>firebaseApp);
+parcelHelpers.export(exports, "userAuth", ()=>userAuth);
 var _app = require("firebase/app");
 var _storage = require("firebase/storage");
 var _auth = require("firebase/auth");
@@ -608,7 +609,6 @@ const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
     if (promptValue === null) return;
     promptString.value = promptValue;
-    console.log(promptValue);
 });
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -798,6 +798,7 @@ clearPromptIcon.addEventListener("click", ()=>{
     localStorage.setItem("promptSave", "");
     console.log(promptValue);
 });
+const userAuth = auth;
 
 },{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

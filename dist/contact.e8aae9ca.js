@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"cEEKW":[function(require,module,exports) {
+})({"ee7lP":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "329920f5ce97aabe";
+module.bundle.HMR_BUNDLE_ID = "279927d3e8aae9ca";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -531,22 +531,23 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"vBRuM":[function(require,module,exports) {
+},{}],"6yNxf":[function(require,module,exports) {
 var _app = require("firebase/app");
 var _auth = require("firebase/auth");
 "use strict";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
-const loginBtn = document.querySelector(".login-btn");
-const logoutBtn = document.querySelector(".logout-btn");
+const loginNav = document.querySelector(".login-btn");
 const loginButton = document.querySelector(".login-button");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
-const promptString = document.querySelector(".prompt-string");
+const navBar = document.querySelector(".navclass");
+const loginBtn = document.querySelector(".login-btn");
+const logoutBtn = document.querySelector(".logout-btn");
 const displayUser = document.querySelector(".display-user");
 const signupButton = document.querySelector(".signup-button");
 const usernameRegister = document.querySelector(".username-register");
@@ -580,6 +581,7 @@ const loginEmailPassword = async ()=>{
     const passwordTxt = passwordInput.value;
     try {
         const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+        navBar.classList.remove("hidden");
         console.log(userCredential.user);
     } catch (err) {
         wrongCred.classList.remove("hidden");
@@ -597,6 +599,7 @@ const logout = async ()=>{
     loginBox.classList.add("hidden");
     signupBox.classList.add("hidden");
     loginInputBox.classList.remove("hidden");
+    navBar.classList.remove("hidden");
 };
 logoutBtn.addEventListener("click", logout);
 //Check if user is logged in
@@ -614,12 +617,13 @@ const monitorAuthState = async ()=>{
     });
 };
 monitorAuthState();
+const promptString = document.querySelector(".prompt-string");
 const loadStorage = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
     if (loadStorage === null) return;
     promptString.value = loadStorage;
 });
-loginBtn.addEventListener("click", ()=>{
+loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");
 });
@@ -635,6 +639,6 @@ signupBack.addEventListener("click", ()=>{
     loginInputBox.classList.remove("hidden");
 });
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}]},["cEEKW","vBRuM"], "vBRuM", "parcelRequire1ccf")
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}]},["ee7lP","6yNxf"], "6yNxf", "parcelRequire1ccf")
 
-//# sourceMappingURL=about.ce97aabe.js.map
+//# sourceMappingURL=contact.e8aae9ca.js.map

@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"cEEKW":[function(require,module,exports) {
+})({"lVs8X":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "329920f5ce97aabe";
+module.bundle.HMR_BUNDLE_ID = "63cec5536f71e114";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -531,26 +531,27 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"vBRuM":[function(require,module,exports) {
+},{}],"eJe0J":[function(require,module,exports) {
 var _app = require("firebase/app");
 var _auth = require("firebase/auth");
 "use strict";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
-const loginBtn = document.querySelector(".login-btn");
-const logoutBtn = document.querySelector(".logout-btn");
-const loginButton = document.querySelector(".login-button");
+const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
+const loginButton = document.querySelector(".login-button");
 const promptString = document.querySelector(".prompt-string");
+const loginBtn = document.querySelector(".login-btn");
+const logoutBtn = document.querySelector(".logout-btn");
 const displayUser = document.querySelector(".display-user");
-const signupButton = document.querySelector(".signup-button");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
+const signupButton = document.querySelector(".signup-button");
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -619,7 +620,7 @@ window.addEventListener("load", ()=>{
     if (loadStorage === null) return;
     promptString.value = loadStorage;
 });
-loginBtn.addEventListener("click", ()=>{
+loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");
 });
@@ -635,6 +636,6 @@ signupBack.addEventListener("click", ()=>{
     loginInputBox.classList.remove("hidden");
 });
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}]},["cEEKW","vBRuM"], "vBRuM", "parcelRequire1ccf")
+},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}]},["lVs8X","eJe0J"], "eJe0J", "parcelRequire1ccf")
 
-//# sourceMappingURL=about.ce97aabe.js.map
+//# sourceMappingURL=help.6f71e114.js.map

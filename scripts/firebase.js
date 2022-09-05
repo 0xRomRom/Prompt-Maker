@@ -86,7 +86,6 @@ const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", () => {
   if (promptValue === null) return;
   promptString.value = promptValue;
-  console.log(promptValue);
 });
 
 export const firebaseApp = initializeApp({
@@ -130,7 +129,6 @@ const loginEmailPassword = async () => {
   wrongCred.classList.add("hidden");
   const emailTxt = emailInput.value;
   const passwordTxt = passwordInput.value;
-
   try {
     const userCredential = await signInWithEmailAndPassword(
       auth,
@@ -322,3 +320,5 @@ clearPromptIcon.addEventListener("click", () => {
   localStorage.setItem("promptSave", "");
   console.log(promptValue);
 });
+
+export const userAuth = auth;

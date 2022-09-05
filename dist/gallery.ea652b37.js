@@ -535,16 +535,91 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _masonryLayout = require("masonry-layout");
 var _masonryLayoutDefault = parcelHelpers.interopDefault(_masonryLayout);
+var _app = require("firebase/app");
+var _auth = require("firebase/auth");
 "use strict";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
 const loginNav = document.querySelector(".login-btn");
+const loginButton = document.querySelector(".login-button");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
+const navBar = document.querySelector(".navclass");
+const loginBtn = document.querySelector(".login-btn");
+const logoutBtn = document.querySelector(".logout-btn");
+const displayUser = document.querySelector(".display-user");
+const signupButton = document.querySelector(".signup-button");
+const usernameRegister = document.querySelector(".username-register");
+const passwordRegister = document.querySelector(".password-register");
+const firebaseApp = (0, _app.initializeApp)({
+    apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
+    authDomain: "prompt-maker.firebaseapp.com",
+    projectId: "prompt-maker",
+    storageBucket: "prompt-maker.appspot.com",
+    messagingSenderId: "449676529770",
+    appId: "1:449676529770:web:470531242f944aa58dfa13",
+    measurementId: "G-DWN7577Z1B"
+});
+const auth = (0, _auth.getAuth)(firebaseApp);
+//Create Account
+const createAccount = async ()=>{
+    const emailTxt = usernameRegister.value;
+    const passwordTxt = passwordRegister.value;
+    const userCredential = await (0, _auth.createUserWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+    signupBox.classList.add("hidden");
+    loginInputBox.classList.add("hidden");
+    usernameRegister.value = "";
+    passwordRegister.value = "";
+    console.log(userCredential.user);
+};
+signupButton.addEventListener("click", createAccount);
+//Login
+const loginEmailPassword = async ()=>{
+    wrongCred.classList.add("hidden");
+    const emailTxt = emailInput.value;
+    const passwordTxt = passwordInput.value;
+    try {
+        const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
+        navBar.classList.remove("hidden");
+        console.log(userCredential.user);
+    } catch (err) {
+        wrongCred.classList.remove("hidden");
+        console.log(err);
+    }
+};
+loginButton.addEventListener("click", loginEmailPassword);
+//Logout
+const logout = async ()=>{
+    await (0, _auth.signOut)(auth);
+    displayUser.textContent = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    wrongCred.classList.add("hidden");
+    loginBox.classList.add("hidden");
+    signupBox.classList.add("hidden");
+    loginInputBox.classList.remove("hidden");
+    navBar.classList.remove("hidden");
+};
+logoutBtn.addEventListener("click", logout);
+//Check if user is logged in
+const monitorAuthState = async ()=>{
+    (0, _auth.onAuthStateChanged)(auth, (user)=>{
+        if (user) {
+            loginBox.classList.add("hidden");
+            loginBtn.classList.add("hidden");
+            logoutBtn.classList.remove("hidden");
+            displayUser.textContent = `Welcome`;
+        } else {
+            loginBtn.classList.remove("hidden");
+            logoutBtn.classList.add("hidden");
+        }
+    });
+};
+monitorAuthState();
 const promptString = document.querySelector(".prompt-string");
 const loadStorage = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
@@ -552,6 +627,7 @@ window.addEventListener("load", ()=>{
     promptString.value = loadStorage;
 });
 loginNav.addEventListener("click", ()=>{
+    navBar.classList.add("hidden");
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");
 });
@@ -561,6 +637,7 @@ hideLogin.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     emailInput.value = "";
     passwordInput.value = "";
+    navBar.classList.remove("hidden");
 });
 signupBack.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
@@ -573,7 +650,7 @@ window.addEventListener("load", ()=>{
     });
 });
 
-},{"masonry-layout":"cYDx4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cYDx4":[function(require,module,exports) {
+},{"masonry-layout":"cYDx4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/app":"5wGMN","firebase/auth":"drt1f"}],"cYDx4":[function(require,module,exports) {
 /*!
  * Masonry v4.2.2
  * Cascading grid layout library

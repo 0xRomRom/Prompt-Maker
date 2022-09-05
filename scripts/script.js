@@ -70,9 +70,7 @@ let copiedQuery = true;
 copyPromptString.addEventListener("click", () => {
   if (promptString.value < 3) return;
   if (promptString.value.endsWith(",")) {
-    console.log("damn, endswith");
     promptString.value = promptString.value.slice(0, -1);
-    promptString.value.slice(0, -1);
   }
   copyPromptString.disabled = true;
   promptCopied.classList.remove("hidden");
