@@ -21,7 +21,7 @@ const indexObject = {
 //Init
 let stringArray = [];
 let totalStringArray = [];
-let finalString = [];
+let cacheString = [];
 let refObject = {};
 let loggedinBool = false;
 let intExpand = 0;
@@ -89,6 +89,10 @@ window.addEventListener("load", () => {
   if (promptValue === null) return;
   promptString.value = promptValue;
 });
+
+const loadString = promptValue.split(",");
+cacheString = loadString;
+console.log(cacheString);
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
@@ -189,22 +193,27 @@ const addtoDiv = (img, i) => {
   newPar.textContent = "";
   newPar.textContent = Object.values(refObject)[i];
   newImg.className = `lightbox-img ${"a" + i}`;
-  lightDiv.className = `lightbox-imgdiv ${Object.values(refObject)[i]}`;
+  lightDiv.className = `lightbox-imgdiv`;
   lightDiv.setAttribute("data-name", `${Object.values(refObject)[i]}`);
   newPar.className = "lightbox-txt";
   newImg.setAttribute("src", img);
   lightDiv.appendChild(newImg);
   lightDiv.appendChild(newPar);
   lightbox.appendChild(lightDiv);
+
   const selectedImg = document.querySelectorAll(".lightbox-imgdiv");
   console.log(totalStringArray);
+  console.log(cacheString);
   selectedImg.forEach((item) => {
     totalStringArray.forEach((word) => {
       if (word.slice(1) === item.dataset.name) {
+        console.log(item);
         item.classList.add("selected");
         outputText.textContent = totalStringArray.toString();
       }
     });
+
+    console.log(item.dataset.name);
   });
   lightboxShade.classList.remove("hidden");
   lightboxDiv.classList.remove("hidden");
@@ -290,23 +299,22 @@ clearClose.addEventListener("click", () => {
   promptString.value = "";
   promptString.value = totalStringArray.toString();
   localStorage.setItem("promptSave", promptString.value);
-  console.log(totalStringArray);
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
+  lightboxParent.innerHTML = "";
 });
 
 //Apply styles
 selectStyles.addEventListener("click", () => {
-  promptString.value = finalString.toString();
   localStorage.setItem("promptSave", totalStringArray.toString());
-  const freshString = localStorage.getItem("promptSave");
   promptString.value = "";
-  promptString.value = freshString;
-  totalCount += +stringArray.length;
-  subjectCount += +stringArray.length;
-  subjectCounter.textContent = subjectCount;
-  subjectMiniCounter.textContent = subjectCount;
-  totalCounter.textContent = totalCount;
+  console.log(totalStringArray);
+  promptString.value = totalStringArray;
+  // totalCount += +stringArray.length;
+  // subjectCount += +stringArray.length;
+  // subjectCounter.textContent = subjectCount;
+  // subjectMiniCounter.textContent = subjectCount;
+  // totalCounter.textContent = totalCount;
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
