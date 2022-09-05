@@ -20,6 +20,8 @@ const indexObject = {
 
 //Init
 let stringArray = [];
+let totalStringArray = [];
+let finalString = [];
 let refObject = {};
 let loggedinBool = false;
 let intExpand = 0;
@@ -176,8 +178,6 @@ const monitorAuthState = async () => {
 monitorAuthState();
 
 const addtoDiv = (img, i) => {
-  stringArray = [];
-  outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
@@ -189,12 +189,23 @@ const addtoDiv = (img, i) => {
   newPar.textContent = "";
   newPar.textContent = Object.values(refObject)[i];
   newImg.className = `lightbox-img ${"a" + i}`;
-  lightDiv.className = `lightbox-imgdiv`;
+  lightDiv.className = `lightbox-imgdiv ${Object.values(refObject)[i]}`;
+  lightDiv.setAttribute("data-name", `${Object.values(refObject)[i]}`);
   newPar.className = "lightbox-txt";
   newImg.setAttribute("src", img);
   lightDiv.appendChild(newImg);
   lightDiv.appendChild(newPar);
   lightbox.appendChild(lightDiv);
+  const selectedImg = document.querySelectorAll(".lightbox-imgdiv");
+  console.log(totalStringArray);
+  selectedImg.forEach((item) => {
+    totalStringArray.forEach((word) => {
+      if (word.slice(1) === item.dataset.name) {
+        item.classList.add("selected");
+        outputText.textContent = totalStringArray.toString();
+      }
+    });
+  });
   lightboxShade.classList.remove("hidden");
   lightboxDiv.classList.remove("hidden");
 };
@@ -233,13 +244,23 @@ lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList[0] === "outer-lightbox") return;
   if (e.target.classList[0] === "lightbox-imgdiv") return;
   if (e.target.classList[0] === "lightbox") return;
+  if (promptString.value.charAt(0) === ",") {
+    promptString.value = promptString.value.slice(1);
+  }
   if (e.target.offsetParent.classList.contains("selected")) {
     e.target.offsetParent.classList.remove("selected");
+
     const index = stringArray.indexOf(
       " " + e.target.offsetParent.lastChild.textContent
     );
     if (index !== -1) {
       stringArray.splice(index, 1);
+    }
+    const index2 = totalStringArray.indexOf(
+      " " + e.target.offsetParent.lastChild.textContent
+    );
+    if (index2 !== -1) {
+      totalStringArray.splice(index2, 1);
     }
     outputText.textContent = stringArray.toString();
     return;
@@ -248,30 +269,38 @@ lightboxParent.addEventListener("click", (e) => {
   stringArray.push(
     " " + Object.values(refObject)[+e.target.classList[1].slice(1)]
   );
-  outputText.textContent = stringArray.toString();
+  totalStringArray.push(
+    " " + Object.values(refObject)[+e.target.classList[1].slice(1)]
+  );
+  outputText.textContent = totalStringArray.toString();
 });
 
 //Clear styles
 clearClose.addEventListener("click", () => {
-  stringArray = [];
   outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
+  console.log(totalStringArray);
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
+    const index2 = totalStringArray.indexOf(" " + item.lastChild.textContent);
+    if (index2 !== -1) {
+      totalStringArray.splice(index2, 1);
+    }
   });
+
+  promptString.value = "";
+  promptString.value = totalStringArray.toString();
+  console.log(totalStringArray);
 });
 
 //Apply styles
 selectStyles.addEventListener("click", () => {
   const fetchStorage = localStorage.getItem("promptSave");
   console.log(fetchStorage);
-  promptString.value += stringArray.toString();
-  localStorage.setItem(
-    "promptSave",
-    fetchStorage + stringArray.toString() + ","
-  );
+  promptString.value = finalString.toString();
+  localStorage.setItem("promptSave", totalStringArray.toString() + ",");
   promptString.value = "";
-  promptString.value = fetchStorage + stringArray.toString();
+  promptString.value = totalStringArray.toString();
   console.log(localStorage.getItem("promptSave"));
   totalCount += +stringArray.length;
   subjectCount += +stringArray.length;
@@ -281,8 +310,6 @@ selectStyles.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
-  stringArray = [];
-  outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
     item.className = "lightbox-imgdiv";
@@ -293,7 +320,6 @@ closeLightbox.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
-  stringArray = [];
   outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
@@ -305,7 +331,6 @@ lightboxShade.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
-  stringArray = [];
   outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
@@ -317,7 +342,7 @@ lightboxShade.addEventListener("click", () => {
 clearPromptIcon.addEventListener("click", () => {
   promptString.value = "";
   console.log(promptValue);
-  localStorage.setItem("promptSave", "");
+  localStorage.setItem("promptSave", " ");
   console.log(promptValue);
 });
 
