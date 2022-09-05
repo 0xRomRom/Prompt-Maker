@@ -80,7 +80,6 @@ const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
-//Init
 
 //Load stored prompt on page load
 const promptValue = localStorage.getItem("promptSave");
@@ -89,8 +88,6 @@ window.addEventListener("load", () => {
   promptString.value = promptValue;
   console.log(promptValue);
 });
-
-//
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
