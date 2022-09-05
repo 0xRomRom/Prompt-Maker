@@ -532,11 +532,13 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"vBRuM":[function(require,module,exports) {
+var _auth = require("firebase/auth");
 "use strict";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
 const loginNav = document.querySelector(".login-btn");
+const loginBtn = document.querySelector(".logout-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const emailInput = document.querySelector(".username-input");
@@ -545,6 +547,7 @@ const wrongCred = document.querySelector(".wrong-credentials");
 const promptString = document.querySelector(".prompt-string");
 const loadStorage = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
+    if (loadStorage === null) return;
     promptString.value = loadStorage;
 });
 loginNav.addEventListener("click", ()=>{
@@ -563,6 +566,6 @@ signupBack.addEventListener("click", ()=>{
     loginInputBox.classList.remove("hidden");
 });
 
-},{}]},["cEEKW","vBRuM"], "vBRuM", "parcelRequire1ccf")
+},{"firebase/auth":"drt1f"}]},["cEEKW","vBRuM"], "vBRuM", "parcelRequire1ccf")
 
 //# sourceMappingURL=about.ce97aabe.js.map

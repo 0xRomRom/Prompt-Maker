@@ -598,18 +598,16 @@ const lightboxShade = document.querySelector(".lightbox-shade");
 const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
+const clearPromptIcon = document.querySelector(".fa-file");
 const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
 //Init
-const clearPromptIcon = document.querySelector(".fa-file");
-clearPromptIcon.addEventListener("click", ()=>{
-    promptString.value = "";
-    localStorage.setItem("promptSave", "");
-});
+//Load stored prompt on page load
 const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
+    if (promptValue === null) return;
     promptString.value = promptValue;
     console.log(promptValue);
 });
@@ -723,25 +721,21 @@ allSubs.forEach((item)=>{
         });
     });
 });
-//Toggle between borders
+//Toggle between keywords
 lightboxParent.addEventListener("click", (e)=>{
-    console.log(e.target.offsetParent.lastChild.textContent);
     if (e.target.classList[0] === "outer-lightbox") return;
     if (e.target.classList[0] === "lightbox-imgdiv") return;
     if (e.target.classList[0] === "lightbox") return;
     if (e.target.offsetParent.classList.contains("selected")) {
         e.target.offsetParent.classList.remove("selected");
         const index = stringArray.indexOf(" " + e.target.offsetParent.lastChild.textContent);
-        console.log(index);
         if (index !== -1) stringArray.splice(index, 1);
-        // stringArray.splice(e.target.offsetParent.lastChild.textContent, 1);
         outputText.textContent = stringArray.toString();
         return;
     }
     e.target.offsetParent.classList.add("selected");
     stringArray.push(" " + Object.values(refObject)[+e.target.classList[1].slice(1)]);
     outputText.textContent = stringArray.toString();
-    console.log(stringArray);
 });
 //Clear styles
 clearClose.addEventListener("click", ()=>{
@@ -755,8 +749,11 @@ clearClose.addEventListener("click", ()=>{
 //Apply styles
 selectStyles.addEventListener("click", ()=>{
     const fetchStorage = localStorage.getItem("promptSave");
+    console.log(fetchStorage);
     promptString.value += stringArray.toString();
     localStorage.setItem("promptSave", fetchStorage + stringArray.toString() + ",");
+    promptString.value = "";
+    promptString.value = fetchStorage + stringArray.toString();
     console.log(localStorage.getItem("promptSave"));
     totalCount += +stringArray.length;
     subjectCount += +stringArray.length;
@@ -794,6 +791,13 @@ lightboxShade.addEventListener("click", ()=>{
     selectedDivs.forEach((item)=>{
         item.className = "lightbox-imgdiv";
     });
+});
+//Clear prompt
+clearPromptIcon.addEventListener("click", ()=>{
+    promptString.value = "";
+    console.log(promptValue);
+    localStorage.setItem("promptSave", "");
+    console.log(promptValue);
 });
 
 },{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {

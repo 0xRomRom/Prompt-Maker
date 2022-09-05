@@ -13,6 +13,7 @@ const wrongCred = document.querySelector(".wrong-credentials");
 const promptString = document.querySelector(".prompt-string");
 const loadStorage = localStorage.getItem("promptSave");
 window.addEventListener("load", () => {
+  if (loadStorage === null) return;
   promptString.value = loadStorage;
 });
 

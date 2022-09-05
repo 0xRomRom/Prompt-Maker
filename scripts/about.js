@@ -4,15 +4,19 @@ const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const loginBox = document.querySelector(".login-box");
 const loginNav = document.querySelector(".login-btn");
+const loginBtn = document.querySelector(".logout-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const wrongCred = document.querySelector(".wrong-credentials");
-
 const promptString = document.querySelector(".prompt-string");
 const loadStorage = localStorage.getItem("promptSave");
+
+import {} from "firebase/auth";
+
 window.addEventListener("load", () => {
+  if (loadStorage === null) return;
   promptString.value = loadStorage;
 });
 
