@@ -748,7 +748,7 @@ lightboxParent.addEventListener("click", (e)=>{
         if (index !== -1) stringArray.splice(index, 1);
         const index2 = totalStringArray.indexOf(" " + e.target.offsetParent.lastChild.textContent);
         if (index2 !== -1) totalStringArray.splice(index2, 1);
-        outputText.textContent = stringArray.toString();
+        outputText.textContent = totalStringArray.toString();
         return;
     }
     e.target.offsetParent.classList.add("selected");
