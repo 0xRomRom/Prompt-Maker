@@ -287,21 +287,21 @@ clearClose.addEventListener("click", () => {
       totalStringArray.splice(index2, 1);
     }
   });
-
   promptString.value = "";
   promptString.value = totalStringArray.toString();
+  localStorage.setItem("promptSave", promptString.value);
   console.log(totalStringArray);
+  lightboxDiv.classList.add("hidden");
+  lightboxShade.classList.add("hidden");
 });
 
 //Apply styles
 selectStyles.addEventListener("click", () => {
-  const fetchStorage = localStorage.getItem("promptSave");
-  console.log(fetchStorage);
   promptString.value = finalString.toString();
-  localStorage.setItem("promptSave", totalStringArray.toString() + ",");
+  localStorage.setItem("promptSave", totalStringArray.toString());
+  const freshString = localStorage.getItem("promptSave");
   promptString.value = "";
-  promptString.value = totalStringArray.toString();
-  console.log(localStorage.getItem("promptSave"));
+  promptString.value = freshString;
   totalCount += +stringArray.length;
   subjectCount += +stringArray.length;
   subjectCounter.textContent = subjectCount;
@@ -345,5 +345,3 @@ clearPromptIcon.addEventListener("click", () => {
   localStorage.setItem("promptSave", " ");
   console.log(promptValue);
 });
-
-export const userAuth = auth;

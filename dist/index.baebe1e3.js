@@ -535,7 +535,6 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "firebaseApp", ()=>firebaseApp);
-parcelHelpers.export(exports, "userAuth", ()=>userAuth);
 var _app = require("firebase/app");
 var _storage = require("firebase/storage");
 var _auth = require("firebase/auth");
@@ -763,17 +762,18 @@ clearClose.addEventListener("click", ()=>{
     });
     promptString.value = "";
     promptString.value = totalStringArray.toString();
+    localStorage.setItem("promptSave", promptString.value);
     console.log(totalStringArray);
+    lightboxDiv.classList.add("hidden");
+    lightboxShade.classList.add("hidden");
 });
 //Apply styles
 selectStyles.addEventListener("click", ()=>{
-    const fetchStorage = localStorage.getItem("promptSave");
-    console.log(fetchStorage);
     promptString.value = finalString.toString();
-    localStorage.setItem("promptSave", totalStringArray.toString() + ",");
+    localStorage.setItem("promptSave", totalStringArray.toString());
+    const freshString = localStorage.getItem("promptSave");
     promptString.value = "";
-    promptString.value = totalStringArray.toString();
-    console.log(localStorage.getItem("promptSave"));
+    promptString.value = freshString;
     totalCount += +stringArray.length;
     subjectCount += +stringArray.length;
     subjectCounter.textContent = subjectCount;
@@ -814,7 +814,6 @@ clearPromptIcon.addEventListener("click", ()=>{
     localStorage.setItem("promptSave", " ");
     console.log(promptValue);
 });
-const userAuth = auth;
 
 },{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
