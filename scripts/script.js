@@ -2,6 +2,7 @@
 
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
+const resetPasswordBox = document.querySelector(".forgot-password-box");
 const displayUser = document.querySelector(".display-user");
 const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
@@ -41,6 +42,8 @@ const loginBox = document.querySelector(".login-box");
 const loginNav = document.querySelector(".login-btn");
 const hideLogin = document.querySelector(".hide-login");
 const signupBack = document.querySelector(".signup-back");
+const resetBack = document.querySelector(".reset-back");
+const forgotHref = document.querySelector(".forgot-ref");
 
 const lightbox = document.querySelector(".outer-lightbox");
 const lightboxContent = document.querySelector(".lightbox");
@@ -100,5 +103,18 @@ hideLogin.addEventListener("click", () => {
 
 signupBack.addEventListener("click", () => {
   signupBox.classList.add("hidden");
+  resetPasswordBox.classList.add("hidden");
   loginInputBox.classList.remove("hidden");
+});
+
+resetBack.addEventListener("click", () => {
+  signupBox.classList.add("hidden");
+  resetPasswordBox.classList.add("hidden");
+  loginInputBox.classList.remove("hidden");
+});
+
+forgotHref.addEventListener("click", () => {
+  signupBox.classList.add("hidden");
+  resetPasswordBox.classList.remove("hidden");
+  loginInputBox.classList.add("hidden");
 });

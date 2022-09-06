@@ -90,10 +90,6 @@ window.addEventListener("load", () => {
   promptString.value = promptValue;
 });
 
-const loadString = promptValue.split(",");
-cacheString = loadString;
-console.log(cacheString);
-
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
   authDomain: "prompt-maker.firebaseapp.com",
@@ -105,6 +101,9 @@ export const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
+
+const users = auth.currentUser;
+console.log(users);
 
 //Show Signup modal
 signupForwards.addEventListener("click", (e) => {
@@ -202,8 +201,6 @@ const addtoDiv = (img, i) => {
   lightbox.appendChild(lightDiv);
 
   const selectedImg = document.querySelectorAll(".lightbox-imgdiv");
-  console.log(totalStringArray);
-  console.log(cacheString);
   selectedImg.forEach((item) => {
     totalStringArray.forEach((word) => {
       if (word.slice(1) === item.dataset.name) {

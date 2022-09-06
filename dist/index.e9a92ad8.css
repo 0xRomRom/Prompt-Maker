@@ -693,12 +693,64 @@ li:hover {
   position: absolute;
 }
 
+.forgot-password-box {
+  height: 25rem;
+  width: 22rem;
+  background-color: #121930;
+  border-radius: .4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+  position: absolute;
+}
+
+.reset-button {
+  position: relative;
+  top: -1rem;
+}
+
+.reset-back {
+  color: #b1aeae;
+  cursor: pointer;
+  font-size: 2rem;
+  position: relative;
+  top: -3.3rem;
+  left: -8.5rem;
+}
+
+.reset-back:hover {
+  color: #fff;
+}
+
+.forgot-ref {
+  color: #dad5d5;
+  cursor: pointer;
+  font-family: Open Sans;
+  font-size: .8rem;
+  font-weight: 700;
+  position: relative;
+  top: 2rem;
+}
+
+.forgot-ref:hover {
+  color: #fff;
+}
+
 .brand-logo2 {
   height: 3.2rem;
   cursor: pointer;
   position: absolute;
   top: -16.5rem;
   left: -46rem;
+}
+
+.forgot-headtext {
+  color: #fff;
+  font-family: Open Sans;
+  font-size: .8rem;
+  font-weight: 700;
 }
 
 .display-user {
@@ -760,7 +812,7 @@ li:hover {
   left: 0;
 }
 
-.fa-arrow-left {
+.signup-back {
   color: #b1aeae;
   cursor: pointer;
   font-size: 2rem;
@@ -769,7 +821,7 @@ li:hover {
   left: -8.5rem;
 }
 
-.fa-arrow-left:hover {
+.signup-back:hover {
   color: #fff;
 }
 
