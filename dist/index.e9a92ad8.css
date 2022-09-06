@@ -693,7 +693,7 @@ li:hover {
   position: absolute;
 }
 
-.forgot-password-box {
+.forgot-password-box, .email-sent-modal {
   height: 25rem;
   width: 22rem;
   background-color: #121930;
@@ -704,6 +704,17 @@ li:hover {
   gap: 2rem;
   display: flex;
   position: absolute;
+}
+
+.email-sent-txt {
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: Open Sans;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: relative;
+  top: -1.5rem;
 }
 
 .reset-button {
@@ -722,6 +733,30 @@ li:hover {
 
 .reset-back:hover {
   color: #fff;
+}
+
+.reset-back2 {
+  color: #b1aeae;
+  cursor: pointer;
+  font-size: 2rem;
+  position: relative;
+  top: -6.5rem;
+  left: -8.5rem;
+}
+
+.reset-back2:hover {
+  color: #fff;
+}
+
+.no-user {
+  color: red;
+  text-align: center;
+  padding: 0 .75rem;
+  font-family: Open Sans;
+  font-size: .6rem;
+  font-weight: 700;
+  position: absolute;
+  top: 16rem;
 }
 
 .forgot-ref {

@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 import { animals, buildings } from "./catIndex.js";
@@ -70,9 +71,12 @@ const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
+const passwordResetInput = document.querySelector(".password-reset");
+const emailSentModal = document.querySelector(".email-sent-modal");
 const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
+const noUserText = document.querySelector(".no-user");
 const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
@@ -82,6 +86,8 @@ const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
+const passwordReset = document.querySelector(".password-reset");
+const passResetButton = document.querySelector(".reset-button");
 
 //Load stored prompt on page load
 const promptValue = localStorage.getItem("promptSave");
@@ -199,7 +205,6 @@ const addtoDiv = (img, i) => {
   lightDiv.appendChild(newImg);
   lightDiv.appendChild(newPar);
   lightbox.appendChild(lightDiv);
-
   const selectedImg = document.querySelectorAll(".lightbox-imgdiv");
   selectedImg.forEach((item) => {
     totalStringArray.forEach((word) => {
@@ -321,6 +326,7 @@ selectStyles.addEventListener("click", () => {
   });
 });
 
+//Close lightbox
 closeLightbox.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
@@ -350,3 +356,21 @@ clearPromptIcon.addEventListener("click", () => {
   localStorage.setItem("promptSave", " ");
   console.log(promptValue);
 });
+
+//Reset password
+const resetPassword = () => {
+  const passInput = passwordResetInput.value;
+  console.log(passInput);
+  noUserText.classList.add("hidden");
+  sendPasswordResetEmail(auth, passInput)
+    .then(() => {
+      passwordResetInput.value = "";
+      emailSentModal.classList.remove("hidden");
+      console.log("Reset email sent!");
+    })
+    .catch((error) => {
+      noUserText.classList.remove("hidden");
+      console.log(error);
+    });
+};
+passResetButton.addEventListener("click", resetPassword);

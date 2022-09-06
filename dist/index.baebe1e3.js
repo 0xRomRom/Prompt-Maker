@@ -594,9 +594,12 @@ const emailInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
+const passwordResetInput = document.querySelector(".password-reset");
+const emailSentModal = document.querySelector(".email-sent-modal");
 const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
+const noUserText = document.querySelector(".no-user");
 const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
@@ -605,6 +608,8 @@ const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
 const promptString = document.querySelector(".prompt-string");
+const passwordReset = document.querySelector(".password-reset");
+const passResetButton = document.querySelector(".reset-button");
 //Load stored prompt on page load
 const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
@@ -789,6 +794,7 @@ selectStyles.addEventListener("click", ()=>{
         item.className = "lightbox-imgdiv";
     });
 });
+//Close lightbox
 closeLightbox.addEventListener("click", ()=>{
     lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
@@ -816,6 +822,21 @@ clearPromptIcon.addEventListener("click", ()=>{
     localStorage.setItem("promptSave", " ");
     console.log(promptValue);
 });
+//Reset password
+const resetPassword = ()=>{
+    const passInput = passwordResetInput.value;
+    console.log(passInput);
+    noUserText.classList.add("hidden");
+    (0, _auth.sendPasswordResetEmail)(auth, passInput).then(()=>{
+        passwordResetInput.value = "";
+        emailSentModal.classList.remove("hidden");
+        console.log("Reset email sent!");
+    }).catch((error)=>{
+        noUserText.classList.remove("hidden");
+        console.log(error);
+    });
+};
+passResetButton.addEventListener("click", resetPassword);
 
 },{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
