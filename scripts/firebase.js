@@ -108,9 +108,6 @@ export const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
-const users = auth.currentUser;
-console.log(users);
-
 //Show Signup modal
 signupForwards.addEventListener("click", (e) => {
   e.preventDefault();
@@ -147,6 +144,7 @@ const loginEmailPassword = async () => {
       passwordTxt
     );
     console.log(userCredential.user);
+    console.log(userCredential.token);
   } catch (err) {
     wrongCred.classList.remove("hidden");
     console.log(err);

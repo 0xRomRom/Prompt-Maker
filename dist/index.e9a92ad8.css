@@ -1141,4 +1141,15 @@ li:hover {
   }
 }
 
+.checkout {
+  width: 7rem;
+  height: 2rem;
+  color: #fff;
+  z-index: 400;
+  background-color: #000;
+  position: absolute;
+  top: 15rem;
+  left: 20rem;
+}
+
 /*# sourceMappingURL=index.e9a92ad8.css.map */
