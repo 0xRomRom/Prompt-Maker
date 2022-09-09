@@ -132,3 +132,28 @@ forgotHref.addEventListener("click", () => {
   resetPasswordBox.classList.remove("hidden");
   loginInputBox.classList.add("hidden");
 });
+
+const inputBox = document.querySelector(".input-text");
+const submitButton = document.querySelector(".submit-firebase");
+
+const postFirebase = async () => {
+  const postText = {
+    name: inputBox.value,
+  };
+  const rawResponse = await fetch(
+    "https://prompt-maker-default-rtdb.europe-west1.firebasedatabase.app/newUser.json",
+    {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postText),
+    }
+  );
+  const content = await rawResponse.json();
+  console.log(content);
+};
+
+submitButton.addEventListener("click", postFirebase);

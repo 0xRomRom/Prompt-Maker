@@ -1152,4 +1152,14 @@ li:hover {
   left: 20rem;
 }
 
+.testbox-firebase {
+  width: 20rem;
+  height: 10rem;
+  z-index: 400;
+  background: green;
+  position: absolute;
+  top: 20rem;
+  left: 40vw;
+}
+
 /*# sourceMappingURL=index.e9a92ad8.css.map */

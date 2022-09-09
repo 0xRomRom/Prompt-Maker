@@ -535,9 +535,6 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "firebaseApp", ()=>firebaseApp);
-parcelHelpers.export(exports, "amount", ()=>amount);
-parcelHelpers.export(exports, "name", ()=>name);
-parcelHelpers.export(exports, "sku", ()=>sku);
 var _app = require("firebase/app");
 var _auth = require("firebase/auth");
 "use strict";
@@ -561,9 +558,6 @@ const monitorAuthState = async ()=>{
 };
 monitorAuthState();
 let stripe = Stripe("pk_test_51Lf8qkIAQEobM5okYXntFcUGzSPwNkeB4QfnUbY6tAKkpS1Wz9zrS5jh00AVBdVHSKwTZoP1npJDhySg4SjimfQO00TKjGe4wa");
-let amount;
-let name;
-let sku;
 const startCheckout = async ()=>{
     const { error  } = await stripe.redirectToCheckout({
         lineItems: [
@@ -573,7 +567,7 @@ const startCheckout = async ()=>{
             }
         ],
         mode: "subscription",
-        successUrl: "https://google.com/",
+        successUrl: "http://localhost:56970/",
         cancelUrl: "https://youtube.com/"
     }).then((result)=>{
         alert(result);

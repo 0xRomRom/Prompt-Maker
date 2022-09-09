@@ -1239,3 +1239,13 @@ li:hover {
   color: rgb(255, 255, 255);
   z-index: 400;
 }
+
+.testbox-firebase {
+  position: absolute;
+  width: 20rem;
+  height: 10rem;
+  left: 40vw;
+  top: 20rem;
+  background: green;
+  z-index: 400;
+}
