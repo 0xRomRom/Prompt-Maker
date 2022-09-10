@@ -4,8 +4,7 @@
   "description": "Query creator for AI image generators",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "devStart": "nodemon scripts/server.js"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -19,11 +18,8 @@
   },
   "homepage": "https://github.com/0xRomRom/Prompt-Maker#readme",
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1",
     "firebase": "^9.9.3",
-    "masonry-layout": "^4.2.2",
-    "stripe": "^10.7.0"
+    "masonry-layout": "^4.2.2"
   },
   "devDependencies": {
     "assert": "^2.0.0",

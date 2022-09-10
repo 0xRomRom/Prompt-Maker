@@ -532,15 +532,13 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SoyA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "firebaseApp", ()=>firebaseApp);
 var _app = require("firebase/app");
 var _storage = require("firebase/storage");
 var _auth = require("firebase/auth");
 var _catIndexJs = require("./catIndex.js");
 var _animateJs = require("./animate.js");
 "use strict";
+//Refference object for the render/fetch/loop function below
 const indexObject = {
     animals: (0, _catIndexJs.animals),
     buildings: (0, _catIndexJs.buildings)
@@ -548,9 +546,7 @@ const indexObject = {
 //Init
 let stringArray = [];
 let totalStringArray = [];
-let cacheString = [];
 let refObject = {};
-let loggedinBool = false;
 let intExpand = 0;
 let totalCount = 0;
 let subjectCount = 0;
@@ -614,6 +610,13 @@ window.addEventListener("load", ()=>{
     if (promptValue === null) return;
     promptString.value = promptValue;
 });
+//Show Signup modal
+signupForwards.addEventListener("click", (e)=>{
+    e.preventDefault();
+    loginInputBox.classList.add("hidden");
+    signupBox.classList.remove("hidden");
+});
+//Firebase Logic
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -624,12 +627,6 @@ const firebaseApp = (0, _app.initializeApp)({
     measurementId: "G-DWN7577Z1B"
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
-//Show Signup modal
-signupForwards.addEventListener("click", (e)=>{
-    e.preventDefault();
-    loginInputBox.classList.add("hidden");
-    signupBox.classList.remove("hidden");
-});
 //Create Account
 const createAccount = async ()=>{
     const emailTxt = usernameRegister.value;
@@ -669,6 +666,20 @@ const logout = async ()=>{
     loginInputBox.classList.remove("hidden");
 };
 logoutBtn.addEventListener("click", logout);
+//Reset password
+const resetPassword = ()=>{
+    const passInput = passwordResetInput.value;
+    noUserText.classList.add("hidden");
+    (0, _auth.sendPasswordResetEmail)(auth, passInput).then(()=>{
+        passwordResetInput.value = "";
+        emailSentModal.classList.remove("hidden");
+        console.log("Reset email sent!");
+    }).catch((error)=>{
+        noUserText.classList.remove("hidden");
+        console.log(error);
+    });
+};
+passResetButton.addEventListener("click", resetPassword);
 //Check if user is logged in
 const monitorAuthState = async ()=>{
     (0, _auth.onAuthStateChanged)(auth, (user)=>{
@@ -678,15 +689,17 @@ const monitorAuthState = async ()=>{
             logoutBtn.classList.remove("hidden");
             console.log(user.email);
             displayUser.textContent = `Welcome`;
-            loggedinBool = true;
         } else {
             loginBtn.classList.remove("hidden");
             logoutBtn.classList.add("hidden");
-            loggedinBool = false;
         }
     });
 };
 monitorAuthState();
+///
+//Function that is called in the loop below.
+//Creates a new box for every keyword/image
+//Will attach classes to refference/manipulate
 const addtoDiv = (img, i)=>{
     const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
     selectedDivs.forEach((item)=>{
@@ -718,14 +731,16 @@ const addtoDiv = (img, i)=>{
     lightboxShade.classList.remove("hidden");
     lightboxDiv.classList.remove("hidden");
 };
-//Check index for required content & render accordingly
+//Check for clicked submenu name.
+//Compare submenu name with match in indexObject
+//Loop over indexObject and fill temporary Object: refObject
+//Access the right path in Firebase to render the right lightbox
 const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item)=>{
     item.addEventListener("click", (e)=>{
         for (let [key, value] of Object.entries(indexObject))if (e.target.offsetParent.dataset.id === key) refObject = value;
         const storage = (0, _storage.getStorage)();
-        if (!loggedinBool) intExpand = +Object.keys(refObject).length; // Or 5-100
-        else intExpand = +Object.keys(refObject).length;
+        intExpand = +Object.keys(refObject).length;
         for(let i = 0; i < intExpand; i++)(0, _storage.getDownloadURL)((0, _storage.ref)(storage, `/${(0, _animateJs.targetCategory)}/${item.dataset.id}/${i}.png`)).then((url)=>{
             addtoDiv(url, i);
         }).catch((err)=>{
@@ -734,6 +749,7 @@ allSubs.forEach((item)=>{
     });
 });
 //Toggle between keywords
+//Click to select, click again to deselect
 lightboxParent.addEventListener("click", (e)=>{
     if (e.target.classList[0] === "outer-lightbox") return;
     if (e.target.classList[0] === "lightbox-imgdiv") return;
@@ -753,7 +769,7 @@ lightboxParent.addEventListener("click", (e)=>{
     totalStringArray.push(" " + Object.values(refObject)[+e.target.classList[1].slice(1)]);
     outputText.textContent = totalStringArray.toString();
 });
-//Clear styles
+//Clear styles button
 clearClose.addEventListener("click", ()=>{
     outputText.textContent = "";
     const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
@@ -770,16 +786,11 @@ clearClose.addEventListener("click", ()=>{
     lightboxShade.classList.add("hidden");
     lightboxParent.innerHTML = "";
 });
-//Apply styles
+//Apply styles button
 selectStyles.addEventListener("click", ()=>{
     localStorage.setItem("promptSave", totalStringArray.toString());
     promptString.value = "";
     promptString.value = totalStringArray;
-    // totalCount += +stringArray.length;
-    // subjectCount += +stringArray.length;
-    // subjectCounter.textContent = subjectCount;
-    // subjectMiniCounter.textContent = subjectCount;
-    // totalCounter.textContent = totalCount;
     lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
     lightboxParent.innerHTML = "";
@@ -788,7 +799,7 @@ selectStyles.addEventListener("click", ()=>{
         item.className = "lightbox-imgdiv";
     });
 });
-//Close lightbox
+//Close lightbox button
 closeLightbox.addEventListener("click", ()=>{
     lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
@@ -815,22 +826,8 @@ clearPromptIcon.addEventListener("click", ()=>{
     promptString.value = "";
     localStorage.setItem("promptSave", " ");
 });
-//Reset password
-const resetPassword = ()=>{
-    const passInput = passwordResetInput.value;
-    noUserText.classList.add("hidden");
-    (0, _auth.sendPasswordResetEmail)(auth, passInput).then(()=>{
-        passwordResetInput.value = "";
-        emailSentModal.classList.remove("hidden");
-        console.log("Reset email sent!");
-    }).catch((error)=>{
-        noUserText.classList.remove("hidden");
-        console.log(error);
-    });
-};
-passResetButton.addEventListener("click", resetPassword);
 
-},{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wGMN":[function(require,module,exports) {
+},{"firebase/app":"5wGMN","firebase/storage":"9dDUH","firebase/auth":"drt1f","./catIndex.js":"8U2wf","./animate.js":"eMc9v"}],"5wGMN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _app = require("@firebase/app");

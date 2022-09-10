@@ -14,6 +14,7 @@ import {
 import { animals, buildings } from "./catIndex.js";
 import { targetCategory } from "./animate.js";
 
+//Refference object for the render/fetch/loop function below
 const indexObject = {
   animals: animals,
   buildings: buildings,
@@ -22,9 +23,7 @@ const indexObject = {
 //Init
 let stringArray = [];
 let totalStringArray = [];
-let cacheString = [];
 let refObject = {};
-let loggedinBool = false;
 let intExpand = 0;
 let totalCount = 0;
 let subjectCount = 0;
@@ -94,7 +93,15 @@ window.addEventListener("load", () => {
   promptString.value = promptValue;
 });
 
-export const firebaseApp = initializeApp({
+//Show Signup modal
+signupForwards.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginInputBox.classList.add("hidden");
+  signupBox.classList.remove("hidden");
+});
+
+//Firebase Logic
+const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
   authDomain: "prompt-maker.firebaseapp.com",
   projectId: "prompt-maker",
@@ -105,13 +112,6 @@ export const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-
-//Show Signup modal
-signupForwards.addEventListener("click", (e) => {
-  e.preventDefault();
-  loginInputBox.classList.add("hidden");
-  signupBox.classList.remove("hidden");
-});
 
 //Create Account
 const createAccount = async () => {
@@ -163,6 +163,23 @@ const logout = async () => {
 };
 logoutBtn.addEventListener("click", logout);
 
+//Reset password
+const resetPassword = () => {
+  const passInput = passwordResetInput.value;
+  noUserText.classList.add("hidden");
+  sendPasswordResetEmail(auth, passInput)
+    .then(() => {
+      passwordResetInput.value = "";
+      emailSentModal.classList.remove("hidden");
+      console.log("Reset email sent!");
+    })
+    .catch((error) => {
+      noUserText.classList.remove("hidden");
+      console.log(error);
+    });
+};
+passResetButton.addEventListener("click", resetPassword);
+
 //Check if user is logged in
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
@@ -172,16 +189,18 @@ const monitorAuthState = async () => {
       logoutBtn.classList.remove("hidden");
       console.log(user.email);
       displayUser.textContent = `Welcome`;
-      loggedinBool = true;
     } else {
       loginBtn.classList.remove("hidden");
       logoutBtn.classList.add("hidden");
-      loggedinBool = false;
     }
   });
 };
 monitorAuthState();
+///
 
+//Function that is called in the loop below.
+//Creates a new box for every keyword/image
+//Will attach classes to refference/manipulate
 const addtoDiv = (img, i) => {
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
   selectedDivs.forEach((item) => {
@@ -214,7 +233,10 @@ const addtoDiv = (img, i) => {
   lightboxDiv.classList.remove("hidden");
 };
 
-//Check index for required content & render accordingly
+//Check for clicked submenu name.
+//Compare submenu name with match in indexObject
+//Loop over indexObject and fill temporary Object: refObject
+//Access the right path in Firebase to render the right lightbox
 const allSubs = document.querySelectorAll(".subjects-style");
 allSubs.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -223,12 +245,10 @@ allSubs.forEach((item) => {
         refObject = value;
       }
     }
+
     const storage = getStorage();
-    if (!loggedinBool) {
-      intExpand = +Object.keys(refObject).length; // Or 5-100
-    } else {
-      intExpand = +Object.keys(refObject).length;
-    }
+    intExpand = +Object.keys(refObject).length;
+
     for (let i = 0; i < intExpand; i++) {
       getDownloadURL(
         ref(storage, `/${targetCategory}/${item.dataset.id}/${i}.png`)
@@ -244,6 +264,7 @@ allSubs.forEach((item) => {
 });
 
 //Toggle between keywords
+//Click to select, click again to deselect
 lightboxParent.addEventListener("click", (e) => {
   if (e.target.classList[0] === "outer-lightbox") return;
   if (e.target.classList[0] === "lightbox-imgdiv") return;
@@ -279,7 +300,7 @@ lightboxParent.addEventListener("click", (e) => {
   outputText.textContent = totalStringArray.toString();
 });
 
-//Clear styles
+//Clear styles button
 clearClose.addEventListener("click", () => {
   outputText.textContent = "";
   const selectedDivs = document.querySelectorAll(".lightbox-imgdiv");
@@ -299,16 +320,11 @@ clearClose.addEventListener("click", () => {
   lightboxParent.innerHTML = "";
 });
 
-//Apply styles
+//Apply styles button
 selectStyles.addEventListener("click", () => {
   localStorage.setItem("promptSave", totalStringArray.toString());
   promptString.value = "";
   promptString.value = totalStringArray;
-  // totalCount += +stringArray.length;
-  // subjectCount += +stringArray.length;
-  // subjectCounter.textContent = subjectCount;
-  // subjectMiniCounter.textContent = subjectCount;
-  // totalCounter.textContent = totalCount;
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
   lightboxParent.innerHTML = "";
@@ -318,7 +334,7 @@ selectStyles.addEventListener("click", () => {
   });
 });
 
-//Close lightbox
+//Close lightbox button
 closeLightbox.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
@@ -329,6 +345,7 @@ closeLightbox.addEventListener("click", () => {
     item.className = "lightbox-imgdiv";
   });
 });
+
 //Close lightbox by background click
 lightboxShade.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
@@ -346,20 +363,3 @@ clearPromptIcon.addEventListener("click", () => {
   promptString.value = "";
   localStorage.setItem("promptSave", " ");
 });
-
-//Reset password
-const resetPassword = () => {
-  const passInput = passwordResetInput.value;
-  noUserText.classList.add("hidden");
-  sendPasswordResetEmail(auth, passInput)
-    .then(() => {
-      passwordResetInput.value = "";
-      emailSentModal.classList.remove("hidden");
-      console.log("Reset email sent!");
-    })
-    .catch((error) => {
-      noUserText.classList.remove("hidden");
-      console.log(error);
-    });
-};
-passResetButton.addEventListener("click", resetPassword);

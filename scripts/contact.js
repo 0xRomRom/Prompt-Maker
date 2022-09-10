@@ -27,6 +27,15 @@ const signupButton = document.querySelector(".signup-button");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
 
+//Localstorage save
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", () => {
+  if (loadStorage === null) return;
+  promptString.value = loadStorage;
+});
+
+//Firebase logic
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
   authDomain: "prompt-maker.firebaseapp.com",
@@ -38,14 +47,6 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-
-//Localstorage save
-const promptString = document.querySelector(".prompt-string");
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", () => {
-  if (loadStorage === null) return;
-  promptString.value = loadStorage;
-});
 
 //Create Account
 const createAccount = async () => {
@@ -113,6 +114,8 @@ const monitorAuthState = async () => {
   });
 };
 monitorAuthState();
+
+///
 
 loginNav.addEventListener("click", () => {
   loginBox.classList.remove("hidden");

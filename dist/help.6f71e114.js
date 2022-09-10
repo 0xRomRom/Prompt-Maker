@@ -552,7 +552,13 @@ const displayUser = document.querySelector(".display-user");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
 const signupButton = document.querySelector(".signup-button");
-//Firebase
+//Localstorage save
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", ()=>{
+    if (loadStorage === null) return;
+    promptString.value = loadStorage;
+});
+//Firebase Logic
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -563,12 +569,6 @@ const firebaseApp = (0, _app.initializeApp)({
     measurementId: "G-DWN7577Z1B"
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
-//Localstorage save
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", ()=>{
-    if (loadStorage === null) return;
-    promptString.value = loadStorage;
-});
 //Create Account
 const createAccount = async ()=>{
     const emailTxt = usernameRegister.value;
@@ -622,6 +622,7 @@ const monitorAuthState = async ()=>{
     });
 };
 monitorAuthState();
+///
 loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");

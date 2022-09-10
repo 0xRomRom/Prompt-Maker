@@ -23,15 +23,15 @@ const dataList4 = document.querySelectorAll(".data-li4");
 const dataList5 = document.querySelectorAll(".data-li5");
 const dataList6 = document.querySelectorAll(".data-li6");
 
-let promptCache = "";
-
 const imageMenu = document.querySelector(".option-box9");
 imageMenu.addEventListener("click", () => {
   promptCache = `${promptString.value}, `;
   console.log(promptCache);
 });
 
+//Array to place keywords at the right index
 let imageArray = [[""], [""], [""], [""], [""], [""]];
+let promptCache = "";
 
 //Version
 version.addEventListener("click", (e) => {
