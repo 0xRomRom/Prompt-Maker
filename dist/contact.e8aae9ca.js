@@ -562,6 +562,13 @@ const firebaseApp = (0, _app.initializeApp)({
     measurementId: "G-DWN7577Z1B"
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
+//Localstorage save
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", ()=>{
+    if (loadStorage === null) return;
+    promptString.value = loadStorage;
+});
 //Create Account
 const createAccount = async ()=>{
     const emailTxt = usernameRegister.value;
@@ -617,12 +624,6 @@ const monitorAuthState = async ()=>{
     });
 };
 monitorAuthState();
-const promptString = document.querySelector(".prompt-string");
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", ()=>{
-    if (loadStorage === null) return;
-    promptString.value = loadStorage;
-});
 loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");

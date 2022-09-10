@@ -533,6 +533,7 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"jUTag":[function(require,module,exports) {
 "use strict";
+//Auth
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
 const resetPasswordBox = document.querySelector(".forgot-password-box");
@@ -545,6 +546,14 @@ const wrongCred = document.querySelector(".wrong-credentials");
 const noUserText = document.querySelector(".no-user");
 const passwordReset = document.querySelector(".password-reset");
 const emailSentModal = document.querySelector(".email-sent-modal");
+const loginBox = document.querySelector(".login-box");
+const loginNav = document.querySelector(".login-btn");
+const hideLogin = document.querySelector(".hide-login");
+const signupBack = document.querySelector(".signup-back");
+const resetBack = document.querySelector(".reset-back");
+const resetBack2 = document.querySelector(".reset-back2");
+const forgotPassBtn = document.querySelector(".forgot-pass-btn");
+//Counters
 const totalCounter = document.querySelector(".total-selection-counter");
 const subjectCounter = document.querySelector(".subject-counter");
 const locationCounter = document.querySelector(".location-counter");
@@ -555,11 +564,7 @@ const colorsCounter = document.querySelector(".colors-counter");
 const cameraCounter = document.querySelector(".camera-counter");
 const artistsCounter = document.querySelector(".artists-counter");
 const imageCounter = document.querySelector(".image-counter");
-const promptString = document.querySelector(".prompt-string");
-const copyPromptString = document.querySelector(".copy-prompt");
-const dot1 = document.querySelector(".dot-1");
-const dot2 = document.querySelector(".dot-2");
-const dot3 = document.querySelector(".dot-3");
+//
 const subjectMiniCounter = document.querySelector(".subjects-counter");
 const locationMiniCounter = document.querySelector(".locations-counter");
 const themeMiniCounter = document.querySelector(".themes-mini-counter");
@@ -569,13 +574,13 @@ const colorsMiniCounter = document.querySelector(".colors-mini-counter");
 const cameraMiniCounter = document.querySelector(".cameras-counter");
 const artistMiniCounter = document.querySelector(".artists-mini-counter");
 const imageMiniCounter = document.querySelector(".imagess-counter");
-const loginBox = document.querySelector(".login-box");
-const loginNav = document.querySelector(".login-btn");
-const hideLogin = document.querySelector(".hide-login");
-const signupBack = document.querySelector(".signup-back");
-const resetBack = document.querySelector(".reset-back");
-const resetBack2 = document.querySelector(".reset-back2");
-const forgotHref = document.querySelector(".forgot-ref");
+//Result string
+const promptString = document.querySelector(".prompt-string");
+const copyPromptString = document.querySelector(".copy-prompt");
+//Dot menu
+const dot1 = document.querySelector(".dot-1");
+const dot2 = document.querySelector(".dot-2");
+const dot3 = document.querySelector(".dot-3");
 const lightbox = document.querySelector(".outer-lightbox");
 const lightboxContent = document.querySelector(".lightbox");
 const closeLightbox = document.querySelector(".close-lightbox");
@@ -593,9 +598,6 @@ let colorsCount = 0;
 let cameraCount = 0;
 let artistsCount = 0;
 let imageCount = 0;
-emailInput.value = "";
-passwordInput.value = "";
-let copiedQuery = true;
 ////////
 //Copy resulting query
 copyPromptString.addEventListener("click", ()=>{
@@ -612,11 +614,12 @@ copyPromptString.addEventListener("click", ()=>{
     promptString.select();
     document.execCommand("copy");
 });
-// Open/close login modal/lightbox
+//Open login modal
 loginNav.addEventListener("click", ()=>{
     loginBox.classList.remove("hidden");
     loginInputBox.classList.remove("hidden");
 });
+//Close login modal
 hideLogin.addEventListener("click", ()=>{
     loginBox.classList.add("hidden");
     wrongCred.classList.add("hidden");
@@ -624,11 +627,13 @@ hideLogin.addEventListener("click", ()=>{
     emailInput.value = "";
     passwordInput.value = "";
 });
+//Go back from signup page
 signupBack.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     resetPasswordBox.classList.add("hidden");
     loginInputBox.classList.remove("hidden");
 });
+//Reset password back
 resetBack.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     resetPasswordBox.classList.add("hidden");
@@ -636,6 +641,7 @@ resetBack.addEventListener("click", ()=>{
     noUserText.classList.add("hidden");
     passwordReset.value = "";
 });
+//Reset password back (modal2)
 resetBack2.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     resetPasswordBox.classList.add("hidden");
@@ -643,30 +649,12 @@ resetBack2.addEventListener("click", ()=>{
     emailSentModal.classList.add("hidden");
     loginInputBox.classList.remove("hidden");
 });
-forgotHref.addEventListener("click", ()=>{
+//Open forgot password modal
+forgotPassBtn.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     resetPasswordBox.classList.remove("hidden");
     loginInputBox.classList.add("hidden");
 });
-const inputBox = document.querySelector(".input-text");
-const submitButton = document.querySelector(".submit-firebase");
-const postFirebase = async ()=>{
-    const postText = {
-        name: inputBox.value
-    };
-    const rawResponse = await fetch("https://prompt-maker-default-rtdb.europe-west1.firebasedatabase.app/newUser.json", {
-        method: "POST",
-        mode: "cors",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postText)
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-};
-submitButton.addEventListener("click", postFirebase);
 
 },{}]},["lNSW0","jUTag"], "jUTag", "parcelRequire1ccf")
 

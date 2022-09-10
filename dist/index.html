@@ -12,6 +12,7 @@
     <script defer="" src="/index.baebe1e3.js"></script>
     <script defer="" src="./scripts/animate.js"></script>
     <script defer="" src="./scripts/catIndex.js"></script>
+    <script defer="" src="/index.77de7396.js"></script>
     <script src="https://kit.fontawesome.com/5f3c108898.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -296,14 +297,134 @@
               <div class="imagebox">
                 <h2 class="subtitle">Define your image properties</h2>
                 <div class="image-buttonbox1">
+                  <button class="version img-btn-style">Version</button>
                   <button class="aspect-ratio img-btn-style">
                     Aspect Ratio
                   </button>
-                  <button class="resolution img-btn-style">Resolution</button>
                   <button class="quality img-btn-style">Quality</button>
                   <button class="stylize img-btn-style">Stylize</button>
-                  <button class="version img-btn-style">Version</button>
+                  <button class="chaos img-btn-style">Chaos</button>
                   <button class="parameters img-btn-style">Parameters</button>
+                </div>
+                <!-- Select Menus -->
+                <div class="dropdown-container">
+                  <div class="version-div drop-style">
+                    <ul class="version-ratio-select select-style hidden">
+                      <li data-value="-v1, " class="data-li1">
+                        V1 (Midjourney First Version)
+                      </li>
+                      <li data-value="-v2, " class="data-li1">
+                        V2 (Midjourney Second Version)
+                      </li>
+                      <li data-value="" class="data-li1">
+                        Default V3 (Midjourney Latest Version)
+                      </li>
+                      <li data-value="-test, " class="data-li1">
+                        Test (New Artistic Version)
+                      </li>
+                      <li data-value="-testp, " class="data-li1">
+                        Testp (Photorealistic Version)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="aspect-div drop-style">
+                    <ul class="aspect-ratio-select select-style hidden">
+                      <li data-value="-ar 1:1, " class="data-li2">
+                        1:1 (square)
+                      </li>
+                      <li data-value="–ar 1:2, " class="data-li2">
+                        1:2 (Vertical)
+                      </li>
+                      <li data-value="–ar 2:1, " class="data-li2">
+                        2:1 (Standard TV/Film)
+                      </li>
+                      <li data-value="–ar 3:2, " class="data-li2">
+                        3:2 (Standard DSLR)
+                      </li>
+                      <li data-value="–ar 4:3, " class="data-li2">
+                        4:3 (Early Video/Photograpghy)
+                      </li>
+                      <li data-value="–ar 4:5, " class="data-li2">
+                        4:5 (Vertical Instagram Post)
+                      </li>
+                      <li data-value="–ar 9:16, " class="data-li2">
+                        9:16 (Vertical/Instagram Story)
+                      </li>
+                      <li data-value="–ar 10:16, " class="data-li2">
+                        10:16 (Midjourney Portrait)
+                      </li>
+                      <li data-value="–ar 16:9, " class="data-li2">
+                        16:9 (Standard HD Video)
+                      </li>
+                      <li data-value="–ar 21:9, " class="data-li2">
+                        21:9 (Ultrawide)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="quality-div drop-style">
+                    <ul class="quality-select select-style hidden">
+                      <li data-value="–quality 0.25, " class="data-li3">
+                        0.25X Rough Results, 4x Faster
+                      </li>
+                      <li data-value="–quality 0.5, " class="data-li3">
+                        0.5X Less Detailed Results, 2X Faster
+                      </li>
+                      <li data-value="" class="data-li3,">1x - Default</li>
+                      <li data-value="–quality 2, " class="data-li3">
+                        2X More Detailed, 2X Slower
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="stylize-div margin-div drop-style">
+                    <ul class="stylize-select select-style hidden">
+                      <li data-value="" class="data-li4">Default</li>
+                      <li data-value="–Stylize 625, " class="data-li4">
+                        625 (Less Static)
+                      </li>
+                      <li data-value="–Stylize 1250, " class="data-li4">
+                        1250 (Less Strict)
+                      </li>
+                      <li data-value="–Stylize 20000, " class="data-li4">
+                        20000 (Take Over)
+                      </li>
+                      <li data-value="–stylize 60000, " class="data-li4">
+                        60000 (Hands Off The Wheel)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="chaos-div margin-div drop-style">
+                    <ul class="chaos-select select-style hidden">
+                      <li data-value="" class="data-li5">Default (Standard)</li>
+                      <li data-value="-chaos 25, " class="data-li5">
+                        25 (Little Chaos)
+                      </li>
+                      <li data-value="-chaos 50, " class="data-li5">
+                        50 (Medium Chaos)
+                      </li>
+                      <li data-value="-chaos 75, " class="data-li5">
+                        75 (Extreme Chaos)
+                      </li>
+                      <li data-value="-chaos 100, " class="data-li5">
+                        100 (Maximum Chaos)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="parameters-div margin-div drop-style">
+                    <ul class="parameters-select select-style hidden">
+                      <li data-value="–uplight, " class="data-li6">
+                        Light Upscaler
+                      </li>
+                      <li data-value="–upbeta, " class="data-li6">
+                        Beta Upscaler
+                      </li>
+                      <li data-value="–upvideo, " class="data-li6">
+                        Save Progress Video
+                      </li>
+                      <li data-value="–creative, " class="data-li6">
+                        Creative Mode
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <h2 class="img-subtitle2">Upload a reference picture</h2>
                 <div class="image-buttonbox2">
@@ -1166,7 +1287,7 @@
           <p class="wrong-credentials hidden">Wrong e-mail or password</p>
           <button class="login-button btn-stl">Login</button>
           <button class="signup-forwards btn-stl">Sign Up</button>
-          <p class="forgot-ref">Forgot password?</p>
+          <p class="forgot-pass-btn">Forgot password?</p>
         </div>
         <div class="forgot-password-box hidden">
           <i class="fa-solid fa-arrow-left reset-back"></i>
@@ -1187,7 +1308,6 @@
           <img src="/Promptmaker_Logo2.9d89b7df.png" class="brand-logo2">
           <input type="text" class="username-register inp-stl" placeholder="E-Mail address" autocomplete="off">
           <input type="password" class="password-register inp-stl" placeholder="Password" autocomplete="off">
-
           <button class="signup-button btn-stl">Sign Up</button>
         </div>
       </div>

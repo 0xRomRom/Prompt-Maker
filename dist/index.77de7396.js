@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"lVs8X":[function(require,module,exports) {
+})({"awAVa":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "63cec5536f71e114";
+module.bundle.HMR_BUNDLE_ID = "affc8b0f77de7396";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
@@ -531,113 +531,170 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"eJe0J":[function(require,module,exports) {
-var _app = require("firebase/app");
-var _auth = require("firebase/auth");
+},{}],"41Y2s":[function(require,module,exports) {
 "use strict";
-const loginInputBox = document.querySelector(".login-inputbox");
-const signupBox = document.querySelector(".signup-inputbox");
-const loginBox = document.querySelector(".login-box");
-const loginNav = document.querySelector(".login-btn");
-const hideLogin = document.querySelector(".hide-login");
-const signupBack = document.querySelector(".signup-back");
-const emailInput = document.querySelector(".username-input");
-const passwordInput = document.querySelector(".password-input");
-const wrongCred = document.querySelector(".wrong-credentials");
-const loginButton = document.querySelector(".login-button");
+const version = document.querySelector(".version");
+const versionMenu = document.querySelector(".version-ratio-select");
+const aspectRatio = document.querySelector(".aspect-ratio");
+const aspectMenu = document.querySelector(".aspect-ratio-select");
+const quality = document.querySelector(".quality");
+const qualityMenu = document.querySelector(".quality-select");
+const stylize = document.querySelector(".stylize");
+const stylizeMenu = document.querySelector(".stylize-select");
+const chaos = document.querySelector(".chaos");
+const chaosMenu = document.querySelector(".chaos-select");
+const parameters = document.querySelector(".parameters");
+const parametersMenu = document.querySelector(".parameters-select");
+const selectBox = document.querySelector(".select-style");
 const promptString = document.querySelector(".prompt-string");
-const loginBtn = document.querySelector(".login-btn");
-const logoutBtn = document.querySelector(".logout-btn");
-const displayUser = document.querySelector(".display-user");
-const usernameRegister = document.querySelector(".username-register");
-const passwordRegister = document.querySelector(".password-register");
-const signupButton = document.querySelector(".signup-button");
-//Firebase
-const firebaseApp = (0, _app.initializeApp)({
-    apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
-    authDomain: "prompt-maker.firebaseapp.com",
-    projectId: "prompt-maker",
-    storageBucket: "prompt-maker.appspot.com",
-    messagingSenderId: "449676529770",
-    appId: "1:449676529770:web:470531242f944aa58dfa13",
-    measurementId: "G-DWN7577Z1B"
+const dataList1 = document.querySelectorAll(".data-li1");
+const dataList2 = document.querySelectorAll(".data-li2");
+const dataList3 = document.querySelectorAll(".data-li3");
+const dataList4 = document.querySelectorAll(".data-li4");
+const dataList5 = document.querySelectorAll(".data-li5");
+const dataList6 = document.querySelectorAll(".data-li6");
+let promptCache = "";
+const imageMenu = document.querySelector(".option-box9");
+imageMenu.addEventListener("click", ()=>{
+    promptCache = `${promptString.value}, `;
+    console.log(promptCache);
 });
-const auth = (0, _auth.getAuth)(firebaseApp);
-//Localstorage save
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", ()=>{
-    if (loadStorage === null) return;
-    promptString.value = loadStorage;
+let imageArray = [
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ]
+];
+//Version
+version.addEventListener("click", (e)=>{
+    versionMenu.style.zIndex = "50";
+    versionMenu.classList.remove("hidden");
+    aspectMenu.classList.add("hidden");
+    qualityMenu.classList.add("hidden");
+    chaosMenu.classList.add("hidden");
+    stylizeMenu.classList.add("hidden");
+    parametersMenu.classList.add("hidden");
 });
-//Create Account
-const createAccount = async ()=>{
-    const emailTxt = usernameRegister.value;
-    const passwordTxt = passwordRegister.value;
-    const userCredential = await (0, _auth.createUserWithEmailAndPassword)(auth, emailTxt, passwordTxt);
-    signupBox.classList.add("hidden");
-    loginInputBox.classList.add("hidden");
-    usernameRegister.value = "";
-    passwordRegister.value = "";
-    console.log(userCredential.user);
-};
-signupButton.addEventListener("click", createAccount);
-//Login
-const loginEmailPassword = async ()=>{
-    wrongCred.classList.add("hidden");
-    const emailTxt = emailInput.value;
-    const passwordTxt = passwordInput.value;
-    try {
-        const userCredential = await (0, _auth.signInWithEmailAndPassword)(auth, emailTxt, passwordTxt);
-        console.log(userCredential.user);
-    } catch (err) {
-        wrongCred.classList.remove("hidden");
-        console.log(err);
-    }
-};
-loginButton.addEventListener("click", loginEmailPassword);
-//Logout
-const logout = async ()=>{
-    await (0, _auth.signOut)(auth);
-    displayUser.textContent = "";
-    emailInput.value = "";
-    passwordInput.value = "";
-    wrongCred.classList.add("hidden");
-    loginBox.classList.add("hidden");
-    signupBox.classList.add("hidden");
-    loginInputBox.classList.remove("hidden");
-};
-logoutBtn.addEventListener("click", logout);
-//Check if user is logged in
-const monitorAuthState = async ()=>{
-    (0, _auth.onAuthStateChanged)(auth, (user)=>{
-        if (user) {
-            loginBox.classList.add("hidden");
-            loginBtn.classList.add("hidden");
-            logoutBtn.classList.remove("hidden");
-            displayUser.textContent = `Welcome`;
-        } else {
-            loginBtn.classList.remove("hidden");
-            logoutBtn.classList.add("hidden");
-        }
+dataList1.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[0] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        versionMenu.classList.add("hidden");
     });
-};
-monitorAuthState();
-loginNav.addEventListener("click", ()=>{
-    loginBox.classList.remove("hidden");
-    loginInputBox.classList.remove("hidden");
 });
-hideLogin.addEventListener("click", ()=>{
-    loginBox.classList.add("hidden");
-    wrongCred.classList.add("hidden");
-    signupBox.classList.add("hidden");
-    emailInput.value = "";
-    passwordInput.value = "";
+//Aspect Ratio
+aspectRatio.addEventListener("click", ()=>{
+    aspectMenu.classList.remove("hidden");
+    versionMenu.classList.add("hidden");
+    qualityMenu.classList.add("hidden");
+    stylizeMenu.classList.add("hidden");
+    chaosMenu.classList.add("hidden");
+    parametersMenu.classList.add("hidden");
 });
-signupBack.addEventListener("click", ()=>{
-    signupBox.classList.add("hidden");
-    loginInputBox.classList.remove("hidden");
+dataList2.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[1] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        aspectMenu.classList.add("hidden");
+    });
+});
+//Quality
+quality.addEventListener("click", ()=>{
+    qualityMenu.classList.remove("hidden");
+    versionMenu.classList.add("hidden");
+    aspectMenu.classList.add("hidden");
+    stylizeMenu.classList.add("hidden");
+    chaosMenu.classList.add("hidden");
+    parametersMenu.classList.add("hidden");
+});
+dataList3.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[2] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        qualityMenu.classList.add("hidden");
+    });
+});
+//Stylize
+stylize.addEventListener("click", ()=>{
+    stylizeMenu.classList.remove("hidden");
+    versionMenu.classList.add("hidden");
+    aspectMenu.classList.add("hidden");
+    qualityMenu.classList.add("hidden");
+    chaosMenu.classList.add("hidden");
+    parametersMenu.classList.add("hidden");
+});
+dataList4.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[3] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        stylizeMenu.classList.add("hidden");
+    });
+});
+//Chaos
+chaos.addEventListener("click", ()=>{
+    chaosMenu.classList.remove("hidden");
+    versionMenu.classList.add("hidden");
+    aspectMenu.classList.add("hidden");
+    qualityMenu.classList.add("hidden");
+    stylizeMenu.classList.add("hidden");
+    parametersMenu.classList.add("hidden");
+});
+dataList5.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[4] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        chaosMenu.classList.add("hidden");
+    });
+});
+//Parameters
+parameters.addEventListener("click", ()=>{
+    parametersMenu.classList.remove("hidden");
+    versionMenu.classList.add("hidden");
+    aspectMenu.classList.add("hidden");
+    qualityMenu.classList.add("hidden");
+    stylizeMenu.classList.add("hidden");
+    chaosMenu.classList.add("hidden");
+});
+dataList6.forEach((item)=>{
+    item.addEventListener("click", (e)=>{
+        imageArray[5] = [
+            `${e.target.dataset.value}`
+        ];
+        promptString.value = "";
+        promptString.value = promptCache + imageArray.join("").toString();
+        parametersMenu.classList.add("hidden");
+    });
 });
 
-},{"firebase/app":"5wGMN","firebase/auth":"drt1f"}]},["lVs8X","eJe0J"], "eJe0J", "parcelRequire1ccf")
+},{}]},["awAVa","41Y2s"], "41Y2s", "parcelRequire1ccf")
 
-//# sourceMappingURL=help.6f71e114.js.map
+//# sourceMappingURL=index.77de7396.js.map

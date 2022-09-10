@@ -1,5 +1,6 @@
 "use strict";
 
+//Masonry library from npm to handle masonry tile layout
 import Masonry from "masonry-layout";
 const loginInputBox = document.querySelector(".login-inputbox");
 const signupBox = document.querySelector(".signup-inputbox");
@@ -28,6 +29,15 @@ import {
   signOut,
 } from "firebase/auth";
 
+//Masonry function from npm to handle masonry tile layout
+window.addEventListener("load", () => {
+  const grid = document.querySelector(".grid");
+
+  const masonry = new Masonry(grid, {
+    itemSelector: ".grid-item",
+  });
+});
+
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
   authDomain: "prompt-maker.firebaseapp.com",
@@ -39,6 +49,14 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
+
+//Localstorage save
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", () => {
+  if (loadStorage === null) return;
+  promptString.value = loadStorage;
+});
 
 //Create Account
 const createAccount = async () => {
@@ -107,13 +125,6 @@ const monitorAuthState = async () => {
 };
 monitorAuthState();
 
-const promptString = document.querySelector(".prompt-string");
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", () => {
-  if (loadStorage === null) return;
-  promptString.value = loadStorage;
-});
-
 loginNav.addEventListener("click", () => {
   navBar.classList.add("hidden");
   loginBox.classList.remove("hidden");
@@ -132,12 +143,4 @@ hideLogin.addEventListener("click", () => {
 signupBack.addEventListener("click", () => {
   signupBox.classList.add("hidden");
   loginInputBox.classList.remove("hidden");
-});
-
-window.addEventListener("load", () => {
-  const grid = document.querySelector(".grid");
-
-  const masonry = new Masonry(grid, {
-    itemSelector: ".grid-item",
-  });
 });

@@ -77,7 +77,6 @@ const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
 const noUserText = document.querySelector(".no-user");
-const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
 const clearPromptIcon = document.querySelector(".fa-file");
@@ -85,11 +84,10 @@ const clearPromptIcon = document.querySelector(".fa-file");
 const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
-const promptString = document.querySelector(".prompt-string");
-const passwordReset = document.querySelector(".password-reset");
 const passResetButton = document.querySelector(".reset-button");
 
 //Load stored prompt on page load
+const promptString = document.querySelector(".prompt-string");
 const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", () => {
   if (promptValue === null) return;
@@ -207,13 +205,10 @@ const addtoDiv = (img, i) => {
   selectedImg.forEach((item) => {
     totalStringArray.forEach((word) => {
       if (word.slice(1) === item.dataset.name) {
-        console.log(item);
         item.classList.add("selected");
         outputText.textContent = totalStringArray.toString();
       }
     });
-
-    console.log(item.dataset.name);
   });
   lightboxShade.classList.remove("hidden");
   lightboxDiv.classList.remove("hidden");
@@ -308,7 +303,6 @@ clearClose.addEventListener("click", () => {
 selectStyles.addEventListener("click", () => {
   localStorage.setItem("promptSave", totalStringArray.toString());
   promptString.value = "";
-  console.log(totalStringArray);
   promptString.value = totalStringArray;
   // totalCount += +stringArray.length;
   // subjectCount += +stringArray.length;
@@ -335,7 +329,7 @@ closeLightbox.addEventListener("click", () => {
     item.className = "lightbox-imgdiv";
   });
 });
-
+//Close lightbox by background click
 lightboxShade.addEventListener("click", () => {
   lightboxDiv.classList.add("hidden");
   lightboxShade.classList.add("hidden");
@@ -350,15 +344,12 @@ lightboxShade.addEventListener("click", () => {
 //Clear prompt
 clearPromptIcon.addEventListener("click", () => {
   promptString.value = "";
-  console.log(promptValue);
   localStorage.setItem("promptSave", " ");
-  console.log(promptValue);
 });
 
 //Reset password
 const resetPassword = () => {
   const passInput = passwordResetInput.value;
-  console.log(passInput);
   noUserText.classList.add("hidden");
   sendPasswordResetEmail(auth, passInput)
     .then(() => {

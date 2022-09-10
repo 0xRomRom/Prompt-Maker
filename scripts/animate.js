@@ -1,5 +1,6 @@
 "use strict";
 
+//Main menu subjects
 const subject = document.querySelector(".subject");
 const location = document.querySelector(".location");
 const themes = document.querySelector(".themes");
@@ -10,6 +11,7 @@ const camera = document.querySelector(".camera");
 const artists = document.querySelector(".artists");
 const image = document.querySelector(".image");
 
+//3 dot buttons
 const buttonBox = document.querySelector(".hover-buttons");
 
 const optionBox1 = document.querySelector(".option-box1");
@@ -32,27 +34,35 @@ const cameraCounter = document.querySelector(".camera-counter");
 const artistsCounter = document.querySelector(".artists-counter");
 const imageCounter = document.querySelector(".image-counter");
 
+//Each category has 3x8 tiles. Variables below indicate category and (1/3) pages for said category
 const sub1 = document.querySelector(".sub1");
 const sub2 = document.querySelector(".sub2");
 const sub3 = document.querySelector(".sub3");
+//
 const loc1 = document.querySelector(".loc1");
 const loc2 = document.querySelector(".loc2");
 const loc3 = document.querySelector(".loc3");
+//
 const the1 = document.querySelector(".the1");
 const the2 = document.querySelector(".the2");
 const the3 = document.querySelector(".the3");
+//
 const des1 = document.querySelector(".des1");
 const des2 = document.querySelector(".des2");
 const des3 = document.querySelector(".des3");
+//
 const lig1 = document.querySelector(".lig1");
 const lig2 = document.querySelector(".lig2");
 const lig3 = document.querySelector(".lig3");
+//
 const col1 = document.querySelector(".col1");
 const col2 = document.querySelector(".col2");
 const col3 = document.querySelector(".col3");
+//
 const cam1 = document.querySelector(".cam1");
 const cam2 = document.querySelector(".cam2");
 const cam3 = document.querySelector(".cam3");
+//
 const art1 = document.querySelector(".art1");
 const art2 = document.querySelector(".art2");
 const art3 = document.querySelector(".art3");
@@ -60,20 +70,24 @@ const art3 = document.querySelector(".art3");
 const mainProgram = document.querySelector(".main-program");
 const subjectBoxes = document.querySelector(".modal-boxes");
 
+//3 dots menu
 const dot1 = document.querySelector(".dot-1");
 const dot2 = document.querySelector(".dot-2");
 const dot3 = document.querySelector(".dot-3");
 
+//Init//
+
+//targetCategory indicates which page to query in database.
+//Will change upon main category switch, see handlers below
+export let targetCategory = "subject";
 let g = "rgb(74, 69, 70)";
 let gb = "2px solid rgb(74, 69, 70)";
 let w = "white";
 let wb = "2px solid white";
 
-//Init//
-export let targetCategory = "subject";
-
 ///////
 
+//Overwrite default styles to start off with dimmed colors
 optionBox2.style.color = g;
 locationCounter.style.color = g;
 locationCounter.style.border = gb;
@@ -99,14 +113,15 @@ optionBox9.style.color = g;
 imageCounter.style.color = g;
 imageCounter.style.border = gb;
 
+//Add/hide class ('display: none')
 const hide = (el) => {
   el.classList.add("hidden");
 };
-
 const show = (el) => {
   el.classList.remove("hidden");
 };
 
+//Opacity effect for main menus
 const opacity = (i1, i2) => {
   i1.classList.add("fadeOpacity");
   i2.classList.add("fadeOpacity");
@@ -116,6 +131,7 @@ const opacity = (i1, i2) => {
   }, 500);
 };
 
+//Reset dot styles upon main category switch
 const resetDots = () => {
   dot1.style.border = "1px solid rgb(37, 49, 96)";
   dot1.style.backgroundColor = "rgb(37, 49, 96)";
@@ -126,12 +142,22 @@ const resetDots = () => {
 };
 
 optionBox1.addEventListener("click", () => {
+  //targetCategory indicates which page to query in database.
   let targetCategory = "subject";
+
+  //Reset dot styles upon main category switch
   resetDots();
+
+  //Change dot styles to show the corresponding menu.
+  //subject category has: dot-1 dot-2 dot-3
+  //location category has: dot-4 dot-5 dot-6
+  //dot className will get sliced() to check for the last number.
+  //Based on the number it will display the corresponding menu.
   dot1.className = "dot-1 d1 dot";
   dot2.className = "dot-2 d2 dot";
   dot3.className = "dot-3 d3 dot";
 
+  //Disable all content besides currently viewed menu
   show(sub1);
   show(subject);
   show(buttonBox);
@@ -166,7 +192,10 @@ optionBox1.addEventListener("click", () => {
   hide(art3);
   hide(image);
 
+  //Animations
   opacity(mainProgram, subjectBoxes);
+
+  //Give the selected menu the right color, reset others
   styleReducer(
     optionBox1,
     subjectCounter,
@@ -199,12 +228,22 @@ optionBox1.addEventListener("click", () => {
 });
 
 optionBox2.addEventListener("click", () => {
+  //targetCategory indicates which page to query in database.
   let targetCategory = "location";
+
+  //Reset dot styles upon main category switch
   resetDots();
+
+  //Change dot styles to show the corresponding menu.
+  //location category has: dot-4 dot-5 dot-6
+  //themes category has: dot-7 dot-8 dot-9
+  //dot className will get sliced() to check for the last number.
+  //Based on the number it will display the corresponding menu.
   dot1.className = "dot-4 d1 dot";
   dot2.className = "dot-5 d2 dot";
   dot3.className = "dot-6 d3 dot";
 
+  //Disable all content besides currently viewed menu
   show(loc1);
   show(location);
   show(buttonBox);
@@ -239,7 +278,10 @@ optionBox2.addEventListener("click", () => {
   hide(art3);
   hide(image);
 
+  //Animations
   opacity(mainProgram, subjectBoxes);
+
+  //Give the selected menu the right color, reset others
   styleReducer(
     optionBox2,
     locationCounter,
@@ -784,6 +826,7 @@ optionBox9.addEventListener("click", () => {
   );
 });
 
+//Change unselected menus to the right colors at all time
 const styleReducer = (
   visible,
   counter,
@@ -842,13 +885,23 @@ const styleReducer = (
   h3.style.border = gb;
 };
 
+//Depending on the selected main category (subject, location, themes)
+//The 3 dots will change classes based on the selected category
+//Select the 3 dots, loop over the dots and listen for a click.
+//Is dotindex equal to 1-3? subject's menus will be displayed
+//Is dotindex equal to 4-6? location's menus will be displayed
+
 //Render right content according to button index
 const dotArray = document.querySelectorAll(".dot");
+//Loop over dots
 dotArray.forEach((dot) => {
   dot.addEventListener("click", (e) => {
+    //Return if active dot is selected to prevent reload
     if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
+    //cut 'dot-' off to have only the remaining number
     let dotIndex = +e.target.classList[0].slice(4) - 1;
     menuTransitions(e);
+    //Display right menu based on dot index
     if (dotIndex === 0) {
       sub1.classList.remove("hidden");
       sub2.classList.add("hidden");
@@ -975,6 +1028,7 @@ dotArray.forEach((dot) => {
   });
 });
 
+//Some nice transitions
 const menuTransitions = (e) => {
   subjectBoxes.classList.add("fadeOut");
   setTimeout(() => {

@@ -1,5 +1,9 @@
 "use strict";
 
+//Category reference file.
+//For loop will roll over the total length of each object,
+//Each index and name will match an image with the same index and name in the database
+
 export const animals = {
   0: "Alpaca",
   1: "Cheetah",

@@ -533,6 +533,7 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"k6b5o":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+//Masonry library from npm to handle masonry tile layout
 var _masonryLayout = require("masonry-layout");
 var _masonryLayoutDefault = parcelHelpers.interopDefault(_masonryLayout);
 var _app = require("firebase/app");
@@ -555,6 +556,13 @@ const displayUser = document.querySelector(".display-user");
 const signupButton = document.querySelector(".signup-button");
 const usernameRegister = document.querySelector(".username-register");
 const passwordRegister = document.querySelector(".password-register");
+//Masonry function from npm to handle masonry tile layout
+window.addEventListener("load", ()=>{
+    const grid = document.querySelector(".grid");
+    const masonry = new (0, _masonryLayoutDefault.default)(grid, {
+        itemSelector: ".grid-item"
+    });
+});
 const firebaseApp = (0, _app.initializeApp)({
     apiKey: "AIzaSyA5SwOpU8KCIMaOEAcpgKSGCeJ5zGa4mYM",
     authDomain: "prompt-maker.firebaseapp.com",
@@ -565,6 +573,13 @@ const firebaseApp = (0, _app.initializeApp)({
     measurementId: "G-DWN7577Z1B"
 });
 const auth = (0, _auth.getAuth)(firebaseApp);
+//Localstorage save
+const promptString = document.querySelector(".prompt-string");
+const loadStorage = localStorage.getItem("promptSave");
+window.addEventListener("load", ()=>{
+    if (loadStorage === null) return;
+    promptString.value = loadStorage;
+});
 //Create Account
 const createAccount = async ()=>{
     const emailTxt = usernameRegister.value;
@@ -620,12 +635,6 @@ const monitorAuthState = async ()=>{
     });
 };
 monitorAuthState();
-const promptString = document.querySelector(".prompt-string");
-const loadStorage = localStorage.getItem("promptSave");
-window.addEventListener("load", ()=>{
-    if (loadStorage === null) return;
-    promptString.value = loadStorage;
-});
 loginNav.addEventListener("click", ()=>{
     navBar.classList.add("hidden");
     loginBox.classList.remove("hidden");
@@ -642,12 +651,6 @@ hideLogin.addEventListener("click", ()=>{
 signupBack.addEventListener("click", ()=>{
     signupBox.classList.add("hidden");
     loginInputBox.classList.remove("hidden");
-});
-window.addEventListener("load", ()=>{
-    const grid = document.querySelector(".grid");
-    const masonry = new (0, _masonryLayoutDefault.default)(grid, {
-        itemSelector: ".grid-item"
-    });
 });
 
 },{"masonry-layout":"cYDx4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","firebase/app":"5wGMN","firebase/auth":"drt1f"}],"cYDx4":[function(require,module,exports) {

@@ -600,17 +600,15 @@ const wrongCred = document.querySelector(".wrong-credentials");
 const lightboxDiv = document.querySelector(".outer-lightbox");
 const lightboxShade = document.querySelector(".lightbox-shade");
 const noUserText = document.querySelector(".no-user");
-const lightboxImgDiv = document.querySelector(".lightbox-imgdiv");
 const lightboxParent = document.querySelector(".lightbox");
 const outputText = document.querySelector(".output-txt");
 const clearPromptIcon = document.querySelector(".fa-file");
 const closeLightbox = document.querySelector(".close-lightbox");
 const clearClose = document.querySelector(".clear-close");
 const selectStyles = document.querySelector(".select-styles");
-const promptString = document.querySelector(".prompt-string");
-const passwordReset = document.querySelector(".password-reset");
 const passResetButton = document.querySelector(".reset-button");
 //Load stored prompt on page load
+const promptString = document.querySelector(".prompt-string");
 const promptValue = localStorage.getItem("promptSave");
 window.addEventListener("load", ()=>{
     if (promptValue === null) return;
@@ -712,12 +710,10 @@ const addtoDiv = (img, i)=>{
     selectedImg.forEach((item)=>{
         totalStringArray.forEach((word)=>{
             if (word.slice(1) === item.dataset.name) {
-                console.log(item);
                 item.classList.add("selected");
                 outputText.textContent = totalStringArray.toString();
             }
         });
-        console.log(item.dataset.name);
     });
     lightboxShade.classList.remove("hidden");
     lightboxDiv.classList.remove("hidden");
@@ -778,7 +774,6 @@ clearClose.addEventListener("click", ()=>{
 selectStyles.addEventListener("click", ()=>{
     localStorage.setItem("promptSave", totalStringArray.toString());
     promptString.value = "";
-    console.log(totalStringArray);
     promptString.value = totalStringArray;
     // totalCount += +stringArray.length;
     // subjectCount += +stringArray.length;
@@ -804,6 +799,7 @@ closeLightbox.addEventListener("click", ()=>{
         item.className = "lightbox-imgdiv";
     });
 });
+//Close lightbox by background click
 lightboxShade.addEventListener("click", ()=>{
     lightboxDiv.classList.add("hidden");
     lightboxShade.classList.add("hidden");
@@ -817,14 +813,11 @@ lightboxShade.addEventListener("click", ()=>{
 //Clear prompt
 clearPromptIcon.addEventListener("click", ()=>{
     promptString.value = "";
-    console.log(promptValue);
     localStorage.setItem("promptSave", " ");
-    console.log(promptValue);
 });
 //Reset password
 const resetPassword = ()=>{
     const passInput = passwordResetInput.value;
-    console.log(passInput);
     noUserText.classList.add("hidden");
     (0, _auth.sendPasswordResetEmail)(auth, passInput).then(()=>{
         passwordResetInput.value = "";
@@ -16084,6 +16077,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "targetCategory", ()=>targetCategory);
 "use strict";
+//Main menu subjects
 const subject = document.querySelector(".subject");
 const location = document.querySelector(".location");
 const themes = document.querySelector(".themes");
@@ -16093,6 +16087,7 @@ const colors = document.querySelector(".colors");
 const camera = document.querySelector(".camera");
 const artists = document.querySelector(".artists");
 const image = document.querySelector(".image");
+//3 dot buttons
 const buttonBox = document.querySelector(".hover-buttons");
 const optionBox1 = document.querySelector(".option-box1");
 const optionBox2 = document.querySelector(".option-box2");
@@ -16112,41 +16107,51 @@ const colorsCounter = document.querySelector(".colors-counter");
 const cameraCounter = document.querySelector(".camera-counter");
 const artistsCounter = document.querySelector(".artists-counter");
 const imageCounter = document.querySelector(".image-counter");
+//Each category has 3x8 tiles. Variables below indicate category and (1/3) pages for said category
 const sub1 = document.querySelector(".sub1");
 const sub2 = document.querySelector(".sub2");
 const sub3 = document.querySelector(".sub3");
+//
 const loc1 = document.querySelector(".loc1");
 const loc2 = document.querySelector(".loc2");
 const loc3 = document.querySelector(".loc3");
+//
 const the1 = document.querySelector(".the1");
 const the2 = document.querySelector(".the2");
 const the3 = document.querySelector(".the3");
+//
 const des1 = document.querySelector(".des1");
 const des2 = document.querySelector(".des2");
 const des3 = document.querySelector(".des3");
+//
 const lig1 = document.querySelector(".lig1");
 const lig2 = document.querySelector(".lig2");
 const lig3 = document.querySelector(".lig3");
+//
 const col1 = document.querySelector(".col1");
 const col2 = document.querySelector(".col2");
 const col3 = document.querySelector(".col3");
+//
 const cam1 = document.querySelector(".cam1");
 const cam2 = document.querySelector(".cam2");
 const cam3 = document.querySelector(".cam3");
+//
 const art1 = document.querySelector(".art1");
 const art2 = document.querySelector(".art2");
 const art3 = document.querySelector(".art3");
 const mainProgram = document.querySelector(".main-program");
 const subjectBoxes = document.querySelector(".modal-boxes");
+//3 dots menu
 const dot1 = document.querySelector(".dot-1");
 const dot2 = document.querySelector(".dot-2");
 const dot3 = document.querySelector(".dot-3");
+let targetCategory = "subject";
 let g = "rgb(74, 69, 70)";
 let gb = "2px solid rgb(74, 69, 70)";
 let w = "white";
 let wb = "2px solid white";
-let targetCategory = "subject";
 ///////
+//Overwrite default styles to start off with dimmed colors
 optionBox2.style.color = g;
 locationCounter.style.color = g;
 locationCounter.style.border = gb;
@@ -16171,12 +16176,14 @@ artistsCounter.style.border = gb;
 optionBox9.style.color = g;
 imageCounter.style.color = g;
 imageCounter.style.border = gb;
+//Add/hide class ('display: none')
 const hide = (el)=>{
     el.classList.add("hidden");
 };
 const show = (el)=>{
     el.classList.remove("hidden");
 };
+//Opacity effect for main menus
 const opacity = (i1, i2)=>{
     i1.classList.add("fadeOpacity");
     i2.classList.add("fadeOpacity");
@@ -16185,6 +16192,7 @@ const opacity = (i1, i2)=>{
         i2.classList.remove("fadeOpacity");
     }, 500);
 };
+//Reset dot styles upon main category switch
 const resetDots = ()=>{
     dot1.style.border = "1px solid rgb(37, 49, 96)";
     dot1.style.backgroundColor = "rgb(37, 49, 96)";
@@ -16194,11 +16202,19 @@ const resetDots = ()=>{
     dot3.style.backgroundColor = "rgb(8, 11, 22)";
 };
 optionBox1.addEventListener("click", ()=>{
+    //targetCategory indicates which page to query in database.
     let targetCategory = "subject";
+    //Reset dot styles upon main category switch
     resetDots();
+    //Change dot styles to show the corresponding menu.
+    //subject category has: dot-1 dot-2 dot-3
+    //location category has: dot-4 dot-5 dot-6
+    //dot className will get sliced() to check for the last number.
+    //Based on the number it will display the corresponding menu.
     dot1.className = "dot-1 d1 dot";
     dot2.className = "dot-2 d2 dot";
     dot3.className = "dot-3 d3 dot";
+    //Disable all content besides currently viewed menu
     show(sub1);
     show(subject);
     show(buttonBox);
@@ -16232,15 +16248,25 @@ optionBox1.addEventListener("click", ()=>{
     hide(art2);
     hide(art3);
     hide(image);
+    //Animations
     opacity(mainProgram, subjectBoxes);
+    //Give the selected menu the right color, reset others
     styleReducer(optionBox1, subjectCounter, subjectCounter, optionBox2, locationCounter, locationCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox2.addEventListener("click", ()=>{
+    //targetCategory indicates which page to query in database.
     let targetCategory = "location";
+    //Reset dot styles upon main category switch
     resetDots();
+    //Change dot styles to show the corresponding menu.
+    //location category has: dot-4 dot-5 dot-6
+    //themes category has: dot-7 dot-8 dot-9
+    //dot className will get sliced() to check for the last number.
+    //Based on the number it will display the corresponding menu.
     dot1.className = "dot-4 d1 dot";
     dot2.className = "dot-5 d2 dot";
     dot3.className = "dot-6 d3 dot";
+    //Disable all content besides currently viewed menu
     show(loc1);
     show(location);
     show(buttonBox);
@@ -16274,7 +16300,9 @@ optionBox2.addEventListener("click", ()=>{
     hide(art2);
     hide(art3);
     hide(image);
+    //Animations
     opacity(mainProgram, subjectBoxes);
+    //Give the selected menu the right color, reset others
     styleReducer(optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox3, themesCounter, themesCounter, optionBox4, designCounter, designCounter, optionBox5, lightningCounter, lightningCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter, optionBox9, imageCounter, imageCounter);
 });
 optionBox3.addEventListener("click", ()=>{
@@ -16573,6 +16601,7 @@ optionBox9.addEventListener("click", ()=>{
     opacity(mainProgram, subjectBoxes);
     styleReducer(optionBox9, imageCounter, imageCounter, optionBox5, lightningCounter, lightningCounter, optionBox4, designCounter, designCounter, optionBox3, themesCounter, themesCounter, optionBox2, locationCounter, locationCounter, optionBox1, subjectCounter, subjectCounter, optionBox6, colorsCounter, colorsCounter, optionBox7, cameraCounter, cameraCounter, optionBox8, artistsCounter, artistsCounter);
 });
+//Change unselected menus to the right colors at all time
 const styleReducer = (visible, counter, border, a1, a2, a3, b1, b2, b3, c1, c2, c3, d1, d2, d3, e1, e2, e3, f1, f2, f3, g1, g2, g3, h1, h2, h3)=>{
     visible.style.color = w;
     counter.style.color = w;
@@ -16602,13 +16631,22 @@ const styleReducer = (visible, counter, border, a1, a2, a3, b1, b2, b3, c1, c2, 
     h2.style.color = g;
     h3.style.border = gb;
 };
+//Depending on the selected main category (subject, location, themes)
+//The 3 dots will change classes based on the selected category
+//Select the 3 dots, loop over the dots and listen for a click.
+//Is dotindex equal to 1-3? subject's menus will be displayed
+//Is dotindex equal to 4-6? location's menus will be displayed
 //Render right content according to button index
 const dotArray = document.querySelectorAll(".dot");
+//Loop over dots
 dotArray.forEach((dot)=>{
     dot.addEventListener("click", (e)=>{
+        //Return if active dot is selected to prevent reload
         if (e.target.style.backgroundColor === "rgb(37, 49, 96)") return;
+        //cut 'dot-' off to have only the remaining number
         let dotIndex = +e.target.classList[0].slice(4) - 1;
         menuTransitions(e);
+        //Display right menu based on dot index
         if (dotIndex === 0) {
             sub1.classList.remove("hidden");
             sub2.classList.add("hidden");
@@ -16734,6 +16772,7 @@ dotArray.forEach((dot)=>{
         menuTransitions(e);
     });
 });
+//Some nice transitions
 const menuTransitions = (e)=>{
     subjectBoxes.classList.add("fadeOut");
     setTimeout(()=>{
